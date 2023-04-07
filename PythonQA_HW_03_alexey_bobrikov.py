@@ -151,6 +151,8 @@ class Student(Person):
 
 # Main program entry point
 if __name__ == '__main__':
+    print('\nHomework 03 (2023.04.06)')
+
     def task_1_launcher() -> None:
         """Function for launch Task 1"""
         print('\nTASK 1')

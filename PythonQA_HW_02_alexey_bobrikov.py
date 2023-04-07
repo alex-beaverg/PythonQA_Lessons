@@ -174,5 +174,6 @@ def task_2_launcher() -> None:
 
 # Main program entry point
 if __name__ == '__main__':
+    print('\nHomework 02 (2023.03.30)')
     string_methods()
     task_2_launcher()

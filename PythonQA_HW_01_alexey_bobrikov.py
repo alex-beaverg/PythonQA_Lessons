@@ -87,6 +87,7 @@ def simple_calculations() -> None:
 
 # Main program entry point
 if __name__ == '__main__':
+    print('\nHomework 01 (2023.03.23)')
     information()
     variables()
     string_methods()
