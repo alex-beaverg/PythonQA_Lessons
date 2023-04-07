@@ -1,0 +1,153 @@
+OOP classes, their fields and methods for the "Document flow system" at a design company:
+
+0. class Documentation:
+
+   Fields: number
+   Methods: toSave
+
+	- extending classes:
+
+	1. class Correspondence:
+
+   	   Fields: companyFrom, nameFrom, companyTo, nameTo, signatory, executor, approver, 
+	   	   text, summary, appendix, type, date, securityLevel, direction
+   	   Methods: toReceive, toSend, toRegister, toSign, toCreate, toApprove, 
+	    	   toExecute, toArchive
+
+		- extending Correspondence:
+
+		1.1. class Letter
+
+	     	     Fields: physicalFolder
+	     	     Methods: toScan, toPutInPhysicalFolder
+
+		1.2. class Email
+
+	     	     Fields: emailFrom, emailTo, linkWhereSave
+	     	     Methods: toPrint
+
+		1.3. class VideoFile
+
+	     	     Fields: linkWhereSave
+	     	     Methods: toWatch, toPrintText
+
+		1.4. class AudioFile
+
+	     	     Fields: linkWhereSave
+	     	     Methods: toListen, toPrintText
+
+		1.5. class Fax
+
+	     	     Fields: faxInNumber, faxOutNumber, PhysicalFolder
+	     	     Methods: toScan, toPutInPhysicalFolder
+
+
+	2. class InternalDocumentation:
+
+   	   Fields: departmentFrom, departmentTo, nameFrom, nameTo, signatory, executor, text, summary, 
+	   	   appendix, type, date, executionDate
+   	   Methods: toReceive, toSend, toRegister, toSign, toCreate, toExecute, 
+	    	   toArchive
+
+		- extending InternalDocumentation:
+
+		2.1. class FromLeaderToEmployee:
+
+	     	     Fields: actualExecutionDate
+	     	     Methods: toAcceptForExecution
+
+		2.2. class FromEmployeeToLeader:
+
+	     	     Fields: actualSignDate
+	     	     Methods: toReject
+
+		2.3. class FromEmployeeToEmployee:
+
+	     	     Fields: actualAnswerDate
+	      	     Methods: toCorrect, toAnswer
+
+
+	3. class WorkingDocumentation:
+
+   	   Fields: workingDocumentationName, textFiles, drawings, 
+	   	   type, releaseDate, status
+   	   Methods: toRead
+
+		- extending WorkingDocumentation:
+
+		3.1. class CurrentWorkingDocumentation:
+
+	     	     Fields: actualReleaseDate, departments, executors, approvers, signatories
+	     	     Methods: toDraw, toWrite, toSign, toApprove, toComplete
+
+		3.2. class CompletedWorkingDocumentation:
+
+	     	     Fields: disignLicense, expertiseAddress, expertiseType, expertiseReport
+	     	     Methods: toExpertise, toReceiveReport, toCorrect
+
+		3.3. class AfterExpertiseDocumentation:
+
+	     	     Fields: expertiseReport, finishedDocumentation, customer
+	     	     Mrthods: toCustomer, toArchive
+
+
+
+Objects, for example:
+
+	Object (Documentation) outGoingLetter = 
+		new Letter(
+			number = '14567/45H', 
+			---
+			companyFrom = 'OurCompany', 
+			nameFrom = 'Ivanov', 
+			companyTo = 'NotOurCompany', 
+			nameTo = 'Petrov', 
+			signatory = 'Ivanov', 
+			executor = 'Sidorov', 
+			approver = 'Ivanova', 
+			text = 'bla-bla-bla', 
+			summary = 'about smth', 
+			appendix = Null, 
+			type = 'letter', 
+			date = 2023-03-18, 			
+			securityLevel = 4, 
+			direction = 'outgoing', 
+			---
+			physycalFolder = 'Box number 1'
+		);
+
+	Object (Documentation) statement = 
+		new FromEmployeeToLeader(
+			number = 'IN-136', 
+			---
+			departmentFrom = 'SubSt. dep.', 
+			departmentTo = 'Lead dep.', 
+			nameFrom = 'Lolova', 
+			nameTo = 'Ivanov', 
+			signatory = 'Kukov', 
+			executor = 'Usov', 
+			text = 'I want to a vacation!!!', 
+			summary = 'Help!!!', 
+			appendix = Null, 
+			type = 'statement', 
+			date = 2023-03-19, 
+			executionDate = 2023-03-26, 
+			---
+			actualSignDate = Null
+		);
+
+	Object (Documentation) archiveDoc = 
+		new AfterExpertiseDocumentation(
+			number = 14556, 
+			---
+			workingDocumentationName = 'Super Project', 
+			textFiles = ['14556-01.doc', '14556-02.doc'], 
+			drawings = ['14556-01.dwg', '14556-02.dwg'], 
+			type = 'construction', 
+			releaseDate = 2023-04-21, 
+			status = 'afterexpertise', 
+			---
+			expertisedReport = 'passed', 
+			finishedDocumentation = [['14556-01.doc', 14556-02.doc'], ['14556-01.dwg', '14556-02.dwg']], 
+			customer = 'NotOurCompany'
+		);

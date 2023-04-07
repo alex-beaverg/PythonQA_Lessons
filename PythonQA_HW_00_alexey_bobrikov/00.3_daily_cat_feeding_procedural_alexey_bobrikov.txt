@@ -1,0 +1,32 @@
+Daily cat feeding:
+
+Pre-Conditions for daily cat feeding:
+1. Cat's food has bought
+2. Cat's food is in the closet
+
+Procedural algorithm:
+1. I go to the kitchen
+2. I take cat's plate
+3. I put cat's plate on the table
+4. I open the closet
+5. I take cat's feed package
+6. I move the cat away from feed package
+7. I open the feed package
+8. I move the cat away from feed package
+9. I pour cat food into the cat's plate
+10. I move the cat away from feed package and cat's plate
+11. I close the feed package
+12. I move the cat away from feed package and cat's plate
+13. I put cat's feed package into the closet
+14. I move the cat away from cat's plate
+15. I close the closet
+16. I move the cat away from cat's plate
+17. I take cat's plate
+18. I put cat's plate on the floor
+19. The cat eats
+20. The cat goes to his living room
+21. The cat lies on the sofa
+22. My goal is reached
+
+Final goal:
+The well-fed cat lies on the sofa

@@ -1,0 +1,12 @@
+Daily sleeping:
+
+Pre-Conditions for daily sleeping:
+1. I'm lying on the bed
+
+Procedural algorithm:
+1. I close my eyes
+2. I open my eyes
+3. My goal is reached
+
+Final goal:
+I have slept enough

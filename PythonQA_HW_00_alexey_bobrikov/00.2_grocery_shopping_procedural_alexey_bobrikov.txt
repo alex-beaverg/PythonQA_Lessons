@@ -1,0 +1,40 @@
+Grocery shopping:
+
+Pre-Condition:
+1. If some groceries were over, I make a shopping list
+2. Shopping list is ready
+
+Procedural algorithm:
+1. I open my wordrobe
+2. I take my clothes
+3. I put on my clothes
+4. I close my wordrobe
+5. I take my wallet from the shelf
+6. I open the door
+7. I leave my appartment
+8. I close the door
+9. I go outside
+10. I go to the shop
+11. I open the door
+12. I enter to the shop
+13. I'm going from section to section and I'm putting at the basket groceries from my shopping list
+14. I go to the store cashier
+15. I buy groceries
+16. I go to the exit
+17. I open the door
+18. I go outside
+19. I go home
+20. I open the door
+21. I come in my appartment
+22. I open my wordrobe
+23. I put off my clothes
+24. I put my clothes into the wordrobe
+25. I close the wordrobe
+26. I go to the kitchen
+27. I open my fridge
+28. I put groceries into the fridge
+29. I close the fridge
+30. My goal is reached
+
+Final goal:
+1. The groceries are in the fridge

@@ -1,0 +1,45 @@
+Daily coffee:
+
+Pre-Conditions for daily coffee:
+1. When I go to the supermarket, I make a shopping list with must-have everything for coffee
+2. I am buying it (ground coffee, sugar and cream)
+3. I have everything I need
+
+Procedural algorithm:
+1. I get up at from ten to twelve o'clock in the "morning"
+2. I go to the kitchen
+3. I take my turk (It isn't in a kitchen cupboard)
+4. I turn on the faucet
+5. I pour a filtering water into the turk
+6. I turn off the faucet
+7. I put the turk on the stove
+8. I open the drower
+9. I take a spoon
+10. I close the drower
+11. I open my kitchen cupboard
+12. I put a can of coffee
+13. I put spoon of ground coffee into the turk (2 times)
+14. I put the can of coffee back to the shelf
+15. I put a can of sugar
+16. I put spoon of sugar into the turk (3 times)
+17. I put the can of sugar back into the shelf
+18. I close the kitchen cupboard
+19. I turn on the gas
+20. I go to the bathroom while my coffee is boiling
+21. After three minutes I come back to the kitchen
+22. I open my kitchen cupboard
+23. I take my coffee cup
+24. I close my kitchen cupboard
+25. I turn off the gas
+26. I take my turk with my coffee
+27. I pour my coffee into the cup
+28. I open a fridge
+29. I take a cream from the fridge
+30. I pour the cream into my cup
+31. I put the cream back into the fridge
+32. I close the fridge
+33. I take the cup of coffe and a cigarette and go to the balcony
+34. My goal is reached
+
+Final goal:
+I'm standing at balcony with a cigarette and a hot coffee with cream
