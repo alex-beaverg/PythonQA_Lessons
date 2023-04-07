@@ -1,14 +1,14 @@
 # Homework 03 (2023.04.06)
 # Task 1
 class Library:
-    """Class Library"""
+    """Docstring: Class Library"""
 
     def __init__(self) -> None:
-        """Constructor for class Library"""
+        """Docstring: Constructor for class Library"""
         self.books = dict()
 
     def print_summary_of_all_library(self) -> None:
-        """Function for print summary of all books in library"""
+        """Docstring: Function for print summary of all books in library"""
         print('List of books in library:')
         for book_info in self.books.values():
             print(f'\tTitle: {book_info["Title"]:30s}Author: {book_info["Author"]:20s}ID: {book_info["ID"]}', end='\n')
@@ -16,10 +16,10 @@ class Library:
 
 
 class Book:
-    """Class Book"""
+    """Docstring: Class Book"""
 
     def __init__(self, *args: (str, int, bool, dict)) -> None:
-        """Constructor for class Book"""
+        """Docstring: Constructor for class Book"""
         self.my_book = {
             'ID': self.__hash__(),
             'Title': args[0],
@@ -34,7 +34,7 @@ class Book:
         args[7][f'{self.my_book["ID"]}'] = self.my_book
 
     def print_book_description(self) -> None:
-        """Function for print full book description"""
+        """Docstring: Function for print full book description"""
         print(f'{self.my_book["Title"]} ({self.my_book["Author"]}):')
         for key, value in self.my_book.items():
             if key != 'Preview' and key != 'Title' and key != 'Author':
@@ -42,7 +42,7 @@ class Book:
         print()
 
     def print_first_three_pages_preview(self) -> None:
-        """Function for print preview of the first three pages"""
+        """Docstring: Function for print preview of the first three pages"""
         print(f'Preview pages of the book "{self.my_book["Title"]}":')
         for string in self.my_book['Preview']:
             print('\t' + string)
@@ -51,88 +51,88 @@ class Book:
 
 # Task 2 (extends Task 2 from Homework 02)
 class Person:
-    """Class Person"""
+    """Docstring: Class Person"""
 
     # Constructor
     def __init__(self) -> None:
-        """Constructor for class Person"""
+        """Docstring: Constructor for class Person"""
         self.name = 'Unknown'
         self.surname = 'Unknown'
         self.patronymic = 'Unknown'
 
     # Setters
     def set_name(self, name: str) -> None:
-        """Method to Set Name"""
+        """Docstring: Method to Set Name"""
         self.name = name
 
     def set_surname(self, surname: str) -> None:
-        """Method to Set Surname"""
+        """Docstring: Method to Set Surname"""
         self.surname = surname
 
     def set_patronymic(self, patronymic: str) -> None:
-        """Method to Set Patronymic"""
+        """Docstring: Method to Set Patronymic"""
         self.patronymic = patronymic
 
     # Getters
     def get_name(self) -> str:
-        """Method to Get Name"""
+        """Docstring: Method to Get Name"""
         return self.name
 
     def get_surname(self) -> str:
-        """Method to Get Surname"""
+        """Docstring: Method to Get Surname"""
         return self.surname
 
     def get_patronymic(self) -> str:
-        """Method to Get Patronymic"""
+        """Docstring: Method to Get Patronymic"""
         return self.patronymic
 
     # Other methods
     def get_surname_with_initials(self) -> str:
-        """Method to Get Surname with Initials"""
+        """Docstring: Method to Get Surname with Initials"""
         return f'{self.surname} {self.name[0:1]}.{self.patronymic[0:1]}.'
 
     def get_all_information(self) -> str:
-        """Method to Get all Information about Person"""
+        """Docstring: Method to Get all Information about Person"""
         return f'{self.surname} {self.name} {self.patronymic}'
 
     def print_all_information(self) -> None:
-        """Method to Print all Information about Person"""
+        """Docstring: Method to Print all Information about Person"""
         print(f'Surname: {self.surname}')
         print(f'Name: {self.name}')
         print(f'Patronymic: {self.patronymic}')
 
 
 class Student(Person):
-    """Class Student extends class Person"""
+    """Docstring: Class Student extends class Person"""
 
     # Constructor
     def __init__(self) -> None:
-        """Constructor for class Student"""
+        """Docstring: Constructor for class Student"""
         super().__init__()
         self.university = 'IT STEP'
         self.group_id = 'QA1823'
 
     # Setters
     def set_university(self, university: str) -> None:
-        """Method to Set University"""
+        """Docstring: Method to Set University"""
         self.university = university
 
     def set_group_id(self, group_id: str) -> None:
-        """Method to Set Group ID"""
+        """Docstring: Method to Set Group ID"""
         self.group_id = group_id
 
     # Getters
     def get_university(self) -> str:
-        """Method to Get University"""
+        """Docstring: Method to Get University"""
         return f'"{self.university}"'
 
     def get_group_id(self) -> str:
-        """Method to Get Group ID"""
+        """Docstring: Method to Get Group ID"""
         return f'"{self.group_id}"'
 
     # Other methods
     def get_all_information(self) -> str:
-        """Method to Get all Information about Student"""
+        """Docstring: Method to Get all Information about Student"""
         if self.name == 'Unknown' and self.surname == 'Unknown' and self.patronymic == 'Unknown':
             return '!!! Information is not set !!!'
         else:
@@ -140,7 +140,7 @@ class Student(Person):
                    f'the "{self.group_id}" group'
 
     def print_all_information(self) -> None:
-        """Method to Print all Information about Student"""
+        """Docstring: Method to Print all Information about Student"""
         if self.name == 'Unknown' and self.surname == 'Unknown' and self.patronymic == 'Unknown':
             print('!!! Information is not set !!!')
         else:
@@ -154,7 +154,7 @@ if __name__ == '__main__':
     print('\nHomework 03 (2023.04.06)')
 
     def task_1_launcher() -> None:
-        """Function for launch Task 1"""
+        """Docstring: Function for launch Task 1"""
         print('\nTASK 1')
         print('-' * 6)
 
@@ -201,7 +201,7 @@ if __name__ == '__main__':
         about_mouse.print_first_three_pages_preview()
 
     def task_2_launcher() -> None:
-        """Function for launch Task 2"""
+        """Docstring: Function for launch Task 2"""
         print('\nTASK 2')
         print('-' * 6)
 
