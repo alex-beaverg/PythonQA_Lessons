@@ -1,4 +1,4 @@
-# Python QA Homeworks
-# itstep.by
-# QA1823
-# Alexey Bobrikov
+## Python QA Homeworks
+## itstep.by
+## QA1823
+## Alexey Bobrikov
