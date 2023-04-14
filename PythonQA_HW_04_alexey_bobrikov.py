@@ -184,102 +184,181 @@ class Envelop:
 
 # Main program entry point
 if __name__ == '__main__':
-    print('\nHomework 04 (2023.04.13)')
-    print('-' * 24)
-    print()
-    my_bookstore = BookStore()
-    first_book = NewBook(20, 12, 'Chook and Gek', 'Arcadii Gaidar', 150, 10, 'ru', 'Belarus', True,
-                         my_bookstore.books,
-                         ('Chook and Gek were brothers.',
-                          'They received a telegram but quarreled.',
-                          'And the story began...'))
-    primer_book = NewBook(15, 5, 'Primer Book', 'Group of authors', 100, 3, 'en', 'US', True,
-                          my_bookstore.books,
-                          ('A - Apple.',
-                           'B - Banana.',
-                           'C - Cucumber.'))
-    blue_book = NewBook(100, 25, 'Blue Book', 'Blue Author', 666, 18, 'by', 'Belarus', True,
-                        my_bookstore.books,
-                        ('My name is Alexey and I am an alcoholic.',
-                         'I really like to drink beer.',
-                         'And I will be drink it every week!'))
-    b_a_book = NewBook(5, 50, 'Murder in the Front Row', 'Brian Lew', 272, 18, 'US', 'United States', True,
-                       my_bookstore.books,
-                       ('This is a story about roots of thrash metal.',
-                        'It began at the Bay Area in San Francisco.',
-                        'It was in the early eighties...'))
-    about_mouse = NewBook(1, 100, 'Pook the mouse', 'Steeve Edgard', 94, 6, 'UK', 'United Kingdom', True,
-                          my_bookstore.books,
-                          ('There lived a little mouse Pook.',
-                           'She liked to fart very loudly.',
-                           'So no one was friends with her...'))
+    def print_everything() -> None:
+        """Docstring: Method to print all information from all methods"""
+        print('\nHomework 04 (2023.04.13)')
+        print('-' * 24)
+        print()
+        my_bookstore = BookStore()
+        first_book = NewBook(20, 12, 'Chook and Gek', 'Arcadii Gaidar', 150, 10, 'ru', 'Belarus', True,
+                             my_bookstore.books,
+                             ('Chook and Gek were brothers.',
+                              'They received a telegram but quarreled.',
+                              'And the story began...'))
+        primer_book = NewBook(15, 5, 'Primer Book', 'Group of authors', 100, 3, 'en', 'US', True,
+                              my_bookstore.books,
+                              ('A - Apple.',
+                               'B - Banana.',
+                               'C - Cucumber.'))
+        blue_book = NewBook(100, 25, 'Blue Book', 'Blue Author', 666, 18, 'by', 'Belarus', True,
+                            my_bookstore.books,
+                            ('My name is Alexey and I am an alcoholic.',
+                             'I really like to drink beer.',
+                             'And I will be drink it every week!'))
+        b_a_book = NewBook(5, 50, 'Murder in the Front Row', 'Brian Lew', 272, 18, 'US', 'United States', True,
+                           my_bookstore.books,
+                           ('This is a story about roots of thrash metal.',
+                            'It began at the Bay Area in San Francisco.',
+                            'It was in the early eighties...'))
+        about_mouse = NewBook(1, 100, 'Pook the mouse', 'Steeve Edgard', 94, 6, 'UK', 'United Kingdom', True,
+                              my_bookstore.books,
+                              ('There lived a little mouse Pook.',
+                               'She liked to fart very loudly.',
+                               'So no one was friends with her...'))
 
-    my_bookstore.print_summary_of_all_bookstore()
+        my_bookstore.print_summary_of_all_bookstore()
 
-    first_customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', my_bookstore.customers, 'Minsk', 'Card')
-    second_customer = Customer('Ivan', 'Ivanov', 'ivan_i', '123456', my_bookstore.customers, 'Grodno', 'Card')
-    my_bookstore.print_summary_of_all_customers()
+        first_customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', my_bookstore.customers, 'Minsk', 'Card')
+        second_customer = Customer('Ivan', 'Ivanov', 'ivan_i', '123456', my_bookstore.customers, 'Grodno', 'Card')
+        my_bookstore.print_summary_of_all_customers()
 
-    first_book.print_book_description()
-    first_book.print_first_three_pages_preview()
-    primer_book.print_book_description()
-    primer_book.print_first_three_pages_preview()
-    blue_book.print_book_description()
-    blue_book.print_first_three_pages_preview()
-    b_a_book.print_book_description()
-    b_a_book.print_first_three_pages_preview()
-    about_mouse.print_book_description()
-    about_mouse.print_first_three_pages_preview()
+        first_book.print_book_description()
+        first_book.print_first_three_pages_preview()
+        primer_book.print_book_description()
+        primer_book.print_first_three_pages_preview()
+        blue_book.print_book_description()
+        blue_book.print_first_three_pages_preview()
+        b_a_book.print_book_description()
+        b_a_book.print_first_three_pages_preview()
+        about_mouse.print_book_description()
+        about_mouse.print_first_three_pages_preview()
 
-    first_order = Order(first_customer)
-    first_order.add_book_in_order(primer_book)
-    first_order.add_book_in_order(primer_book)
-    first_order.add_book_in_order(blue_book)
-    first_order.add_book_in_order(about_mouse)
-    first_order.print_info_order()
-    print()
+        first_order = Order(first_customer)
+        first_order.add_book_in_order(primer_book)
+        first_order.add_book_in_order(primer_book)
+        first_order.add_book_in_order(blue_book)
+        first_order.add_book_in_order(about_mouse)
+        first_order.print_info_order()
+        print()
 
-    second_order = Order(second_customer)
-    second_order.add_book_in_order(first_book)
-    second_order.add_book_in_order(blue_book)
-    second_order.add_book_in_order(blue_book)
-    second_order.add_book_in_order(b_a_book)
-    second_order.add_book_in_order(b_a_book)
-    second_order.print_info_order()
-    print()
+        second_order = Order(second_customer)
+        second_order.add_book_in_order(first_book)
+        second_order.add_book_in_order(blue_book)
+        second_order.add_book_in_order(blue_book)
+        second_order.add_book_in_order(b_a_book)
+        second_order.add_book_in_order(b_a_book)
+        second_order.print_info_order()
+        print()
 
-    third_order = Order(first_customer)
-    third_order.add_book_in_order(blue_book)
-    third_order.add_book_in_order(blue_book)
-    third_order.add_book_in_order(about_mouse)
-    third_order.print_info_order()
-    print()
+        third_order = Order(first_customer)
+        third_order.add_book_in_order(blue_book)
+        third_order.add_book_in_order(blue_book)
+        third_order.add_book_in_order(about_mouse)
+        third_order.print_info_order()
+        print()
 
-    first_package = Package(first_order)
-    second_package = Package(second_order)
-    third_package = Package(third_order)
-    first_package.print_package_info()
-    print()
-    second_package.print_package_info()
-    print()
-    third_order.print_info_order()
-    print()
+        first_package = Package(first_order)
+        second_package = Package(second_order)
+        third_package = Package(third_order)
+        first_package.print_package_info()
+        print()
+        second_package.print_package_info()
+        print()
+        third_order.print_info_order()
+        print()
 
-    # Create and send first letter
-    first_letter = Envelop(first_package)
-    first_letter.send_mail()
-    first_letter.print_info()
+        # Create and send first letter
+        first_letter = Envelop(first_package)
+        first_letter.send_mail()
+        first_letter.print_info()
 
-    # Create and send second letter
-    second_letter = Envelop(second_package)
-    second_letter.send_mail()
-    second_letter.print_info()
+        # Create and send second letter
+        second_letter = Envelop(second_package)
+        second_letter.send_mail()
+        second_letter.print_info()
 
-    # Create and send second letter
-    third_letter = Envelop(third_package)
-    third_letter.send_mail()
-    third_letter.print_info()
+        # Create and send second letter
+        third_letter = Envelop(third_package)
+        third_letter.send_mail()
+        third_letter.print_info()
 
-    print('After orders:')
-    my_bookstore.print_summary_of_all_bookstore()
-    my_bookstore.print_summary_of_all_customers()
+        print('After orders:')
+        my_bookstore.print_summary_of_all_bookstore()
+        my_bookstore.print_summary_of_all_customers()
+
+    def print_bookstore_only_before_and_after() -> None:
+        """Docstring: Method to print information about bookstore catalog before and after orders"""
+        print('\nHomework 04 (2023.04.13)')
+        print('-' * 24)
+        print()
+        my_bookstore = BookStore()
+        first_book = NewBook(20, 12, 'Chook and Gek', 'Arcadii Gaidar', 150, 10, 'ru', 'Belarus', True,
+                             my_bookstore.books,
+                             ('Chook and Gek were brothers.',
+                              'They received a telegram but quarreled.',
+                              'And the story began...'))
+        primer_book = NewBook(15, 5, 'Primer Book', 'Group of authors', 100, 3, 'en', 'US', True,
+                              my_bookstore.books,
+                              ('A - Apple.',
+                               'B - Banana.',
+                               'C - Cucumber.'))
+        blue_book = NewBook(100, 25, 'Blue Book', 'Blue Author', 666, 18, 'by', 'Belarus', True,
+                            my_bookstore.books,
+                            ('My name is Alexey and I am an alcoholic.',
+                             'I really like to drink beer.',
+                             'And I will be drink it every week!'))
+        b_a_book = NewBook(5, 50, 'Murder in the Front Row', 'Brian Lew', 272, 18, 'US', 'United States', True,
+                           my_bookstore.books,
+                           ('This is a story about roots of thrash metal.',
+                            'It began at the Bay Area in San Francisco.',
+                            'It was in the early eighties...'))
+        about_mouse = NewBook(1, 100, 'Pook the mouse', 'Steeve Edgard', 94, 6, 'UK', 'United Kingdom', True,
+                              my_bookstore.books,
+                              ('There lived a little mouse Pook.',
+                               'She liked to fart very loudly.',
+                               'So no one was friends with her...'))
+
+        first_customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', my_bookstore.customers, 'Minsk', 'Card')
+        second_customer = Customer('Ivan', 'Ivanov', 'ivan_i', '123456', my_bookstore.customers, 'Grodno', 'Card')
+
+        print('Before orders:')
+        my_bookstore.print_summary_of_all_bookstore()
+        my_bookstore.print_summary_of_all_customers()
+
+        first_order = Order(first_customer)
+        first_order.add_book_in_order(primer_book)
+        first_order.add_book_in_order(primer_book)
+        first_order.add_book_in_order(blue_book)
+        first_order.add_book_in_order(about_mouse)
+
+        second_order = Order(second_customer)
+        second_order.add_book_in_order(first_book)
+        second_order.add_book_in_order(blue_book)
+        second_order.add_book_in_order(blue_book)
+        second_order.add_book_in_order(b_a_book)
+        second_order.add_book_in_order(b_a_book)
+
+        third_order = Order(first_customer)
+        third_order.add_book_in_order(blue_book)
+        third_order.add_book_in_order(blue_book)
+        third_order.add_book_in_order(about_mouse)
+
+        first_package = Package(first_order)
+        second_package = Package(second_order)
+        third_package = Package(third_order)
+
+        first_letter = Envelop(first_package)
+        first_letter.send_mail()
+
+        second_letter = Envelop(second_package)
+        second_letter.send_mail()
+
+        third_letter = Envelop(third_package)
+        third_letter.send_mail()
+
+        print('After orders:')
+        my_bookstore.print_summary_of_all_bookstore()
+        my_bookstore.print_summary_of_all_customers()
+
+    # print_everything()
+    print_bookstore_only_before_and_after()
