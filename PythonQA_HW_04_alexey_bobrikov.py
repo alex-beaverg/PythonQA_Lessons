@@ -16,7 +16,7 @@ class BookStore:
         print('List of books in BookStore:')
         for book_info in self.books.values():
             print(f'\tTitle: {book_info["Title"]:25s}Author: {book_info["Author"]:20s}'
-                  f'ID: {book_info["ID"]:<15}Amount: {book_info["Amount"]:<5}Price: {book_info["Price"]:<5}', end='\n')
+                  f'ID: {book_info["ID"]:<15}Amount: {book_info["Amount"]:<5}Price: {book_info["Price"]} BYN', end='\n')
         print()
 
     def print_summary_of_all_customers(self) -> None:
