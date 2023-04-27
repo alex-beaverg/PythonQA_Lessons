@@ -1,9 +1,11 @@
 # Homework 02 (2023.03.30)
 # Task 1 (extends Task 3 from Homework 01)
+
 def string_methods() -> None:
     """Function for print results of string methods"""
     print('\nTASK 1 (extends Task 3 from Homework 01)')
     print('-' * 6)
+    print('LOG_INFO: Print results of string methods')
     text = "Hello my dear Friends!!!"
     print('Text for examples: "Hello my dear Friends!!!":')
     print('-' * 46)
@@ -66,50 +68,60 @@ class Person:
     # Constructor
     def __init__(self) -> None:
         """Constructor for class Person"""
-        self.name = 'Unknown'
-        self.surname = 'Unknown'
-        self.patronymic = 'Unknown'
+        print('LOG_INFO: Create person without parameters')
+        self.__name = 'Unknown'
+        self.__surname = 'Unknown'
+        self.__patronymic = 'Unknown'
 
     # Setters
     def set_name(self, name: str) -> None:
         """Method to Set Name"""
-        self.name = name
+        print(f'LOG_INFO: Set name with value = {name}')
+        self.__name = name
 
     def set_surname(self, surname: str) -> None:
         """Method to Set Surname"""
-        self.surname = surname
+        print(f'LOG_INFO: Set surname with value = {surname}')
+        self.__surname = surname
 
     def set_patronymic(self, patronymic: str) -> None:
         """Method to Set Patronymic"""
-        self.patronymic = patronymic
+        print(f'LOG_INFO: Set patronymic with value = {patronymic}')
+        self.__patronymic = patronymic
 
     # Getters
     def get_name(self) -> str:
         """Method to Get Name"""
-        return self.name
+        print(f'LOG_INFO: Get name with value = {self.__name}')
+        return self.__name
 
     def get_surname(self) -> str:
         """Method to Get Surname"""
-        return self.surname
+        print(f'LOG_INFO: Get surname with value = {self.__surname}')
+        return self.__surname
 
     def get_patronymic(self) -> str:
         """Method to Get Patronymic"""
-        return self.patronymic
+        print(f'LOG_INFO: Get patronymic with value = {self.__patronymic}')
+        return self.__patronymic
 
     # Other methods
     def get_surname_with_initials(self) -> str:
         """Method to Get Surname with Initials"""
-        return f'{self.surname} {self.name[0:1]}.{self.patronymic[0:1]}.'
+        print('LOG_INFO: Get Surname with Initials')
+        return f'{self.__surname} {self.__name[0:1]}.{self.__patronymic[0:1]}.'
 
     def get_all_information(self) -> str:
         """Method to Get all Information about Person"""
-        return f'{self.surname} {self.name} {self.patronymic}'
+        print('LOG_INFO: Get all Information about Person')
+        return f'{self.__surname} {self.__name} {self.__patronymic}'
 
     def print_all_information(self) -> None:
         """Method to Print all Information about Person"""
-        print(f'Surname: {self.surname}')
-        print(f'Name: {self.name}')
-        print(f'Patronymic: {self.patronymic}')
+        print('LOG_INFO: Print all Information about Person')
+        print(f'Surname: {self.__surname}')
+        print(f'Name: {self.__name}')
+        print(f'Patronymic: {self.__patronymic}')
 
 
 class Student(Person):
@@ -119,43 +131,51 @@ class Student(Person):
     def __init__(self) -> None:
         """Constructor for class Student"""
         super().__init__()
-        self.university = 'IT STEP'
-        self.group_id = 'QA1823'
+        print('LOG_INFO: Create student with default parameters')
+        self.__university = 'IT STEP'
+        self.__group_id = 'QA1823'
 
     # Setters
     def set_university(self, university: str) -> None:
         """Method to Set University"""
-        self.university = university
+        print(f'LOG_INFO: Set university with value = {university}')
+        self.__university = university
 
     def set_group_id(self, group_id: str) -> None:
         """Method to Set Group ID"""
-        self.group_id = group_id
+        print(f'LOG_INFO: Set group_id with value = {group_id}')
+        self.__group_id = group_id
 
     # Getters
     def get_university(self) -> str:
         """Method to Get University"""
-        return self.university
+        print(f'LOG_INFO: Get university with value = {self.__university}')
+        return self.__university
 
     def get_group_id(self) -> str:
         """Method to Get Group ID"""
-        return self.group_id
+        print(f'LOG_INFO: Get group_id with value = {self.__group_id}')
+        return self.__group_id
 
     # Other methods
     def get_all_information(self) -> str:
         """Method to Get all Information about Student"""
-        return f'{super().get_all_information()} is studying at the {self.university} in the {self.group_id} group'
+        print('LOG_INFO: Get all Information about Student')
+        return f'{super().get_all_information()} is studying at the {self.__university} in the {self.__group_id} group'
 
     def print_all_information(self) -> None:
         """Method to Print all Information about Student"""
+        print('LOG_INFO: Print all Information about Student')
         super().print_all_information()
-        print(f'University: {self.university}')
-        print(f'Group: {self.group_id}')
+        print(f'University: {self.__university}')
+        print(f'Group: {self.__group_id}')
 
 
 def task_2_launcher() -> None:
     """Function for launch Task 2"""
     print('\nTASK 2 (extends Task 1 from Homework 01)')
     print('-' * 6)
+    print('LOG_INFO: Function for launch Task 2')
     me = Student()
     print(me.get_all_information())
     me.set_name('Alexey')

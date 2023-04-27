@@ -1,18 +1,23 @@
 # Homework 01 (2023.03.23)
 # Task 1
+
 def information() -> None:
     """Function for print information about me"""
+    print('\nTASK 1')
+    print('-' * 6)
+    print('LOG_INFO: Print information about me')
     name = 'Alexey'
     surname = 'Bobrikov'
     patronymic = 'Valerievich'
-    print('\nTASK 1')
-    print('-' * 6)
     print(f'Hello! My full name is {surname} {name} {patronymic} ({surname} {name[0:1]}.{patronymic[0:1]}.)\n')
 
 
 # Task 2
 def variables() -> None:
     """Function for print all types variables"""
+    print('\nTASK 2')
+    print('-' * 6)
+    print('LOG_INFO: Print all types variables')
     vars_types = {'Number, int': 1,
                   'Number, float': 1.1,
                   'Boolean': "True",
@@ -24,8 +29,6 @@ def variables() -> None:
                   'Dictionary': "{'one': 1, 'two': 2, 'three': 3}",
                   'Set, Set': "{1, 2, 3}",
                   'Set, Frozenset': "{1, 2, 3}"}
-    print('\nTASK 2')
-    print('-' * 6)
     print('Variables what i know:')
     print(f'{"Type":20s} {"Example":35s}')
     for key, value in vars_types.items():
@@ -38,6 +41,7 @@ def string_methods() -> None:
     """Function for print results of string methods"""
     print('\nTASK 3')
     print('-' * 6)
+    print('LOG_INFO: Print results of string methods')
     print('Write your text, for example "hello my dear friends!!!":', end=' ')
     text = input()[:25]
     lng = len("-".join(text)) + 5
@@ -64,6 +68,7 @@ def simple_calculations() -> None:
     """Function for print results of simple calculations"""
     print('\nTASK 4')
     print('-' * 6)
+    print('LOG_INFO: Print results of simple calculations')
     print('Results of simple calculations:')
     print(f'10 + 10 = {10 + 10} | 10 - 10 = {10 - 10} | 10 * 10 = {10 * 10} | 10 / 10 = {10 / 10}')
     print(f'12 // 10 = {12 // 10} | 12 % 10 = {12 % 10} | 2 ** 4 = {2 ** 4}')
