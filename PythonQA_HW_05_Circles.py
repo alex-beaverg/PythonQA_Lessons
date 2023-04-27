@@ -69,19 +69,19 @@ class Point:
         self.__y = y
 
     @property
-    def x(self):
+    def x(self) -> (int, float):
         """Docstring: Getter for variable 'x'"""
         print(f'LOG_INFO: Get "x" with value = {self.__x}')
         return self.__x
 
     @property
-    def y(self):
+    def y(self) -> (int, float):
         """Docstring: Getter for variable 'y'"""
         print(f'LOG_INFO: Get "y" with value = {self.__y}')
         return self.__y
 
     @x.setter
-    def x(self, value):
+    def x(self, value: (int, float)) -> None:
         """Docstring: Setter for variable 'x'"""
         print(f'LOG_INFO: Set "x" with value = {value}')
         try:
@@ -90,7 +90,7 @@ class Point:
             print(f'ERROR_INFO: x coordinate is read-only')
 
     @y.setter
-    def y(self, value):
+    def y(self, value: (int, float)) -> None:
         """Docstring: Setter for variable 'y'"""
         print(f'LOG_INFO: Set "y" with value = {value}')
         try:

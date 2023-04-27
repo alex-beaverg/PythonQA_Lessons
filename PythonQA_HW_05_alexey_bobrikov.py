@@ -10,12 +10,12 @@ from PythonQA_HW_05_Circles import Circle, CircleAnother, Point
 class Employee:
     """Docstring: Class Employee"""
 
-    def __init__(self, salary):
+    def __init__(self, salary: (int, float)) -> None:
         """Docstring: Constructor for class Employee"""
         print(f'LOG_INFO: Create employee with salary = {salary}')
         self.__salary = salary
 
-    def set_salary(self, new_salary):
+    def set_salary(self, new_salary: (int, float)) -> None:
         """Setter for salary variable"""
         print(f'LOG_INFO: Call set_salary method. Preview value = {self.__salary}. New value = {new_salary}')
         the_salary = new_salary
@@ -28,7 +28,7 @@ class Employee:
             print(f'LOG_INFO: New value = {the_salary}')
         self.__salary = the_salary
 
-    def get_salary(self):
+    def get_salary(self) -> (int, float):
         """Getter for salary variable"""
         print(f'LOG_INFO: Call get_salary method. Current value = {self.__salary}')
         return self.__salary
