@@ -34,6 +34,7 @@ class Employee:
         return self.__salary
 
 
+# Main program entry point
 if __name__ == '__main__':
     print('\nHomework 05 (2023.04.27)')
     print()
