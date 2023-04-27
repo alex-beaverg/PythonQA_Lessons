@@ -16,7 +16,7 @@ class Employee:
         self.__salary = salary
 
     def set_salary(self, new_salary: (int, float)) -> None:
-        """Setter for salary variable"""
+        """Docstring: Setter for salary variable"""
         print(f'LOG_INFO: Call set_salary method. Preview value = {self.__salary}. New value = {new_salary}')
         the_salary = new_salary
         if new_salary < self.__salary:
@@ -29,7 +29,7 @@ class Employee:
         self.__salary = the_salary
 
     def get_salary(self) -> (int, float):
-        """Getter for salary variable"""
+        """Docstring: Getter for salary variable"""
         print(f'LOG_INFO: Call get_salary method. Current value = {self.__salary}')
         return self.__salary
 
