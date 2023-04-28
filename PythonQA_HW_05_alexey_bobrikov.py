@@ -62,6 +62,7 @@ if __name__ == '__main__':
     c.radius = 10
     c.radius
     del c.radius
+    print(Circle.radius.__doc__)
 
     # Work with 'Python properties', another variant (module PythonQA_HW_05_Circles, class CircleAnother):
     print()
