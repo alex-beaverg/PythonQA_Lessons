@@ -1,7 +1,7 @@
-# Homework 07 (2023.06.01)
+# Homework 07-2 (2023.06.01)
 # Actions
 
-from PythonQA_HW_07_alexey_bobrikov import Human, Parent, Kid
+from PythonQA_HW_07_1_Classes import Human, Parent, Kid
 
 print('\nHomework 07 (2023.06.01)')
 print('-' * 24)
@@ -11,7 +11,7 @@ print()
 # Create all class objects:
 firstHuman = Human("Alex", "Black")
 firstParent = Parent("Dima", "Brown", 35, "office", 1000, "High", 15000, "Soccer")
-firstKid = Kid("Sasha", "Smith", "School")
+firstKid = Kid("School", "Sasha", "Smith")
 
 
 # Print all class objects:

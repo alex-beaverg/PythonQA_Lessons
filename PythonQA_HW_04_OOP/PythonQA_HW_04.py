@@ -1,6 +1,6 @@
 # Homework 04 (2023.04.13)
 
-from PythonQA_HW_03_alexey_bobrikov import Book
+from PythonQA_HW_03_OOP.PythonQA_HW_03 import Book
 
 
 class BookStore:
@@ -29,6 +29,14 @@ class BookStore:
         print('LOG_INFO: Add customer to BookStore')
         self.__customers[f'{customer.get_customer()["Name"]} {customer.get_customer()["Surname"]}'] = \
             customer.get_customer()
+
+    def get_books(self) -> dict:
+        """Docstring: Getter for book list"""
+        return self.__books
+
+    def get_customers(self) -> dict:
+        """Docstring: Getter for customer list"""
+        return self.__customers
 
     def print_summary_of_all_bookstore(self) -> None:
         """Docstring: Function for print summary of all books in BookStore"""
@@ -103,6 +111,10 @@ class Order:
         """Docstring: Method to get order customer"""
         print('LOG_INFO: Get order customer')
         return self.__customer
+
+    def get_books_in_order(self) -> list:
+        """Docstring:  Getter for book list in order"""
+        return self.__books
 
     def get_order_total_with_sale(self) -> (int, float):
         """Docstring: Method to get order total with sale"""

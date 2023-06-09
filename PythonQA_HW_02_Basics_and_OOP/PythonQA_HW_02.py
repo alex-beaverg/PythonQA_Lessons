@@ -1,7 +1,7 @@
 # Homework 02 (2023.03.30)
 # Task 1 (extends Task 3 from Homework 01)
 
-def string_methods() -> None:
+def string_methods() -> int:
     """Function for print results of string methods"""
     print('\nTASK 1 (extends Task 3 from Homework 01)')
     print('-' * 6)
@@ -59,6 +59,7 @@ def string_methods() -> None:
                  ('text[::]:', text[::], '- get "copy" of text')]
     for item in lst_slice:
         print(f'{item[0]:20s} {item[1]:30s} {item[2]:55s}')
+    return len(lst) + len(lst_slice)
 
 
 # Task 2 (extends Task 1 from Homework 01)

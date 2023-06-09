@@ -1,4 +1,4 @@
-# Homework 07 (2023.06.01)
+# Homework 07-1 (2023.06.01)
 # Classes
 
 class Human:

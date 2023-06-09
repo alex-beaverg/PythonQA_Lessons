@@ -1,10 +1,10 @@
-# Homework 05 (2023.04.27)
+# Homework 05-1 (2023.04.27)
 
 # public -> variable
 # protected -> _variable
 # private -> __variable
 
-from PythonQA_HW_05_Circles import Circle, CircleAnother, Point
+from PythonQA_HW_05_OOP.PythonQA_HW_05_2_Circles import Circle, CircleAnother, Point
 
 
 class Employee:

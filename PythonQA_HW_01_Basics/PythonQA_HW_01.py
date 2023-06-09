@@ -1,7 +1,7 @@
 # Homework 01 (2023.03.23)
 # Task 1
 
-def information() -> None:
+def information() -> str:
     """Function for print information about me"""
     print('\nTASK 1')
     print('-' * 6)
@@ -10,10 +10,11 @@ def information() -> None:
     surname = 'Bobrikov'
     patronymic = 'Valerievich'
     print(f'Hello! My full name is {surname} {name} {patronymic} ({surname} {name[0:1]}.{patronymic[0:1]}.)\n')
+    return f'{surname} {name[0:1]}.{patronymic[0:1]}.'
 
 
 # Task 2
-def variables() -> None:
+def variables() -> int:
     """Function for print all types variables"""
     print('\nTASK 2')
     print('-' * 6)
@@ -34,16 +35,20 @@ def variables() -> None:
     for key, value in vars_types.items():
         print(f'{key:<20} {value:<35}')
     print()
+    return len(vars_types)
 
 
 # Task 3
-def string_methods() -> None:
+def string_methods() -> int:
     """Function for print results of string methods"""
     print('\nTASK 3')
     print('-' * 6)
     print('LOG_INFO: Print results of string methods')
     print('Write your text, for example "hello my dear friends!!!":', end=' ')
-    text = input()[:25]
+
+    # text = input()[:25]
+    text = "hello my dear friends!!!"
+
     lng = len("-".join(text)) + 5
     lst = [('text.upper():', text.upper(), '- all letters in UPPERCASE'),
            ('text.lower()', text.lower(), '- all letters in lowercase'),
@@ -61,10 +66,11 @@ def string_methods() -> None:
     for item in lst:
         print(f'{item[0]:30s} {item[1]:<{lng}s} {item[2]:55s}')
     print('...and many other methods\n')
+    return len(lst)
 
 
 # Task 4
-def simple_calculations() -> None:
+def simple_calculations() -> int:
     """Function for print results of simple calculations"""
     print('\nTASK 4')
     print('-' * 6)
@@ -88,6 +94,7 @@ def simple_calculations() -> None:
     print(f'"Hel" + "lo" = "{"hel" + "lo"}" - Concatenation')
     print(f'"100" + "500" = "{"100" + "500"}" - Concatenation too')
     print(f'int("100") + int("500") = {int("100") + int("500")} - addition')
+    return a
 
 
 # Main program entry point

@@ -14,6 +14,10 @@ class Library:
         print('LOG_INFO: Add book to library')
         self.__books[book.get_book()["ID"]] = book.get_book()
 
+    def get_books(self) -> dict:
+        """Docstring: Getter for book list"""
+        return self.__books
+
     def print_summary_of_all_library(self) -> None:
         """Docstring: Function for print summary of all books in library"""
         print('LOG_INFO: Print summary of all books in library')
