@@ -139,7 +139,7 @@ class TestCaseHomework03:
         library = Library()
         library.add_book(book)
         result = len(library.get_books())
-        assert result == expected_result, "[ASSERT MESSAGE]: Book was not added to library!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to library!"
 
     @pytest.mark.parametrize('expected_result', ['Author'])
     def test_03_02_get_book(self, expected_result) -> None:
@@ -147,7 +147,7 @@ class TestCaseHomework03:
         book = Book('Name', 'Author', 150, 10, 'ru', 'Belarus', True,
                     ('1st string', '2nd string', '3rd string'))
         result = book.get_book()['Author']
-        assert result == expected_result, "[ASSERT MESSAGE]: Book was not created!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book not created!"
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_03_03_get_person_name(self, name, expected_result) -> None:
@@ -237,7 +237,7 @@ class TestCaseHomework04:
         """Docstring: Parametrized test method for get address"""
         BookStore()
         result = BookStore.get_address()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Address is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_04_02_add_book_and_get_books(self, expected_result) -> None:
@@ -247,7 +247,7 @@ class TestCaseHomework04:
                        ('1st string', '2nd string', '3rd string'))
         bookstore.add_book(book)
         result = len(bookstore.get_books())
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to Bookstore!"
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_04_03_add_customer_and_get_customers(self, expected_result) -> None:
@@ -256,14 +256,14 @@ class TestCaseHomework04:
         customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', 'Minsk', 'Card')
         bookstore.add_customer(customer)
         result = len(bookstore.get_customers())
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer not added to Bookstore!"
 
     @pytest.mark.parametrize('expected_result', ['Alexey'])
     def test_04_04_get_customer(self, expected_result) -> None:
         """Docstring: Parametrized test method for get book"""
         customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', 'Minsk', 'Card')
         result = customer.get_customer()['Name']
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer not created!"
 
     def test_04_05_get_order_id(self) -> None:
         """Docstring: Test method for get order id"""
@@ -271,7 +271,7 @@ class TestCaseHomework04:
         order = Order(customer)
         result = order.get_order_id()
         expected_result = order.__hash__()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer's id is not incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['Alexey'])
     def test_04_06_get_order_customer(self, expected_result) -> None:
@@ -279,7 +279,7 @@ class TestCaseHomework04:
         customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', 'Minsk', 'Card')
         order = Order(customer)
         result = order.get_order_customer().get_customer()['Name']
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer's name is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [12])
     def test_04_07_get_order_total_with_sale(self, expected_result) -> None:
@@ -292,7 +292,7 @@ class TestCaseHomework04:
         bookstore.add_book(book)
         order.add_book_in_order(book)
         result = order.get_order_total_with_sale()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Total order price with sale is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_04_08_add_book_in_order_and_get_books_in_order(self, expected_result) -> None:
@@ -305,7 +305,7 @@ class TestCaseHomework04:
         bookstore.add_book(book)
         order.add_book_in_order(book)
         result = len(order.get_books_in_order())
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to order!"
 
     def test_04_09_get_package(self) -> None:
         """Docstring: Test method for get package"""
@@ -319,20 +319,20 @@ class TestCaseHomework04:
         package = Package(order)
         result = package.get_package()['Order']
         expected_result = order
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Package not created!"
 
     @pytest.mark.parametrize('addr_from, addr_to, expected_result', [('Minsk', 'Minsk', 1), ('Minsk', 'Grodno', 2)])
     def test_04_10_get_quantity_stamps(self, addr_from, addr_to, expected_result) -> None:
         """Docstring: Parametrized test method for method get_quantity_stamps"""
         stamp = Stamp(addr_from, addr_to)
         result = stamp.get_quantity_stamps()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Incorrect calculation of stamps!"
 
     @pytest.mark.parametrize('addr_to, expected_result', [('Minsk', 123000), ('Grodno', 225000), ('Brest', 321000)])
     def test_04_11_generate_code(self, addr_to, expected_result) -> None:
         """Docstring: Parametrized test method for method generate_code"""
         result = Envelop.generate_code(addr_to)
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Incorrect generating code!"
 
     @pytest.mark.parametrize('addr_to, expected_result', [('Minsk', 1), ('Grodno', 2)])
     def test_04_12_generate_stamp(self, addr_to, expected_result) -> None:
@@ -347,7 +347,7 @@ class TestCaseHomework04:
         package = Package(order)
         envelop = Envelop(package)
         result = envelop.generate_stamp()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Incorrect generating stamp!"
 
 
 class TestCaseHomework05:
@@ -359,7 +359,7 @@ class TestCaseHomework05:
         employee = Employee(sal)
         employee.set_salary(new_sal)
         result = employee.get_salary()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Salary after setter method is incorrect!"
 
     @pytest.mark.parametrize('rad, new_rad, expected_result', [(15, 20, 20)])
     def test_05_02_set_circle_radius(self, rad, new_rad, expected_result) -> None:
@@ -367,7 +367,7 @@ class TestCaseHomework05:
         circle = Circle(rad)
         circle.radius = new_rad
         result = circle.radius
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: New radius is incorrect!"
 
     @pytest.mark.parametrize('rad, new_rad, expected_result', [(15, 20, 20)])
     def test_05_03_set_another_circle_radius(self, rad, new_rad, expected_result) -> None:
@@ -375,7 +375,7 @@ class TestCaseHomework05:
         circle = CircleAnother(rad)
         circle.radius = new_rad
         result = circle.radius
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: New radius is incorrect!"
 
     @pytest.mark.parametrize('coord, new_coord, expected_result', [((5, 5), (7, 7), (5, 5))])
     def test_05_04_set_coordinates(self, coord, new_coord, expected_result) -> None:
@@ -384,7 +384,7 @@ class TestCaseHomework05:
         point.x = new_coord[0]
         point.y = new_coord[1]
         result = (point.x, point.y)
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: New coordinates added! It's incorrect!"
 
 
 class TestCaseHomework06:
@@ -395,21 +395,21 @@ class TestCaseHomework06:
         """Docstring: Parametrized test method for getter for person name"""
         person = Pers3(name, 'Second name', 41)
         result = person.get_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's name is incorrect!"
 
     @pytest.mark.parametrize('second_name, expected_result', [('Bobrikov', 'Bobrikov'), ('Smith', 'Smith')])
     def test_06_02_get_person_second_name(self, second_name, expected_result) -> None:
         """Docstring: Parametrized test method for getter for person second name"""
         person = Pers3('Name', second_name, 41)
         result = person.get_second_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's surname is incorrect!"
 
     @pytest.mark.parametrize('birth_year, expected_result', [(41, 41), (28, 28)])
     def test_06_03_get_person_birth_year(self, birth_year, expected_result) -> None:
         """Docstring: Parametrized test method for getter for person birth year"""
         person = Pers3('Name', 'Second name', birth_year)
         result = person.get_birth_year()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's birth date is incorrect!"
 
     @pytest.mark.parametrize('name, new_name, expected_result', [('Ivan', 'Alex', 'Alex'), ('Ian', 'Ivan', 'Ivan')])
     def test_06_04_set_person_name(self, name, new_name, expected_result) -> None:
@@ -417,7 +417,7 @@ class TestCaseHomework06:
         person = Pers3(name, 'Second name', 41)
         person.set_name(new_name)
         result = person.get_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's name after setter method is incorrect!"
 
     @pytest.mark.parametrize('sec_name, new_sec_name, expected_result', [('Smith', 'Bobrikov', 'Bobrikov')])
     def test_06_05_set_person_second_name(self, sec_name, new_sec_name, expected_result) -> None:
@@ -425,7 +425,7 @@ class TestCaseHomework06:
         person = Pers3('Name', sec_name, 41)
         person.set_second_name(new_sec_name)
         result = person.get_second_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's surname after set method is incorrect!"
 
     @pytest.mark.parametrize('birth_year, new_birth_year, expected_result', [(28, 41, 41), (41, 28, 28)])
     def test_06_06_set_person_birth_year(self, birth_year, new_birth_year, expected_result) -> None:
@@ -433,14 +433,14 @@ class TestCaseHomework06:
         person = Pers3('Name', 'Second name', birth_year)
         person.set_birth_year(new_birth_year)
         result = person.get_birth_year()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's birth date after set method is incorrect!"
 
     @pytest.mark.parametrize('grade, expected_result', [('7 "A"', '7 "A"'), ('5 "B"', '5 "B"')])
     def test_06_07_get_schoolboy_grade(self, grade, expected_result) -> None:
         """Docstring: Parametrized test method for getter for schoolboy grade"""
         schoolboy = SchoolBoy(grade, 'Name', 'Second name', 13)
         result = schoolboy.get_grade()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Schoolboy's grade is incorrect!"
 
     @pytest.mark.parametrize('grade, new_grade, expected_result', [('4 "E"', '7 "A"', '7 "A"')])
     def test_06_08_set_schoolboy_grade(self, grade, new_grade, expected_result) -> None:
@@ -448,14 +448,14 @@ class TestCaseHomework06:
         schoolboy = SchoolBoy(grade, 'Name', 'Second name', 13)
         schoolboy.set_grade(new_grade)
         result = schoolboy.get_grade()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Schoolboy's grade after set method is incorrect!"
 
     @pytest.mark.parametrize('job_address, expected_result', [('Office', 'Office'), ('Home', 'Home')])
     def test_06_09_get_parent_job_address(self, job_address, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent job address"""
         parent = Parent1(job_address, 'Name', 'Second name', 35)
         result = parent.get_job_address()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's job address is incorrect!"
 
     @pytest.mark.parametrize('job_addr, new_job_addr, expected_result', [('Home', 'Office', 'Office')])
     def test_06_10_set_parent_job_address(self, job_addr, new_job_addr, expected_result) -> None:
@@ -463,7 +463,7 @@ class TestCaseHomework06:
         parent = Parent1(job_addr, 'Name', 'Second name', 35)
         parent.set_job_address(new_job_addr)
         result = parent.get_job_address()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's job address after set method is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_06_11_add_child(self, expected_result) -> None:
@@ -472,7 +472,7 @@ class TestCaseHomework06:
         schoolboy = SchoolBoy('Grade', 'Name', 'Second name', 13)
         parent.add_child(schoolboy)
         result = len(parent.children)
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Child not added to parent"
 
 
 class TestCaseHomework07:
@@ -483,14 +483,14 @@ class TestCaseHomework07:
         """Docstring: Parametrized test method for getter for human name"""
         human = Human(name, 'Surname')
         result = human.name
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Human's name is incorrect!"
 
     @pytest.mark.parametrize('surname, expected_result', [('Bobrikov', 'Bobrikov'), ('Smith', 'Smith')])
     def test_07_02_get_human_surname(self, surname, expected_result) -> None:
         """Docstring: Parametrized test method for getter for human surname"""
         human = Human('Name', surname)
         result = human.surname
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Human's surname is incorrect!"
 
     @pytest.mark.parametrize('name, new_name, expected_result', [('Ivan', 'Alexey', 'Alexey'), ('Ian', 'Ivan', 'Ivan')])
     def test_07_03_set_human_name(self, name, new_name, expected_result) -> None:
@@ -498,7 +498,7 @@ class TestCaseHomework07:
         human = Human(name, 'Surname')
         human.name = new_name
         result = human.name
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Human's name after set method is incorrect!"
 
     @pytest.mark.parametrize('surname, new_surname, expected_result', [('Smith', 'Bobrikov', 'Bobrikov')])
     def test_07_04_set_human_surname(self, surname, new_surname, expected_result) -> None:
@@ -506,49 +506,49 @@ class TestCaseHomework07:
         human = Human('Name', surname)
         human.surname = new_surname
         result = human.surname
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Human's surname after set method is incorrect!"
 
     @pytest.mark.parametrize('age, expected_result', [(41, 41), (28, 28)])
     def test_07_05_get_parent_age(self, age, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent age"""
         parent = Parent2("Name", "Surname", age, "Office", 1000, "High", 15000, "Soccer")
         result = parent.age
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's age is incorrect!"
 
     @pytest.mark.parametrize('job, expected_result', [('Office', 'Office'), ('Home', 'Home')])
     def test_07_06_get_parent_job(self, job, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent job"""
         parent = Parent2("Name", "Surname", 32, job, 1000, "High", 15000, "Soccer")
         result = parent.job
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's job is incorrect!"
 
     @pytest.mark.parametrize('salary, expected_result', [(1000, 1000), (1200, 1200)])
     def test_07_07_get_parent_salary(self, salary, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent salary"""
         parent = Parent2("Name", "Surname", 32, "Office", salary, "High", 15000, "Soccer")
         result = parent.salary
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's salary is incorrect!"
 
     @pytest.mark.parametrize('education, expected_result', [('High', 'High'), ('Medium', 'Medium')])
     def test_07_08_get_parent_education(self, education, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent education"""
         parent = Parent2("Name", "Surname", 32, "Office", 1500, education, 15000, "Soccer")
         result = parent.education
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's education is incorrect!"
 
     @pytest.mark.parametrize('accumulation, expected_result', [(100_000, 100_000), (50_000, 50_000)])
     def test_07_09_get_parent_accumulation(self, accumulation, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent accumulation"""
         parent = Parent2("Name", "Surname", 32, "Office", 1500, "High", accumulation, "Soccer")
         result = parent.accumulation
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's accumulation is incorrect!"
 
     @pytest.mark.parametrize('hobby, expected_result', [('Fishing', 'Fishing'), ('Hockey', 'Hockey')])
     def test_07_10_get_parent_hobby(self, hobby, expected_result) -> None:
         """Docstring: Parametrized test method for getter for parent hobby"""
         parent = Parent2("Name", "Surname", 32, "Office", 1500, "High", 15000, hobby)
         result = parent.hobby
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's hobby is incorrect!"
 
     @pytest.mark.parametrize('age, new_age, expected_result', [(28, 41, 41), (41, 28, 28)])
     def test_07_11_set_parent_age(self, age, new_age, expected_result) -> None:
@@ -556,7 +556,7 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", age, "Office", 1000, "High", 15000, "Soccer")
         parent.age = new_age
         result = parent.age
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's age after set method is incorrect!"
 
     @pytest.mark.parametrize('job, new_job, expected_result', [('Home', 'Office', 'Office')])
     def test_07_12_set_parent_job(self, job, new_job, expected_result) -> None:
@@ -564,7 +564,7 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", 32, job, 1000, "High", 15000, "Soccer")
         parent.job = new_job
         result = parent.job
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's job after set method is incorrect!"
 
     @pytest.mark.parametrize('salary, new_salary, expected_result', [(800, 1000, 1000), (1300, 1200, 1200)])
     def test_07_13_set_parent_salary(self, salary, new_salary, expected_result) -> None:
@@ -572,7 +572,7 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", 32, "Office", salary, "High", 15000, "Soccer")
         parent.salary = new_salary
         result = parent.salary
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's salary after set method is incorrect!"
 
     @pytest.mark.parametrize('education, new_education, expected_result', [('Medium', 'High', 'High')])
     def test_07_14_set_parent_education(self, education, new_education, expected_result) -> None:
@@ -580,7 +580,7 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", 32, "Office", 1500, education, 15000, "Soccer")
         parent.education = new_education
         result = parent.education
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's education after set method is incorrect!"
 
     @pytest.mark.parametrize('accumulation, new_accumulation, expected_result', [(80_000, 100_000, 100_000)])
     def test_07_15_set_parent_accumulation(self, accumulation, new_accumulation, expected_result) -> None:
@@ -588,7 +588,7 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", 32, "Office", 1500, "High", accumulation, "Soccer")
         parent.accumulation = new_accumulation
         result = parent.accumulation
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's accumulation after set method is incorrect!"
 
     @pytest.mark.parametrize('hobby, new_hobby, expected_result', [('Soccer', 'Fishing', 'Fishing')])
     def test_07_16_set_parent_hobby(self, hobby, new_hobby, expected_result) -> None:
@@ -596,14 +596,14 @@ class TestCaseHomework07:
         parent = Parent2("Name", "Surname", 32, "Office", 1500, "High", 15000, hobby)
         parent.hobby = new_hobby
         result = parent.hobby
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Parent's hobby after set method is incorrect!"
 
     @pytest.mark.parametrize('job, expected_result', [('School', 'School'), ('Home', 'Home')])
     def test_07_17_get_kid_job(self, job, expected_result) -> None:
         """Docstring: Parametrized test method for getter for kid job"""
         kid = Kid(job, "Name", "Surname")
         result = kid.job
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Kid's job is incorrect!"
 
     @pytest.mark.parametrize('job, new_job, expected_result', [('Home', 'School', 'School')])
     def test_07_18_set_kid_job(self, job, new_job, expected_result) -> None:
@@ -611,4 +611,4 @@ class TestCaseHomework07:
         kid = Kid(job, "Name", "Surname")
         kid.job = new_job
         result = kid.job
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Kid's job after set method is incorrect!"
