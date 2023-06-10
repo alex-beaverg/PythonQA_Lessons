@@ -21,30 +21,29 @@ from PythonQA_HW_07_Basics_and_OOP.PythonQA_HW_07_1_Classes import Human, Parent
 class TestCaseHomework01:
     """Docstring: Test class (case) for tests for homework 01"""
 
-    @pytest.mark.parametrize('name, surname, patronymic, expected_result',
-                             [('Alexey', 'Bobrikov', 'Valerievich', 'Bobrikov A.V.')])
-    def test_01_01_information_method(self, name, surname, patronymic, expected_result) -> None:
+    @pytest.mark.parametrize('expected_result', ['Bobrikov A.V.'])
+    def test_01_01_information_method(self, expected_result) -> None:
         """Docstring: Parametrized test method for method information"""
         result = information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Incorrect information!"
 
     @pytest.mark.parametrize('expected_result', [11])
     def test_01_02_variables_method(self, expected_result) -> None:
         """Docstring: Parametrized test method for method variables"""
         result = variables()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Length of variables' list is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [12])
     def test_01_03_string_methods_method(self, expected_result) -> None:
         """Docstring: Parametrized test method for method string_methods"""
         result = SM1()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Length of methods' list is incorrect!"
 
     @pytest.mark.parametrize('expected_result', [10])
     def test_01_04_simple_calculations_method(self, expected_result) -> None:
         """Docstring: Parametrized test method for method simple_calculations"""
         result = simple_calculations()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Variable 'a' is incorrect!"
 
 
 class TestCaseHomework02:
@@ -54,7 +53,7 @@ class TestCaseHomework02:
     def test_02_01_string_methods_method(self, expected_result) -> None:
         """Docstring: Parametrized test method for method string_methods"""
         result = SM2()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Length of methods' list is incorrect!"
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_02_02_get_person_name(self, name, expected_result) -> None:
@@ -62,7 +61,7 @@ class TestCaseHomework02:
         person = Pers1()
         person.set_name(name)
         result = person.get_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's name is incorrect!"
 
     @pytest.mark.parametrize('surname, expected_result', [('Bobrikov', 'Bobrikov'), ('Ivanov', 'Ivanov')])
     def test_02_03_get_person_surname(self, surname, expected_result) -> None:
@@ -70,7 +69,7 @@ class TestCaseHomework02:
         person = Pers1()
         person.set_surname(surname)
         result = person.get_surname()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's surname is incorrect!"
 
     @pytest.mark.parametrize('patronymic, expected_result', [('Valerievich', 'Valerievich'), ('Mitrich', 'Mitrich')])
     def test_02_04_get_person_patronymic(self, patronymic, expected_result) -> None:
@@ -78,7 +77,7 @@ class TestCaseHomework02:
         person = Pers1()
         person.set_patronymic(patronymic)
         result = person.get_patronymic()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's patronymic is incorrect!"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich', 'Bobrikov A.V.')])
@@ -89,7 +88,7 @@ class TestCaseHomework02:
         person.set_surname(surname)
         person.set_patronymic(patronymic)
         result = person.get_surname_with_initials()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich', 'Bobrikov Alexey Valerievich')])
@@ -100,21 +99,21 @@ class TestCaseHomework02:
         person.set_surname(surname)
         person.set_patronymic(patronymic)
         result = person.get_all_information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['IT STEP'])
     def test_02_07_get_student_university(self, expected_result) -> None:
         """Docstring: Parametrized test method for getter for student university"""
         student = Stud1()
         result = student.get_university()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['QA1823'])
     def test_02_08_get_student_group_id(self, expected_result) -> None:
         """Docstring: Parametrized test method for getter for student group_id"""
         student = Stud1()
         result = student.get_group_id()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich',
@@ -126,7 +125,7 @@ class TestCaseHomework02:
         student.set_surname(surname)
         student.set_patronymic(patronymic)
         result = student.get_all_information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
 
 class TestCaseHomework03:
@@ -140,7 +139,7 @@ class TestCaseHomework03:
         library = Library()
         library.add_book(book)
         result = len(library.get_books())
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Book was not added to library!"
 
     @pytest.mark.parametrize('expected_result', ['Author'])
     def test_03_02_get_book(self, expected_result) -> None:
@@ -148,7 +147,7 @@ class TestCaseHomework03:
         book = Book('Name', 'Author', 150, 10, 'ru', 'Belarus', True,
                     ('1st string', '2nd string', '3rd string'))
         result = book.get_book()['Author']
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Book was not created!"
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_03_03_get_person_name(self, name, expected_result) -> None:
@@ -156,7 +155,7 @@ class TestCaseHomework03:
         person = Pers2()
         person.set_name(name)
         result = person.get_name()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's name is incorrect!"
 
     @pytest.mark.parametrize('surname, expected_result', [('Bobrikov', 'Bobrikov'), ('Ivanov', 'Ivanov')])
     def test_03_04_get_person_surname(self, surname, expected_result) -> None:
@@ -164,7 +163,7 @@ class TestCaseHomework03:
         person = Pers2()
         person.set_surname(surname)
         result = person.get_surname()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's surname is incorrect!"
 
     @pytest.mark.parametrize('patronymic, expected_result', [('Valerievich', 'Valerievich'), ('Mitrich', 'Mitrich')])
     def test_03_05_get_person_patronymic(self, patronymic, expected_result) -> None:
@@ -172,7 +171,7 @@ class TestCaseHomework03:
         person = Pers2()
         person.set_patronymic(patronymic)
         result = person.get_patronymic()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Person's patronymic is incorrect!"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich', 'Bobrikov A.V.')])
@@ -183,7 +182,7 @@ class TestCaseHomework03:
         person.set_surname(surname)
         person.set_patronymic(patronymic)
         result = person.get_surname_with_initials()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich', 'Bobrikov Alexey Valerievich')])
@@ -194,21 +193,21 @@ class TestCaseHomework03:
         person.set_surname(surname)
         person.set_patronymic(patronymic)
         result = person.get_all_information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['"IT STEP"'])
     def test_03_08_get_student_university(self, expected_result) -> None:
         """Docstring: Parametrized test method for getter for student university"""
         student = Stud2()
         result = student.get_university()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: University is incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['"QA1823"'])
     def test_03_09_get_student_group_id(self, expected_result) -> None:
         """Docstring: Parametrized test method for getter for student group_id"""
         student = Stud2()
         result = student.get_group_id()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Group is incorrect!"
 
     @pytest.mark.parametrize('name, surname, patronymic, expected_result',
                              [('Alexey', 'Bobrikov', 'Valerievich',
@@ -220,15 +219,14 @@ class TestCaseHomework03:
         student.set_surname(surname)
         student.set_patronymic(patronymic)
         result = student.get_all_information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
-    @pytest.mark.parametrize('name, surname, patronymic, expected_result',
-                             [('Unknown', 'Unknown', 'Unknown', '!!! Information is not set !!!')])
-    def test_03_11_get_student_all_info_without_sets(self, name, surname, patronymic, expected_result) -> None:
+    @pytest.mark.parametrize('expected_result', ['!!! Information is not set !!!'])
+    def test_03_11_get_student_all_info_without_sets(self, expected_result) -> None:
         """Docstring: Parametrized test method for method get_all_information without sets"""
         student = Stud2()
         result = student.get_all_information()
-        assert result == expected_result
+        assert result == expected_result, "[ASSERT MESSAGE]: Result of method is incorrect!"
 
 
 class TestCaseHomework04:
