@@ -139,7 +139,7 @@ class TestCaseHomework03:
         library = Library()
         library.add_book(book)
         result = len(library.get_books())
-        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to library!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book didn't add to library!"
 
     @pytest.mark.parametrize('expected_result', ['Author'])
     def test_03_02_get_book(self, expected_result) -> None:
@@ -147,7 +147,7 @@ class TestCaseHomework03:
         book = Book('Name', 'Author', 150, 10, 'ru', 'Belarus', True,
                     ('1st string', '2nd string', '3rd string'))
         result = book.get_book()['Author']
-        assert result == expected_result, "[ASSERT MESSAGE]: Book not created!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book didn't create!"
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_03_03_get_person_name(self, name, expected_result) -> None:
@@ -247,7 +247,7 @@ class TestCaseHomework04:
                        ('1st string', '2nd string', '3rd string'))
         bookstore.add_book(book)
         result = len(bookstore.get_books())
-        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to Bookstore!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book didn't add to Bookstore!"
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_04_03_add_customer_and_get_customers(self, expected_result) -> None:
@@ -256,14 +256,14 @@ class TestCaseHomework04:
         customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', 'Minsk', 'Card')
         bookstore.add_customer(customer)
         result = len(bookstore.get_customers())
-        assert result == expected_result, "[ASSERT MESSAGE]: Customer not added to Bookstore!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer didn't add to Bookstore!"
 
     @pytest.mark.parametrize('expected_result', ['Alexey'])
     def test_04_04_get_customer(self, expected_result) -> None:
         """Docstring: Parametrized test method for get book"""
         customer = Customer('Alexey', 'Bobrikov', 'alex_b', 'qwerty', 'Minsk', 'Card')
         result = customer.get_customer()['Name']
-        assert result == expected_result, "[ASSERT MESSAGE]: Customer not created!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer didn't create!"
 
     def test_04_05_get_order_id(self) -> None:
         """Docstring: Test method for get order id"""
@@ -271,7 +271,7 @@ class TestCaseHomework04:
         order = Order(customer)
         result = order.get_order_id()
         expected_result = order.__hash__()
-        assert result == expected_result, "[ASSERT MESSAGE]: Customer's id is not incorrect!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Customer's id is incorrect!"
 
     @pytest.mark.parametrize('expected_result', ['Alexey'])
     def test_04_06_get_order_customer(self, expected_result) -> None:
@@ -305,7 +305,7 @@ class TestCaseHomework04:
         bookstore.add_book(book)
         order.add_book_in_order(book)
         result = len(order.get_books_in_order())
-        assert result == expected_result, "[ASSERT MESSAGE]: Book not added to order!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Book didn't add to order!"
 
     def test_04_09_get_package(self) -> None:
         """Docstring: Test method for get package"""
@@ -319,7 +319,7 @@ class TestCaseHomework04:
         package = Package(order)
         result = package.get_package()['Order']
         expected_result = order
-        assert result == expected_result, "[ASSERT MESSAGE]: Package not created!"
+        assert result == expected_result, "[ASSERT MESSAGE]: Package didn't create!"
 
     @pytest.mark.parametrize('addr_from, addr_to, expected_result', [('Minsk', 'Minsk', 1), ('Minsk', 'Grodno', 2)])
     def test_04_10_get_quantity_stamps(self, addr_from, addr_to, expected_result) -> None:
@@ -472,7 +472,7 @@ class TestCaseHomework06:
         schoolboy = SchoolBoy('Grade', 'Name', 'Second name', 13)
         parent.add_child(schoolboy)
         result = len(parent.children)
-        assert result == expected_result, "[ASSERT MESSAGE]: Child not added to parent"
+        assert result == expected_result, "[ASSERT MESSAGE]: Child didn't add to parent"
 
 
 class TestCaseHomework07:
