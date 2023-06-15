@@ -185,12 +185,32 @@ def some_actions_with_dict() -> None:
     print(dictionary)
 
 
-class ShoppingList(dict):
+class ShoppingList:
     """Docstring: class ShoppingList as a dictionary container"""
 
-    # INFO!!!!
-    # This class provides concrete generic implementations of all the dictionary methods except for .__getitem__(),
-    # .__setitem__(), .__delitem__(), .__iter__(), and .__len__(), which you’ll have to implement by yourself.
+    def __init__(self):
+        """Docstring: Constructor for class ShoppingList"""
+        self.items = dict()
+
+    def __contains__(self, key):
+        """Docstring: If dictionary contains key"""
+        return key in self.items
+
+    def __setitem__(self, key, value):
+        """Docstring: Setter for class ShoppingList"""
+        self.items[key] = value
+
+    def __getitem__(self, key):
+        """Docstring: Getter for class ShoppingList"""
+        return self.items[key]
+
+    def __iter__(self):
+        """Docstring: Iterator for class ShoppingList"""
+        return iter(self.items.items())
+
+    def pop(self, key) -> None:
+        """Docstring: Method to pop element from dictionary"""
+        del self.items[key]
 
 
 def some_actions_with_shopping_list() -> None:
@@ -219,7 +239,7 @@ def some_actions_with_shopping_list() -> None:
 
     # Print dict after adding groceries as an elements:
     print("\nPrint my_shopping_list after adding groceries as an elements:")
-    for key, value in my_shopping_list.items():
+    for key, value in my_shopping_list:
         print(f"{key}: {value}")
 
     # Print message if condition is true or false [true]:
@@ -250,7 +270,7 @@ def some_actions_with_shopping_list() -> None:
 
     # Print dict after going to store as an elements:
     print("\nPrint my_shopping_list after going to store as an elements:")
-    for key, value in my_shopping_list.items():
+    for key, value in my_shopping_list:
         print(f"{key}: {value}")
 
 
