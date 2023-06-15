@@ -185,24 +185,12 @@ def some_actions_with_dict() -> None:
     print(dictionary)
 
 
-class ShoppingList:
+class ShoppingList(dict):
     """Docstring: class ShoppingList as a dictionary container"""
 
-    def __init__(self):
-        """Docstring: Constructor for class ShoppingList"""
-        self.items = dict()
-
-    def __contains__(self, item):
-        """Docstring: If contains..."""
-        return item in self.items
-
-    def __setitem__(self, key, value):
-        """Docstring: Setter"""
-        self.items[key] = value
-
-    def __getitem__(self, item):
-        """Docstring: Getter"""
-        return self.items[item]
+    # INFO!!!!
+    # This class provides concrete generic implementations of all the dictionary methods except for .__getitem__(),
+    # .__setitem__(), .__delitem__(), .__iter__(), and .__len__(), which you’ll have to implement by yourself.
 
 
 def some_actions_with_shopping_list() -> None:
@@ -211,13 +199,13 @@ def some_actions_with_shopping_list() -> None:
     print("=" * 34)
 
     # Create empty dict:
-    my_shopping_list = ShoppingList().items
+    my_shopping_list = ShoppingList()
 
-    # Print my_shopping_list before all actions:
+    # Print dict before all actions:
     print("\nPrint my_shopping_list before all actions:")
     print(my_shopping_list)
 
-    # Add groceries to my_shopping_list:
+    # Add groceries to dict:
     my_shopping_list['beer'] = 5
     my_shopping_list['chips'] = 2
     my_shopping_list['bread'] = 0.5
@@ -225,11 +213,11 @@ def some_actions_with_shopping_list() -> None:
     my_shopping_list['tomato'] = 4
     my_shopping_list['sausage'] = 1
 
-    # Print my_shopping_list after adding groceries:
+    # Print dict after adding groceries:
     print("\nPrint my_shopping_list after adding groceries:")
     print(my_shopping_list)
 
-    # Print my_shopping_list after adding groceries as an elements:
+    # Print dict after adding groceries as an elements:
     print("\nPrint my_shopping_list after adding groceries as an elements:")
     for key, value in my_shopping_list.items():
         print(f"{key}: {value}")
@@ -248,7 +236,7 @@ def some_actions_with_shopping_list() -> None:
     else:
         print("I'm so sad...")
 
-    # Delete groceries from my_shopping_list after going to store:
+    # Delete groceries from dict after going to store:
     my_shopping_list.pop('beer')
     my_shopping_list.pop('chips')
     my_shopping_list.pop('sausage')
@@ -260,7 +248,7 @@ def some_actions_with_shopping_list() -> None:
     else:
         print("I'm so sad...")
 
-    # Print my_shopping_list after going to store as an elements:
+    # Print dict after going to store as an elements:
     print("\nPrint my_shopping_list after going to store as an elements:")
     for key, value in my_shopping_list.items():
         print(f"{key}: {value}")
