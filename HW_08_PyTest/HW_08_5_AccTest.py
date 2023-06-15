@@ -3,14 +3,14 @@
 
 # Run with cmd-line from current files' folder:
 #   Current file:
-#       pytest PythonQA_HW_08_5_AccTest.py -v
+#       pytest HW_08_5_AccTest.py -v
 #   All test files:
-#       pytest PythonQA_HW_08_4_CalcTest.py PythonQA_HW_08_5_AccTest.py -v
+#       pytest HW_08_4_CalcTest.py HW_08_5_AccTest.py -v
 # (Flag "-v" -> using for more information in console)
 
 import pytest
 
-from PythonQA_HW_08_2_AccEngine import AccountingEngine
+from HW_08_2_AccEngine import AccountingEngine
 
 
 class TestAccountingEngine:

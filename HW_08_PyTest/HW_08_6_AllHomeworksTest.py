@@ -3,19 +3,19 @@
 
 # Run with cmd-line from current files' folder:
 #   Current file:
-#       pytest PythonQA_HW_08_6_AllHomeworksTest.py -v
+#       pytest HW_08_6_AllHomeworksTest.py -v
 # (Flag "-v" -> using for more information in console)
 
 import pytest
 
-from PythonQA_HW_01_Basics.PythonQA_HW_01 import information, variables, string_methods as SM1, simple_calculations
-from PythonQA_HW_02_Basics_and_OOP.PythonQA_HW_02 import string_methods as SM2, Person as Pers1, Student as Stud1
-from PythonQA_HW_03_OOP.PythonQA_HW_03 import Book, Library, Person as Pers2, Student as Stud2
-from PythonQA_HW_04_OOP.PythonQA_HW_04 import BookStore, NewBook, Customer, Order, Package, Stamp, Envelop
-from PythonQA_HW_05_OOP.PythonQA_HW_05_1 import Employee
-from PythonQA_HW_05_OOP.PythonQA_HW_05_2_Circles import Circle, CircleAnother, Point
-from PythonQA_HW_06_OOP.PythonQA_HW_06 import Person as Pers3, SchoolBoy, Parent as Parent1
-from PythonQA_HW_07_Basics_and_OOP.PythonQA_HW_07_1_Classes import Human, Parent as Parent2, Kid
+from HW_01_Basics.HW_01 import information, variables, string_methods as SM1, simple_calculations
+from HW_02_Basics_and_OOP.HW_02 import string_methods as SM2, Person as Pers1, Student as Stud1
+from HW_03_OOP.HW_03 import Book, Library, Person as Pers2, Student as Stud2
+from HW_04_OOP.HW_04 import BookStore, NewBook, Customer, Order, Package, Stamp, Envelop
+from HW_05_OOP.HW_05_1 import Employee
+from HW_05_OOP.HW_05_2_Circles import Circle, CircleAnother, Point
+from HW_06_OOP.HW_06 import Person as Pers3, SchoolBoy, Parent as Parent1
+from HW_07_Basics_and_OOP.HW_07_1_Classes import Human, Parent as Parent2, Kid
 
 
 class TestCaseHomework01:

@@ -1,7 +1,7 @@
 # Homework 08, file 3 (2023.06.08)
 # Actions
 
-from PythonQA_HW_08_2_AccEngine import AccountingEngine
+from HW_08_2_AccEngine import AccountingEngine
 
 if __name__ == '__main__':
     acc_engine = AccountingEngine()

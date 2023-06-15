@@ -1,7 +1,7 @@
 # Homework 08, file 2 (2023.06.08)
 # Accounting Engine
 
-from PythonQA_HW_08_1_CalcEngine import CalcEngine
+from HW_08_1_CalcEngine import CalcEngine
 
 
 class AccountingEngine:

@@ -1,6 +1,6 @@
 # Homework 04 (2023.04.13)
 
-from PythonQA_HW_03_OOP.PythonQA_HW_03 import Book
+from HW_03_OOP.HW_03 import Book
 
 
 class BookStore:

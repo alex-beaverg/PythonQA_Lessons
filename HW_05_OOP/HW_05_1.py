@@ -4,7 +4,7 @@
 # protected -> _variable
 # private -> __variable
 
-from PythonQA_HW_05_OOP.PythonQA_HW_05_2_Circles import Circle, CircleAnother, Point
+from HW_05_OOP.HW_05_2_Circles import Circle, CircleAnother, Point
 
 
 class Employee:

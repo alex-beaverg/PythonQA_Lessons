@@ -1,7 +1,7 @@
 # Homework 07-2 (2023.06.01)
 # Actions
 
-from PythonQA_HW_07_1_Classes import Human, Parent, Kid
+from HW_07_1_Classes import Human, Parent, Kid
 
 print('\nHomework 07 (2023.06.01)')
 print('-' * 24)
