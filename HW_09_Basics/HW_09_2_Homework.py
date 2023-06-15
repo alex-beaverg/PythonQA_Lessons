@@ -185,7 +185,7 @@ def some_actions_with_dict() -> None:
     print(dictionary)
 
 
-class ShoppingList:
+class ShoppingListCustomDictionary:
     """Docstring: class ShoppingList as a dictionary container"""
 
     def __init__(self):
@@ -217,19 +217,19 @@ class ShoppingList:
         del self.items[key]
 
 
-def some_actions_with_shopping_list() -> None:
+def some_actions_with_custom_dictionary_shopping_list() -> None:
     """Docstring: Method to some actions with container ShoppingList()"""
     print("\n\nTask 4. Actions with ShoppingList:")
     print("=" * 34)
 
-    # Create empty dict:
-    my_shopping_list = ShoppingList()
+    # Create empty custom dictionary my_shopping_list:
+    my_shopping_list = ShoppingListCustomDictionary()
 
-    # Print dict before all actions:
+    # Print custom dictionary my_shopping_list before all actions:
     print("\nPrint my_shopping_list before all actions:")
     print(my_shopping_list)
 
-    # Add groceries to dict:
+    # Add groceries to custom dictionary my_shopping_list:
     my_shopping_list['beer'] = 5
     my_shopping_list['chips'] = 2
     my_shopping_list['bread'] = 0.5
@@ -237,11 +237,11 @@ def some_actions_with_shopping_list() -> None:
     my_shopping_list['tomato'] = 4
     my_shopping_list['sausage'] = 1
 
-    # Print dict after adding groceries:
+    # Print custom dictionary my_shopping_list after adding groceries:
     print("\nPrint my_shopping_list after adding groceries:")
     print(my_shopping_list)
 
-    # Print dict after adding groceries as an elements:
+    # Print custom dictionary my_shopping_list after adding groceries as an elements:
     print("\nPrint my_shopping_list after adding groceries as an elements:")
     for key, value in my_shopping_list:
         print(f"{key}: {value}")
@@ -260,7 +260,7 @@ def some_actions_with_shopping_list() -> None:
     else:
         print("I'm so sad...")
 
-    # Delete groceries from dict after going to store:
+    # Delete groceries from custom dictionary my_shopping_list after going to store:
     del my_shopping_list['beer']
     del my_shopping_list['chips']
     del my_shopping_list['sausage']
@@ -272,19 +272,20 @@ def some_actions_with_shopping_list() -> None:
     else:
         print("I'm so sad...")
 
-    # Print dict after going to store as an elements:
+    # Print custom dictionary my_shopping_list after going to store as an elements:
     print("\nPrint my_shopping_list after going to store as an elements:")
     for key, value in my_shopping_list:
         print(f"{key}: {value}")
 
-    # Print dict after going to store as a tuple:
+    # Print custom dictionary my_shopping_list after going to store as a tuple:
     print("\nPrint my_shopping_list after going to store as a tuple:")
     for element in my_shopping_list:
         print(element)
 
 
+# Main program entry point
 if __name__ == "__main__":
     some_actions_with_list()
     some_actions_with_tuple()
     some_actions_with_dict()
-    some_actions_with_shopping_list()
+    some_actions_with_custom_dictionary_shopping_list()
