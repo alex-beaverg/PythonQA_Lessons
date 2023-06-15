@@ -204,12 +204,16 @@ class ShoppingList:
         """Docstring: Getter for class ShoppingList"""
         return self.items[key]
 
+    def __str__(self):
+        """Docstring: Method to string"""
+        return str(dict(self))
+
     def __iter__(self):
         """Docstring: Iterator for class ShoppingList"""
         return iter(self.items.items())
 
-    def pop(self, key) -> None:
-        """Docstring: Method to pop element from dictionary"""
+    def __delitem__(self, key) -> None:
+        """Docstring: Method to delete element from dictionary"""
         del self.items[key]
 
 
@@ -257,9 +261,9 @@ def some_actions_with_shopping_list() -> None:
         print("I'm so sad...")
 
     # Delete groceries from dict after going to store:
-    my_shopping_list.pop('beer')
-    my_shopping_list.pop('chips')
-    my_shopping_list.pop('sausage')
+    del my_shopping_list['beer']
+    del my_shopping_list['chips']
+    del my_shopping_list['sausage']
 
     # Print message if condition is true or false after going to store [true]:
     print("\nPrint message if condition is true or false after going to store [true]:")
@@ -272,6 +276,11 @@ def some_actions_with_shopping_list() -> None:
     print("\nPrint my_shopping_list after going to store as an elements:")
     for key, value in my_shopping_list:
         print(f"{key}: {value}")
+
+    # Print dict after going to store as a tuple:
+    print("\nPrint my_shopping_list after going to store as a tuple:")
+    for element in my_shopping_list:
+        print(element)
 
 
 if __name__ == "__main__":
