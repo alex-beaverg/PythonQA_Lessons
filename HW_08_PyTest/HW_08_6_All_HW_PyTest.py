@@ -3,7 +3,7 @@
 
 # Run with cmd-line from current files' folder:
 #   Current file:
-#       pytest HW_08_6_AllHomeworksTest.py -v
+#       pytest HW_08_6_All_HW_PyTest.py -v
 # (Flag "-v" -> using for more information in console)
 
 import pytest

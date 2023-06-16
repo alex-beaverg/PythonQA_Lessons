@@ -3,9 +3,9 @@
 
 # Run with cmd-line from current files' folder:
 #   Current file:
-#       pytest HW_08_4_CalcTest.py -v
+#       pytest HW_08_4_CalcPyTest.py -v
 #   All test files:
-#       pytest HW_08_4_CalcTest.py HW_08_5_AccTest.py -v
+#       pytest HW_08_4_CalcPyTest.py HW_08_5_AccPyTest.py -v
 # (Flag "-v" -> using for more information in console)
 
 import pytest
