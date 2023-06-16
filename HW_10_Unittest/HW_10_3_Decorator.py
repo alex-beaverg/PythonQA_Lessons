@@ -41,7 +41,7 @@ def third_decorating_function(arg1, arg2) -> None:
 
 @log_decorator
 def fourth_decorating_function(arg1, arg2) -> None:
-    """Fourth function with custom logging decorator, 2 arguments and might error"""
+    """Fourth function with custom logging decorator, 2 arguments and may error"""
     print(f"- - - function divides {arg1} by {arg2} - - -")
     result = arg1 / arg2
     print(f"- - - Result = {result} - - -")
@@ -49,7 +49,7 @@ def fourth_decorating_function(arg1, arg2) -> None:
 
 @log_decorator
 def fifth_decorating_function(arg1, arg2) -> None:
-    """Fourth function with custom logging decorator, 2 arguments and might error"""
+    """Fifth function with custom logging decorator, 2 arguments and may error"""
     print(f"- - - function multiplies {arg1} and {arg2} - - -")
     result = arg1 + arg2
     print(f"- - - Result = {result} - - -")
@@ -57,7 +57,7 @@ def fifth_decorating_function(arg1, arg2) -> None:
 
 @log_decorator
 def sixth_decorating_function(arg1, arg2, arg3) -> None:
-    """Third function with custom logging decorator and 2 arguments"""
+    """Sixth function with custom logging decorator and 3 arguments"""
     print(f"- - - function does something with {arg1}, {arg2} and {arg3} - - -")
 
 
