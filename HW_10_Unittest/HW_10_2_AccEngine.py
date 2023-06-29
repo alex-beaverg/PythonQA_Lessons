@@ -11,6 +11,10 @@ class AccountingEngine:
         """Docstring: Constructor for class AccountingEngine"""
         self.calc_engine = CalcEngine()
 
+    def __del__(self) -> None:
+        """Docstring: Destructor for class AccountingEngine"""
+        pass
+
     def calc_se_taxes(self, income: (int, float)) -> (int, float):
         """Docstring: Method for calculation SE taxes"""
         se_taxes_percent = self.get_se_taxes_percent_from_gov()

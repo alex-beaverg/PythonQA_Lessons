@@ -19,7 +19,7 @@ from HW_07_Basics_and_OOP.HW_07_1_Classes import Human, Parent as Parent2, Kid
 
 
 class TestCaseHomework01:
-    """Docstring: Test class (case) for tests for homework 01"""
+    """Docstring: Test class (suite) for tests for homework 01"""
 
     @pytest.mark.parametrize('expected_result', ['Bobrikov A.V.'])
     def test_01_01_information_method(self, expected_result) -> None:

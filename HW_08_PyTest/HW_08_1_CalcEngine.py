@@ -13,6 +13,10 @@ class CalcEngine:
         """Docstring: Constructor for class CalcEngine"""
         self.__result = 0
 
+    def __del__(self) -> None:
+        """Docstring: Destructor for class CalcEngine"""
+        pass
+
     @dispatch((int, float), (int, float))
     def add(self, a, b) -> (int, float):
         """Docstring: Basic realization of method for addiction"""

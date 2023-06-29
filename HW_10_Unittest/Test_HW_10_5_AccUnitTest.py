@@ -13,48 +13,50 @@ from HW_10_2_AccEngine import AccountingEngine
 
 
 class TestAccountingEngine(unittest.TestCase):
-    """Docstring: Test class (case) TestAccountingEngine"""
+    """Docstring: Test class (suite) TestAccountingEngine"""
+
+    def setUp(self) -> None:
+        """Docstring: SetUp method for test class TestAccountingEngine"""
+        self.accounting_engine = AccountingEngine()
+
+    def tearDown(self) -> None:
+        """Docstring: TearDown method for test class TestAccountingEngine"""
+        del self.accounting_engine
 
     @parameterized.expand([[800, 128], [0, 0], [1_000_000, 160_000]])
     def test_01_calc_se_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation SE taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_se_taxes(income)
+        result = self.accounting_engine.calc_se_taxes(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: SE tax is incorrect!")
 
     @parameterized.expand([[800, 640], [0, 0], [1_000_000, 800_000]])
     def test_02_calc_devil_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation devil taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_devil_taxes_for_nonresident(income)
+        result = self.accounting_engine.calc_devil_taxes_for_nonresident(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: Devil tax is incorrect!")
 
     @parameterized.expand([[800, 25.6], [0, 0], [1_000_000, 32_000]])
     def test_03_calc_light_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation light taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_light_taxes_for_gov_structures(income)
+        result = self.accounting_engine.calc_light_taxes_for_gov_structures(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: Light tax is incorrect!")
 
     @parameterized.expand([[800, 32], [0, 0], [1_000_000, 40_000]])
     def test_04_calc_special_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation special taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_special_taxes_for_under_gov_structures(income)
+        result = self.accounting_engine.calc_special_taxes_for_under_gov_structures(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: Special tax is incorrect!")
 
     @parameterized.expand([[800, 0.008], [0, 0], [1_000_000, 10]])
     def test_05_calc_free_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation free taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_free_taxes_for_elected_people(income)
+        result = self.accounting_engine.calc_free_taxes_for_elected_people(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: Free tax is incorrect!")
 
     @parameterized.expand([[800, 799.992], [0, 0], [1_000_000, 999_990]])
     def test_06_calc_killable_taxes(self, income, expected_result) -> None:
         """Docstring: Parametrized test method for calculation killable taxes"""
-        accounting_engine = AccountingEngine()
-        result = accounting_engine.calc_killable_taxes_for_unique_people(income)
+        result = self.accounting_engine.calc_killable_taxes_for_unique_people(income)
         self.assertEqual(result, expected_result, "[ASSERT MESSAGE]: Killable tax is incorrect!")
 
     @parameterized.expand([16])
