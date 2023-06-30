@@ -1,6 +1,7 @@
 # Homework 11, file 1 - (2023.06.29)
 # Classwork
 # CalcEngine and AccEngine Unittest are in HW_10_Unittest_and_Decorator folder
+# 3A Rule -> in test methods
 
 import unittest
 from parameterized import parameterized

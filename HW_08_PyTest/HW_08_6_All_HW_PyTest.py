@@ -47,7 +47,7 @@ class TestCaseHomework01:
 
 
 class TestCaseHomework02:
-    """Docstring: Test class (case) for tests for homework 02"""
+    """Docstring: Test class (suite) for tests for homework 02"""
 
     @pytest.mark.parametrize('expected_result', [42])
     def test_02_01_string_methods_method(self, expected_result) -> None:
@@ -129,7 +129,7 @@ class TestCaseHomework02:
 
 
 class TestCaseHomework03:
-    """Docstring: Test class (case) for tests for homework 03"""
+    """Docstring: Test class (suite) for tests for homework 03"""
 
     @pytest.mark.parametrize('expected_result', [1])
     def test_03_01_add_book_to_library_and_get_books(self, expected_result) -> None:
@@ -230,7 +230,7 @@ class TestCaseHomework03:
 
 
 class TestCaseHomework04:
-    """Docstring: Test class (case) for tests for homework 04"""
+    """Docstring: Test class (suite) for tests for homework 04"""
 
     @pytest.mark.parametrize('expected_result', ['Minsk'])
     def test_04_01_get_address(self, expected_result) -> None:
@@ -351,7 +351,7 @@ class TestCaseHomework04:
 
 
 class TestCaseHomework05:
-    """Docstring: Test class (case) for tests for homework 05"""
+    """Docstring: Test class (suite) for tests for homework 05"""
 
     @pytest.mark.parametrize('sal, new_sal, expected_result', [(500, 400, 500), (1000, 1200, 1200), (500, 4000, 1000)])
     def test_05_01_set_salary(self, sal, new_sal, expected_result) -> None:
@@ -388,7 +388,7 @@ class TestCaseHomework05:
 
 
 class TestCaseHomework06:
-    """Docstring: Test class (case) for tests for homework 06"""
+    """Docstring: Test class (suite) for tests for homework 06"""
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_06_01_get_person_name(self, name, expected_result) -> None:
@@ -476,7 +476,7 @@ class TestCaseHomework06:
 
 
 class TestCaseHomework07:
-    """Docstring: Test class (case) for tests for homework 07"""
+    """Docstring: Test class (suite) for tests for homework 07"""
 
     @pytest.mark.parametrize('name, expected_result', [('Alexey', 'Alexey'), ('Ivan', 'Ivan')])
     def test_07_01_get_human_name(self, name, expected_result) -> None:
