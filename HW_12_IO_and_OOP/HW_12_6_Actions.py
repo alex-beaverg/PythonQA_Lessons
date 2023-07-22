@@ -1154,3 +1154,63 @@ print('\n3 customers without orders from xml file (SAX):')
 for customer in customers_18:
     customer.print_information()
 print()
+
+# ----------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH FILE NOT FOUND ERRORS. BOOKS:
+path = 'fantastic_path'
+# Read text file with book:
+TxtBookFuncs.read_books_from_text_file(path)
+# Read binary file with book:
+BinBookFuncs.read_books_from_binary_file(path)
+# Read xml file with book (minidom):
+XmlMiniDomBookFuncs.read_books_from_xml_file(path)
+# Read xml file with book (elementtree):
+XmlElementTreeBookFuncs.read_books_from_xml_file(path)
+# Read xml file with book (SAX):
+XmlSaxReadBookFuncs.read_books_from_xml_file(path)
+# Read json file with book (json module):
+JsonModuleBookFuncs.read_books_from_json_file(path)
+# Read json file with book (orjson module):
+OrjsonModuleBookFuncs.read_books_from_json_file(path)
+# Read json file with book (jsonpickle module):
+JsonPickleBookFuncs.read_books_from_json_file(path)
+print()
+
+# -----------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH FILE NOT FOUND ERRORS. ORDERS:
+# Read text file with order:
+TxtOrderFuncs.read_orders_from_text_file(path)
+# Read binary file with order:
+BinOrderFuncs.read_orders_from_binary_file(path)
+# Read xml file with order (minidom):
+XmlMiniDomOrderFuncs.read_orders_from_xml_file(path)
+# Read xml file with order (elementtree):
+XmlElementTreeOrderFuncs.read_orders_from_xml_file(path)
+# Read xml file with order (SAX):
+XmlSaxReadOrderFuncs.read_orders_from_xml_file(path)
+# Read json file with order (json module):
+JsonModuleOrderFuncs.read_orders_from_json_file(path)
+# Read json file with order (orjson module):
+OrjsonModuleOrderFuncs.read_orders_from_json_file(path)
+# Read json file with order (jsonpickle module):
+JsonPickleOrderFuncs.read_orders_from_json_file(path)
+print()
+
+# --------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH FILE NOT FOUND ERRORS. CUSTOMERS:
+# Read text file with customer:
+TxtCustomerFuncs.read_customers_from_text_file(path)
+# Read binary file with customer:
+BinCustomerFuncs.read_customers_from_binary_file(path)
+# Read xml file with customer (minidom):
+XmlMiniDomCustomerFuncs.read_customers_from_xml_file(path)
+# Read xml file with customer (elementtree):
+XmlElementTreeCustomerFuncs.read_customers_from_xml_file(path)
+# Read xml file with customer (SAX):
+XmlSaxReadCustomerFuncs.read_customers_from_xml_file(path)
+# Read json file with customer (json module):
+JsonModuleCustomerFuncs.read_customers_from_json_file(path)
+# Read json file with customer (orjson module):
+OrjsonModuleCustomerFuncs.read_customers_from_json_file(path)
+# Read json file with customer (jsonpickle module):
+JsonPickleCustomerFuncs.read_customers_from_json_file(path)

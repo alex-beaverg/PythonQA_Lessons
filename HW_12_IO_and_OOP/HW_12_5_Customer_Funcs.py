@@ -40,41 +40,45 @@ class TxtCustomerFuncs:
         lines = []
         customers = []
         customer = Customer('', '', '', 0, {}, '', '')
-        with open(path, 'r') as file_read:
-            for line in file_read:
-                lines.append(line.strip())
-        i = 0
-        while i < len(lines):
-            customer.name = lines[i]
-            i += 1
-            customer.surname = lines[i]
-            i += 1
-            customer.sex = lines[i]
-            i += 1
-            customer.age = lines[i]
-            i += 1
-            customer.addresses[lines[i]] = lines[i + 1]
-            i += 2
-            customer.addresses[lines[i]] = lines[i + 1]
-            i += 2
-            customer.phone = lines[i]
-            i += 1
-            customer.email = lines[i]
-            i += 1
-            while True:
-                if i == len(lines) or lines[i] == '':
-                    i += 1
-                    break
-                else:
-                    customer.orders[lines[i]] = lines[i + 1]
-                    i += 2
-            if not single:
-                customers.append(customer)
-                customer = Customer('', '', '', 0, {}, '', '')
-        if single:
-            return customer
+        try:
+            with open(path, 'r') as file_read:
+                for line in file_read:
+                    lines.append(line.strip())
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from text file')
         else:
-            return customers
+            i = 0
+            while i < len(lines):
+                customer.name = lines[i]
+                i += 1
+                customer.surname = lines[i]
+                i += 1
+                customer.sex = lines[i]
+                i += 1
+                customer.age = lines[i]
+                i += 1
+                customer.addresses[lines[i]] = lines[i + 1]
+                i += 2
+                customer.addresses[lines[i]] = lines[i + 1]
+                i += 2
+                customer.phone = lines[i]
+                i += 1
+                customer.email = lines[i]
+                i += 1
+                while True:
+                    if i == len(lines) or lines[i] == '':
+                        i += 1
+                        break
+                    else:
+                        customer.orders[lines[i]] = lines[i + 1]
+                        i += 2
+                if not single:
+                    customers.append(customer)
+                    customer = Customer('', '', '', 0, {}, '', '')
+            if single:
+                return customer
+            else:
+                return customers
 
 
 class BinCustomerFuncs:
@@ -89,20 +93,24 @@ class BinCustomerFuncs:
     @staticmethod
     def read_customers_from_binary_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from binary file"""
-        if single:
-            with open(path, 'rb') as file_read:
-                output = pickle.load(file_read)
-        else:
-            output = []
-            with open(path, 'rb') as file_read:
-                while True:
-                    try:
-                        customer = pickle.load(file_read)
-                    except EOFError:
-                        break
-                    else:
-                        output.append(customer)
-        return output
+        try:
+            if single:
+                with open(path, 'rb') as file_read:
+                    output = pickle.load(file_read)
+            else:
+                output = []
+                with open(path, 'rb') as file_read:
+                    while True:
+                        try:
+                            customer = pickle.load(file_read)
+                        except EOFError:
+                            break
+                        else:
+                            output.append(customer)
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from binary '
+                  f'file')
 
 
 class XmlMiniDomCustomerFuncs:
@@ -167,38 +175,42 @@ class XmlMiniDomCustomerFuncs:
     def read_customers_from_xml_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from xml file"""
         addresses, orders, output = {}, {}, []
-        with parse(path) as xml_doc:
-            customers = xml_doc.getElementsByTagName('customer')
-            for customer in customers:
-                name = customer.getElementsByTagName('name')[0].firstChild.data
-                surname = customer.getElementsByTagName('surname')[0].firstChild.data
-                sex = customer.getElementsByTagName('sex')[0].firstChild.data
-                age = customer.getElementsByTagName('age')[0].firstChild.data
+        try:
+            with parse(path) as xml_doc:
+                customers = xml_doc.getElementsByTagName('customer')
+                for customer in customers:
+                    name = customer.getElementsByTagName('name')[0].firstChild.data
+                    surname = customer.getElementsByTagName('surname')[0].firstChild.data
+                    sex = customer.getElementsByTagName('sex')[0].firstChild.data
+                    age = customer.getElementsByTagName('age')[0].firstChild.data
 
-                addresses_element = customer.getElementsByTagName('addresses')[0]
-                address_list = addresses_element.getElementsByTagName('address')
-                for address_element in address_list:
-                    address_type = address_element.getElementsByTagName('type')[0].firstChild.data
-                    address_text = address_element.getElementsByTagName('text')[0].firstChild.data
-                    addresses[address_type] = address_text
-                phone = customer.getElementsByTagName('phone')[0].firstChild.data
-                email = customer.getElementsByTagName('email')[0].firstChild.data
+                    addresses_element = customer.getElementsByTagName('addresses')[0]
+                    address_list = addresses_element.getElementsByTagName('address')
+                    for address_element in address_list:
+                        address_type = address_element.getElementsByTagName('type')[0].firstChild.data
+                        address_text = address_element.getElementsByTagName('text')[0].firstChild.data
+                        addresses[address_type] = address_text
+                    phone = customer.getElementsByTagName('phone')[0].firstChild.data
+                    email = customer.getElementsByTagName('email')[0].firstChild.data
 
-                orders_element = customer.getElementsByTagName('orders')[0]
-                order_list = orders_element.getElementsByTagName('order')
-                for order_element in order_list:
-                    order_id = order_element.getElementsByTagName('id')[0].firstChild.data
-                    status = order_element.getElementsByTagName('status')[0].firstChild.data
-                    orders[order_id] = status
-                if single:
-                    output = Customer(name, surname, sex, age, addresses, phone, email)
-                    output.orders = orders
-                else:
-                    one_customer = Customer(name, surname, sex, age, addresses, phone, email)
-                    one_customer.orders = orders
-                    output.append(one_customer)
-                    addresses, orders = {}, {}
-        return output
+                    orders_element = customer.getElementsByTagName('orders')[0]
+                    order_list = orders_element.getElementsByTagName('order')
+                    for order_element in order_list:
+                        order_id = order_element.getElementsByTagName('id')[0].firstChild.data
+                        status = order_element.getElementsByTagName('status')[0].firstChild.data
+                        orders[order_id] = status
+                    if single:
+                        output = Customer(name, surname, sex, age, addresses, phone, email)
+                        output.orders = orders
+                    else:
+                        one_customer = Customer(name, surname, sex, age, addresses, phone, email)
+                        one_customer.orders = orders
+                        output.append(one_customer)
+                        addresses, orders = {}, {}
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from xml file '
+                  f'(minidom module)')
 
 
 class XmlElementTreeCustomerFuncs:
@@ -247,52 +259,57 @@ class XmlElementTreeCustomerFuncs:
     @staticmethod
     def read_customers_from_xml_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from xml file"""
-        tree = ET_parse(path)
-        root = tree.getroot()
-        output, age, addresses, orders = [], 0, {}, {}
-        name, surname, sex, phone, email, addr_type, addr_text, order_id, status = '', '', '', '', '', '', '', '', ''
-        for element in root.iter():
-            if element.tag == 'orders' or element.text.strip() != '':
-                if element.tag == 'name':
-                    name = element.text
-                if element.tag == 'surname':
-                    surname = element.text
-                if element.tag == 'sex':
-                    sex = element.text
-                if element.tag == 'age':
-                    age = element.text
-                if element.tag == 'type':
-                    addr_type = element.text
-                if element.tag == 'text':
-                    addr_text = element.text
-                if addr_type != '' and addr_text != '':
-                    addresses[addr_type] = addr_text
-                    addr_type, addr_text = '', ''
-                if element.tag == 'phone':
-                    phone = element.text
-                if element.tag == 'email':
-                    email = element.text
-                if element.tag == 'id':
-                    order_id = element.text
-                if element.tag == 'status':
-                    status = element.text
-                if order_id != '' and status != '':
-                    orders[order_id] = status
-                    order_id, status = '', ''
-            if element.tag == 'customer' and name != '':
+        try:
+            tree = ET_parse(path)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from xml file '
+                  f'(elementtree module)')
+        else:
+            root = tree.getroot()
+            output, age, addresses, orders = [], 0, {}, {}
+            name, surname, sex, phone, email, addr_type, addr_text, order_id, status = '', '', '', '', '', '', '', '', ''
+            for element in root.iter():
+                if element.tag == 'orders' or element.text.strip() != '':
+                    if element.tag == 'name':
+                        name = element.text
+                    if element.tag == 'surname':
+                        surname = element.text
+                    if element.tag == 'sex':
+                        sex = element.text
+                    if element.tag == 'age':
+                        age = element.text
+                    if element.tag == 'type':
+                        addr_type = element.text
+                    if element.tag == 'text':
+                        addr_text = element.text
+                    if addr_type != '' and addr_text != '':
+                        addresses[addr_type] = addr_text
+                        addr_type, addr_text = '', ''
+                    if element.tag == 'phone':
+                        phone = element.text
+                    if element.tag == 'email':
+                        email = element.text
+                    if element.tag == 'id':
+                        order_id = element.text
+                    if element.tag == 'status':
+                        status = element.text
+                    if order_id != '' and status != '':
+                        orders[order_id] = status
+                        order_id, status = '', ''
+                if element.tag == 'customer' and name != '':
+                    one_customer = Customer(name, surname, sex, age, addresses, phone, email)
+                    one_customer.orders = orders
+                    output.append(one_customer)
+                    name, surname, sex, phone, email, age, addresses, orders = '', '', '', '', '', 0, {}, {}
+                    continue
+            if single:
+                output = Customer(name, surname, sex, age, addresses, phone, email)
+                output.orders = orders
+            else:
                 one_customer = Customer(name, surname, sex, age, addresses, phone, email)
                 one_customer.orders = orders
                 output.append(one_customer)
-                name, surname, sex, phone, email, age, addresses, orders = '', '', '', '', '', 0, {}, {}
-                continue
-        if single:
-            output = Customer(name, surname, sex, age, addresses, phone, email)
-            output.orders = orders
-        else:
-            one_customer = Customer(name, surname, sex, age, addresses, phone, email)
-            one_customer.orders = orders
-            output.append(one_customer)
-        return output
+            return output
 
 
 class JsonModuleCustomerFuncs:
@@ -324,27 +341,32 @@ class JsonModuleCustomerFuncs:
     def read_customers_from_json_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            income = json.load(file_read)
-        if single:
-            output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
-                              income['phone'], income['email'])
-            output.orders = income['orders']
+        try:
+            with open(path, 'r') as file_read:
+                income = json.load(file_read)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from json file '
+                  f'(json module)')
         else:
-            if type(income) == dict:
-                some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
-                                         income['addresses'], income['phone'], income['email'])
-                some_customer.orders = income['orders']
-                output.append(some_customer)
+            if single:
+                output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
+                                  income['phone'], income['email'])
+                output.orders = income['orders']
             else:
-                for customer_from_list in income:
-                    some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
-                                             customer_from_list['sex'], customer_from_list['age'],
-                                             customer_from_list['addresses'], customer_from_list['phone'],
-                                             customer_from_list['email'])
-                    some_customer.orders = customer_from_list['orders']
+                if type(income) == dict:
+                    some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
+                                             income['addresses'], income['phone'], income['email'])
+                    some_customer.orders = income['orders']
                     output.append(some_customer)
-        return output
+                else:
+                    for customer_from_list in income:
+                        some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
+                                                 customer_from_list['sex'], customer_from_list['age'],
+                                                 customer_from_list['addresses'], customer_from_list['phone'],
+                                                 customer_from_list['email'])
+                        some_customer.orders = customer_from_list['orders']
+                        output.append(some_customer)
+            return output
 
 
 class OrjsonModuleCustomerFuncs:
@@ -378,28 +400,33 @@ class OrjsonModuleCustomerFuncs:
     def read_customers_from_json_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = orjson.loads(text)
-        if single:
-            output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
-                              income['phone'], income['email'])
-            output.orders = income['orders']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = orjson.loads(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from json file '
+                  f'(orjson module)')
         else:
-            if type(income) == dict:
-                some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
-                                         income['addresses'], income['phone'], income['email'])
-                some_customer.orders = income['orders']
-                output.append(some_customer)
+            if single:
+                output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
+                                  income['phone'], income['email'])
+                output.orders = income['orders']
             else:
-                for customer_from_list in income:
-                    some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
-                                             customer_from_list['sex'], customer_from_list['age'],
-                                             customer_from_list['addresses'], customer_from_list['phone'],
-                                             customer_from_list['email'])
-                    some_customer.orders = customer_from_list['orders']
+                if type(income) == dict:
+                    some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
+                                             income['addresses'], income['phone'], income['email'])
+                    some_customer.orders = income['orders']
                     output.append(some_customer)
-        return output
+                else:
+                    for customer_from_list in income:
+                        some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
+                                                 customer_from_list['sex'], customer_from_list['age'],
+                                                 customer_from_list['addresses'], customer_from_list['phone'],
+                                                 customer_from_list['email'])
+                        some_customer.orders = customer_from_list['orders']
+                        output.append(some_customer)
+            return output
 
 
 class JsonPickleCustomerFuncs:
@@ -435,28 +462,33 @@ class JsonPickleCustomerFuncs:
     def read_customers_from_json_file(path: str, single=True) -> (Customer, list):
         """Docstring: Function to read customers from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = jsonpickle.decode(text)
-        if single:
-            output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
-                              income['phone'], income['email'])
-            output.orders = income['orders']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = jsonpickle.decode(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from json file '
+                  f'(jsonpickle module)')
         else:
-            if type(income) == dict:
-                some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
-                                         income['addresses'], income['phone'], income['email'])
-                some_customer.orders = income['orders']
-                output.append(some_customer)
+            if single:
+                output = Customer(income['name'], income['surname'], income['sex'], income['age'], income['addresses'],
+                                  income['phone'], income['email'])
+                output.orders = income['orders']
             else:
-                for customer_from_list in income:
-                    some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
-                                             customer_from_list['sex'], customer_from_list['age'],
-                                             customer_from_list['addresses'], customer_from_list['phone'],
-                                             customer_from_list['email'])
-                    some_customer.orders = customer_from_list['orders']
+                if type(income) == dict:
+                    some_customer = Customer(income['name'], income['surname'], income['sex'], income['age'],
+                                             income['addresses'], income['phone'], income['email'])
+                    some_customer.orders = income['orders']
                     output.append(some_customer)
-        return output
+                else:
+                    for customer_from_list in income:
+                        some_customer = Customer(customer_from_list['name'], customer_from_list['surname'],
+                                                 customer_from_list['sex'], customer_from_list['age'],
+                                                 customer_from_list['addresses'], customer_from_list['phone'],
+                                                 customer_from_list['email'])
+                        some_customer.orders = customer_from_list['orders']
+                        output.append(some_customer)
+            return output
 
 
 class XmlSaxReadCustomerFuncs(ContentHandler):
@@ -512,9 +544,14 @@ class XmlSaxReadCustomerFuncs(ContentHandler):
     def read_customers_from_xml_file(path: str) -> (Customer, list):
         """Docstring: Function to read books from xml file"""
         handler = XmlSaxReadCustomerFuncs()
-        SAX_parse(path, handler)
-        customer_list = handler.get_customers()
-        if len(customer_list) == 1:
-            return customer_list[0]
+        try:
+            SAX_parse(path, handler)
+        except ValueError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Customer has not been created from xml file '
+                  f'(sax)')
         else:
-            return customer_list
+            customer_list = handler.get_customers()
+            if len(customer_list) == 1:
+                return customer_list[0]
+            else:
+                return customer_list

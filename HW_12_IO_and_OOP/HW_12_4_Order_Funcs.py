@@ -37,36 +37,40 @@ class TxtOrderFuncs:
         lines = []
         orders = []
         order = Order()
-        with open(path, 'r') as file_read:
-            for line in file_read:
-                lines.append(line.strip())
-        i = 0
-        while i < len(lines):
-            order.id = lines[i]
-            i += 1
-            order.status = lines[i]
-            i += 1
-            while True:
-                if lines[i] == '':
-                    i += 1
-                    break
-                else:
-                    order.books[lines[i]] = lines[i + 1]
-                    i += 2
-            while True:
-                if i == len(lines) or lines[i] == '':
-                    i += 2
-                    break
-                else:
-                    order.places.append(lines[i])
-                    i += 1
-            if not single:
-                orders.append(order)
-                order = Order()
-        if single:
-            return order
+        try:
+            with open(path, 'r') as file_read:
+                for line in file_read:
+                    lines.append(line.strip())
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from text file')
         else:
-            return orders
+            i = 0
+            while i < len(lines):
+                order.id = lines[i]
+                i += 1
+                order.status = lines[i]
+                i += 1
+                while True:
+                    if lines[i] == '':
+                        i += 1
+                        break
+                    else:
+                        order.books[lines[i]] = lines[i + 1]
+                        i += 2
+                while True:
+                    if i == len(lines) or lines[i] == '':
+                        i += 2
+                        break
+                    else:
+                        order.places.append(lines[i])
+                        i += 1
+                if not single:
+                    orders.append(order)
+                    order = Order()
+            if single:
+                return order
+            else:
+                return orders
 
 
 class BinOrderFuncs:
@@ -81,20 +85,23 @@ class BinOrderFuncs:
     @staticmethod
     def read_orders_from_binary_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from binary file"""
-        if single:
-            with open(path, 'rb') as file_read:
-                output = pickle.load(file_read)
-        else:
-            output = []
-            with open(path, 'rb') as file_read:
-                while True:
-                    try:
-                        order = pickle.load(file_read)
-                    except EOFError:
-                        break
-                    else:
-                        output.append(order)
-        return output
+        try:
+            if single:
+                with open(path, 'rb') as file_read:
+                    output = pickle.load(file_read)
+            else:
+                output = []
+                with open(path, 'rb') as file_read:
+                    while True:
+                        try:
+                            order = pickle.load(file_read)
+                        except EOFError:
+                            break
+                        else:
+                            output.append(order)
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from binary file')
 
 
 class XmlMiniDomOrderFuncs:
@@ -142,38 +149,42 @@ class XmlMiniDomOrderFuncs:
     def read_orders_from_xml_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from xml file"""
         books, places, output = {}, [], []
-        with parse(path) as xml_doc:
-            orders = xml_doc.getElementsByTagName('order')
-            for order in orders:
-                order_id = order.getElementsByTagName('id')[0].firstChild.data
-                status = order.getElementsByTagName('status')[0].firstChild.data
-                books_element = order.getElementsByTagName('books')[0]
-                book_list = books_element.getElementsByTagName('book')
-                for book_element in book_list:
-                    title = book_element.getElementsByTagName('title')[0].firstChild.data
-                    quantity = book_element.getElementsByTagName('quantity')[0].firstChild.data
-                    books[title] = int(quantity)
-                places_element = order.getElementsByTagName('places')[0]
-                place_list = places_element.getElementsByTagName('place')
-                for place_element in place_list:
-                    place = place_element.firstChild.data
-                    places.append(place)
-                if single:
-                    output = Order()
-                    output.id = order_id
-                    output.status = status
-                    output.books = books
-                    output.places = places
-                else:
-                    one_order = Order()
-                    one_order.id = order_id
-                    one_order.status = status
-                    one_order.books = books
-                    one_order.places = places
-                    output.append(one_order)
-                    books = {}
-                    places = []
-        return output
+        try:
+            with parse(path) as xml_doc:
+                orders = xml_doc.getElementsByTagName('order')
+                for order in orders:
+                    order_id = order.getElementsByTagName('id')[0].firstChild.data
+                    status = order.getElementsByTagName('status')[0].firstChild.data
+                    books_element = order.getElementsByTagName('books')[0]
+                    book_list = books_element.getElementsByTagName('book')
+                    for book_element in book_list:
+                        title = book_element.getElementsByTagName('title')[0].firstChild.data
+                        quantity = book_element.getElementsByTagName('quantity')[0].firstChild.data
+                        books[title] = int(quantity)
+                    places_element = order.getElementsByTagName('places')[0]
+                    place_list = places_element.getElementsByTagName('place')
+                    for place_element in place_list:
+                        place = place_element.firstChild.data
+                        places.append(place)
+                    if single:
+                        output = Order()
+                        output.id = order_id
+                        output.status = status
+                        output.books = books
+                        output.places = places
+                    else:
+                        one_order = Order()
+                        one_order.id = order_id
+                        one_order.status = status
+                        one_order.books = books
+                        one_order.places = places
+                        output.append(one_order)
+                        books = {}
+                        places = []
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from xml file '
+                  f'(minidom module)')
 
 
 class XmlElementTreeOrderFuncs:
@@ -211,47 +222,52 @@ class XmlElementTreeOrderFuncs:
     @staticmethod
     def read_orders_from_xml_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from xml file"""
-        tree = ET_parse(path)
-        root = tree.getroot()
-        output, title, quantity, order_id, status, books, places = [], '', '', '', '', {}, []
-        for element in root.iter():
-            if element.tag == 'books' or element.tag == 'places' or element.text.strip() != '':
-                if element.tag == 'id':
-                    order_id = element.text
-                if element.tag == 'status':
-                    status = element.text
-                if element.tag == 'title':
-                    title = element.text
-                if element.tag == 'quantity':
-                    quantity = element.text
-                if title != '' and quantity != '':
-                    books[title] = quantity
-                    title, quantity = '', ''
-                if element.tag == 'place':
-                    places.append(element.text)
-            if element.tag == 'order' and order_id != '':
+        try:
+            tree = ET_parse(path)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from xml file '
+                  f'(elementtree module)')
+        else:
+            root = tree.getroot()
+            output, title, quantity, order_id, status, books, places = [], '', '', '', '', {}, []
+            for element in root.iter():
+                if element.tag == 'books' or element.tag == 'places' or element.text.strip() != '':
+                    if element.tag == 'id':
+                        order_id = element.text
+                    if element.tag == 'status':
+                        status = element.text
+                    if element.tag == 'title':
+                        title = element.text
+                    if element.tag == 'quantity':
+                        quantity = element.text
+                    if title != '' and quantity != '':
+                        books[title] = quantity
+                        title, quantity = '', ''
+                    if element.tag == 'place':
+                        places.append(element.text)
+                if element.tag == 'order' and order_id != '':
+                    one_order = Order()
+                    one_order.id = order_id
+                    one_order.status = status
+                    one_order.books = books
+                    one_order.places = places
+                    output.append(one_order)
+                    books, places, order_id, status = {}, [], '', ''
+                    continue
+            if single:
+                output = Order()
+                output.id = order_id
+                output.status = status
+                output.books = books
+                output.places = places
+            else:
                 one_order = Order()
                 one_order.id = order_id
                 one_order.status = status
                 one_order.books = books
                 one_order.places = places
                 output.append(one_order)
-                books, places, order_id, status = {}, [], '', ''
-                continue
-        if single:
-            output = Order()
-            output.id = order_id
-            output.status = status
-            output.books = books
-            output.places = places
-        else:
-            one_order = Order()
-            one_order.id = order_id
-            one_order.status = status
-            one_order.books = books
-            one_order.places = places
-            output.append(one_order)
-        return output
+            return output
 
 
 class JsonModuleOrderFuncs:
@@ -279,31 +295,36 @@ class JsonModuleOrderFuncs:
     def read_orders_from_json_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            income = json.load(file_read)
-        if single:
-            output = Order()
-            output.id = income['id']
-            output.status = income['status']
-            output.books = income['books']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                income = json.load(file_read)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from json file '
+                  f'(json module)')
         else:
-            if type(income) == dict:
-                some_order = Order()
-                some_order.id = income['id']
-                some_order.status = income['status']
-                some_order.books = income['books']
-                some_order.places = income['places']
-                output.append(some_order)
+            if single:
+                output = Order()
+                output.id = income['id']
+                output.status = income['status']
+                output.books = income['books']
+                output.places = income['places']
             else:
-                for order_from_list in income:
+                if type(income) == dict:
                     some_order = Order()
-                    some_order.id = order_from_list['id']
-                    some_order.status = order_from_list['status']
-                    some_order.books = order_from_list['books']
-                    some_order.places = order_from_list['places']
+                    some_order.id = income['id']
+                    some_order.status = income['status']
+                    some_order.books = income['books']
+                    some_order.places = income['places']
                     output.append(some_order)
-        return output
+                else:
+                    for order_from_list in income:
+                        some_order = Order()
+                        some_order.id = order_from_list['id']
+                        some_order.status = order_from_list['status']
+                        some_order.books = order_from_list['books']
+                        some_order.places = order_from_list['places']
+                        output.append(some_order)
+            return output
 
 
 class OrjsonModuleOrderFuncs:
@@ -333,32 +354,37 @@ class OrjsonModuleOrderFuncs:
     def read_orders_from_json_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = orjson.loads(text)
-        if single:
-            output = Order()
-            output.id = income['id']
-            output.status = income['status']
-            output.books = income['books']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = orjson.loads(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from json file '
+                  f'(orjson module)')
         else:
-            if type(income) == dict:
-                some_order = Order()
-                some_order.id = income['id']
-                some_order.status = income['status']
-                some_order.books = income['books']
-                some_order.places = income['places']
-                output.append(some_order)
+            if single:
+                output = Order()
+                output.id = income['id']
+                output.status = income['status']
+                output.books = income['books']
+                output.places = income['places']
             else:
-                for order_from_list in income:
+                if type(income) == dict:
                     some_order = Order()
-                    some_order.id = order_from_list['id']
-                    some_order.status = order_from_list['status']
-                    some_order.books = order_from_list['books']
-                    some_order.places = order_from_list['places']
+                    some_order.id = income['id']
+                    some_order.status = income['status']
+                    some_order.books = income['books']
+                    some_order.places = income['places']
                     output.append(some_order)
-        return output
+                else:
+                    for order_from_list in income:
+                        some_order = Order()
+                        some_order.id = order_from_list['id']
+                        some_order.status = order_from_list['status']
+                        some_order.books = order_from_list['books']
+                        some_order.places = order_from_list['places']
+                        output.append(some_order)
+            return output
 
 
 class JsonPickleOrderFuncs:
@@ -390,32 +416,37 @@ class JsonPickleOrderFuncs:
     def read_orders_from_json_file(path: str, single=True) -> (Order, list):
         """Docstring: Function to read orders from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = jsonpickle.decode(text)
-        if single:
-            output = Order()
-            output.id = income['id']
-            output.status = income['status']
-            output.books = income['books']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = jsonpickle.decode(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from json file '
+                  f'(jsonpickle module)')
         else:
-            if type(income) == dict:
-                some_order = Order()
-                some_order.id = income['id']
-                some_order.status = income['status']
-                some_order.books = income['books']
-                some_order.places = income['places']
-                output.append(some_order)
+            if single:
+                output = Order()
+                output.id = income['id']
+                output.status = income['status']
+                output.books = income['books']
+                output.places = income['places']
             else:
-                for order_from_list in income:
+                if type(income) == dict:
                     some_order = Order()
-                    some_order.id = order_from_list['id']
-                    some_order.status = order_from_list['status']
-                    some_order.books = order_from_list['books']
-                    some_order.places = order_from_list['places']
+                    some_order.id = income['id']
+                    some_order.status = income['status']
+                    some_order.books = income['books']
+                    some_order.places = income['places']
                     output.append(some_order)
-        return output
+                else:
+                    for order_from_list in income:
+                        some_order = Order()
+                        some_order.id = order_from_list['id']
+                        some_order.status = order_from_list['status']
+                        some_order.books = order_from_list['books']
+                        some_order.places = order_from_list['places']
+                        output.append(some_order)
+            return output
 
 
 class XmlSaxReadOrderFuncs(ContentHandler):
@@ -461,9 +492,14 @@ class XmlSaxReadOrderFuncs(ContentHandler):
     def read_orders_from_xml_file(path: str) -> (Order, list):
         """Docstring: Function to read books from xml file"""
         handler = XmlSaxReadOrderFuncs()
-        SAX_parse(path, handler)
-        order_list = handler.get_orders()
-        if len(order_list) == 1:
-            return order_list[0]
+        try:
+            SAX_parse(path, handler)
+        except ValueError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Order has not been created from xml file '
+                  f'(sax)')
         else:
-            return order_list
+            order_list = handler.get_orders()
+            if len(order_list) == 1:
+                return order_list[0]
+            else:
+                return order_list

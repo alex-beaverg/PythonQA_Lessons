@@ -35,35 +35,39 @@ class TxtBookFuncs:
         lines = []
         books = []
         book = Book('', '', 0, 0)
-        with open(path, 'r') as file_read:
-            for line in file_read:
-                lines.append(line.strip())
-        i = 0
-        while i < len(lines):
-            book.id = lines[i]
-            i += 1
-            book.title = lines[i]
-            i += 1
-            book.author = lines[i]
-            i += 1
-            book.quantity = lines[i]
-            i += 1
-            book.price = lines[i]
-            i += 1
-            while True:
-                if i == len(lines) or lines[i] == '':
-                    i += 1
-                    break
-                else:
-                    book.places.append(lines[i])
-                    i += 1
-            if not single:
-                books.append(book)
-                book = Book('', '', 0, 0)
-        if single:
-            return book
+        try:
+            with open(path, 'r') as file_read:
+                for line in file_read:
+                    lines.append(line.strip())
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from text file')
         else:
-            return books
+            i = 0
+            while i < len(lines):
+                book.id = lines[i]
+                i += 1
+                book.title = lines[i]
+                i += 1
+                book.author = lines[i]
+                i += 1
+                book.quantity = lines[i]
+                i += 1
+                book.price = lines[i]
+                i += 1
+                while True:
+                    if i == len(lines) or lines[i] == '':
+                        i += 1
+                        break
+                    else:
+                        book.places.append(lines[i])
+                        i += 1
+                if not single:
+                    books.append(book)
+                    book = Book('', '', 0, 0)
+            if single:
+                return book
+            else:
+                return books
 
 
 class BinBookFuncs:
@@ -78,20 +82,23 @@ class BinBookFuncs:
     @staticmethod
     def read_books_from_binary_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from binary file"""
-        if single:
-            with open(path, 'rb') as file_read:
-                output = pickle.load(file_read)
-        else:
-            output = []
-            with open(path, 'rb') as file_read:
-                while True:
-                    try:
-                        book = pickle.load(file_read)
-                    except EOFError:
-                        break
-                    else:
-                        output.append(book)
-        return output
+        try:
+            if single:
+                with open(path, 'rb') as file_read:
+                    output = pickle.load(file_read)
+            else:
+                output = []
+                with open(path, 'rb') as file_read:
+                    while True:
+                        try:
+                            book = pickle.load(file_read)
+                        except EOFError:
+                            break
+                        else:
+                            output.append(book)
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from binary file')
 
 
 class XmlMiniDomBookFuncs:
@@ -137,31 +144,35 @@ class XmlMiniDomBookFuncs:
     def read_books_from_xml_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from xml file"""
         places, output = [], []
-        with parse(path) as xml_doc:
-            books = xml_doc.getElementsByTagName('book')
-            for book in books:
-                book_id = book.getElementsByTagName('id')[0].firstChild.data
-                title = book.getElementsByTagName('title')[0].firstChild.data
-                author = book.getElementsByTagName('author')[0].firstChild.data
-                quantity = book.getElementsByTagName('quantity')[0].firstChild.data
-                price = book.getElementsByTagName('price')[0].firstChild.data
+        try:
+            with parse(path) as xml_doc:
+                books = xml_doc.getElementsByTagName('book')
+                for book in books:
+                    book_id = book.getElementsByTagName('id')[0].firstChild.data
+                    title = book.getElementsByTagName('title')[0].firstChild.data
+                    author = book.getElementsByTagName('author')[0].firstChild.data
+                    quantity = book.getElementsByTagName('quantity')[0].firstChild.data
+                    price = book.getElementsByTagName('price')[0].firstChild.data
 
-                places_element = book.getElementsByTagName('places')[0]
-                place_list = places_element.getElementsByTagName('place')
-                for place_element in place_list:
-                    place = place_element.firstChild.data
-                    places.append(place)
-                if single:
-                    output = Book(title, author, quantity, price)
-                    output.id = book_id
-                    output.places = places
-                else:
-                    one_book = Book(title, author, quantity, price)
-                    one_book.id = book_id
-                    one_book.places = places
-                    output.append(one_book)
-                    places = []
-        return output
+                    places_element = book.getElementsByTagName('places')[0]
+                    place_list = places_element.getElementsByTagName('place')
+                    for place_element in place_list:
+                        place = place_element.firstChild.data
+                        places.append(place)
+                    if single:
+                        output = Book(title, author, quantity, price)
+                        output.id = book_id
+                        output.places = places
+                    else:
+                        one_book = Book(title, author, quantity, price)
+                        one_book.id = book_id
+                        one_book.places = places
+                        output.append(one_book)
+                        places = []
+            return output
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from xml file '
+                  f'(minidom module)')
 
 
 class XmlElementTreeBookFuncs:
@@ -198,40 +209,45 @@ class XmlElementTreeBookFuncs:
     @staticmethod
     def read_books_from_xml_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from xml file"""
-        tree = ET_parse(path)
-        root = tree.getroot()
-        output, title, author, quantity, price, places, book_id = [], '', '', 0, 0, [], ''
-        for element in root.iter():
-            if element.tag == 'places' or element.text.strip() != '':
-                if element.tag == 'id':
-                    book_id = element.text
-                if element.tag == 'title':
-                    title = element.text
-                if element.tag == 'author':
-                    author = element.text
-                if element.tag == 'quantity':
-                    quantity = element.text
-                if element.tag == 'price':
-                    price = element.text
-                if element.tag == 'place':
-                    places.append(element.text)
-            if element.tag == 'book' and book_id != '':
+        try:
+            tree = ET_parse(path)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from xml file '
+                  f'(elementtree module)')
+        else:
+            root = tree.getroot()
+            output, title, author, quantity, price, places, book_id = [], '', '', 0, 0, [], ''
+            for element in root.iter():
+                if element.tag == 'places' or element.text.strip() != '':
+                    if element.tag == 'id':
+                        book_id = element.text
+                    if element.tag == 'title':
+                        title = element.text
+                    if element.tag == 'author':
+                        author = element.text
+                    if element.tag == 'quantity':
+                        quantity = element.text
+                    if element.tag == 'price':
+                        price = element.text
+                    if element.tag == 'place':
+                        places.append(element.text)
+                if element.tag == 'book' and book_id != '':
+                    one_book = Book(title, author, quantity, price)
+                    one_book.id = book_id
+                    one_book.places = places
+                    output.append(one_book)
+                    book_id, title, author, quantity, price, places = '', '', '', 0, 0, []
+                    continue
+            if single:
+                output = Book(title, author, quantity, price)
+                output.id = book_id
+                output.places = places
+            else:
                 one_book = Book(title, author, quantity, price)
                 one_book.id = book_id
                 one_book.places = places
                 output.append(one_book)
-                book_id, title, author, quantity, price, places = '', '', '', 0, 0, []
-                continue
-        if single:
-            output = Book(title, author, quantity, price)
-            output.id = book_id
-            output.places = places
-        else:
-            one_book = Book(title, author, quantity, price)
-            one_book.id = book_id
-            one_book.places = places
-            output.append(one_book)
-        return output
+            return output
 
 
 class JsonModuleBookFuncs:
@@ -261,26 +277,31 @@ class JsonModuleBookFuncs:
     def read_books_from_json_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            income = json.load(file_read)
-        if single:
-            output = Book(income['title'], income['author'], income['quantity'], income['price'])
-            output.id = income['id']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                income = json.load(file_read)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from json file '
+                  f'(json module)')
         else:
-            if type(income) == dict:
-                some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
-                some_book.id = income['id']
-                some_book.places = income['places']
-                output.append(some_book)
+            if single:
+                output = Book(income['title'], income['author'], income['quantity'], income['price'])
+                output.id = income['id']
+                output.places = income['places']
             else:
-                for book_from_list in income:
-                    some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
-                                     book_from_list['price'])
-                    some_book.id = book_from_list['id']
-                    some_book.places = book_from_list['places']
+                if type(income) == dict:
+                    some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
+                    some_book.id = income['id']
+                    some_book.places = income['places']
                     output.append(some_book)
-        return output
+                else:
+                    for book_from_list in income:
+                        some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
+                                         book_from_list['price'])
+                        some_book.id = book_from_list['id']
+                        some_book.places = book_from_list['places']
+                        output.append(some_book)
+            return output
 
 
 class OrjsonModuleBookFuncs:
@@ -312,27 +333,32 @@ class OrjsonModuleBookFuncs:
     def read_books_from_json_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = orjson.loads(text)
-        if single:
-            output = Book(income['title'], income['author'], income['quantity'], income['price'])
-            output.id = income['id']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = orjson.loads(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from json file '
+                  f'(orjson module)')
         else:
-            if type(income) == dict:
-                some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
-                some_book.id = income['id']
-                some_book.places = income['places']
-                output.append(some_book)
+            if single:
+                output = Book(income['title'], income['author'], income['quantity'], income['price'])
+                output.id = income['id']
+                output.places = income['places']
             else:
-                for book_from_list in income:
-                    some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
-                                     book_from_list['price'])
-                    some_book.id = book_from_list['id']
-                    some_book.places = book_from_list['places']
+                if type(income) == dict:
+                    some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
+                    some_book.id = income['id']
+                    some_book.places = income['places']
                     output.append(some_book)
-        return output
+                else:
+                    for book_from_list in income:
+                        some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
+                                         book_from_list['price'])
+                        some_book.id = book_from_list['id']
+                        some_book.places = book_from_list['places']
+                        output.append(some_book)
+            return output
 
 
 class JsonPickleBookFuncs:
@@ -366,27 +392,32 @@ class JsonPickleBookFuncs:
     def read_books_from_json_file(path: str, single=True) -> (Book, list):
         """Docstring: Function to read books from json file"""
         output = []
-        with open(path, 'r') as file_read:
-            text = file_read.read()
-            income = jsonpickle.decode(text)
-        if single:
-            output = Book(income['title'], income['author'], income['quantity'], income['price'])
-            output.id = income['id']
-            output.places = income['places']
+        try:
+            with open(path, 'r') as file_read:
+                text = file_read.read()
+                income = jsonpickle.decode(text)
+        except FileNotFoundError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from json file '
+                  f'(jsonpickle module)')
         else:
-            if type(income) == dict:
-                some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
-                some_book.id = income['id']
-                some_book.places = income['places']
-                output.append(some_book)
+            if single:
+                output = Book(income['title'], income['author'], income['quantity'], income['price'])
+                output.id = income['id']
+                output.places = income['places']
             else:
-                for book_from_list in income:
-                    some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
-                                     book_from_list['price'])
-                    some_book.id = book_from_list['id']
-                    some_book.places = book_from_list['places']
+                if type(income) == dict:
+                    some_book = Book(income['title'], income['author'], income['quantity'], income['price'])
+                    some_book.id = income['id']
+                    some_book.places = income['places']
                     output.append(some_book)
-        return output
+                else:
+                    for book_from_list in income:
+                        some_book = Book(book_from_list['title'], book_from_list['author'], book_from_list['quantity'],
+                                         book_from_list['price'])
+                        some_book.id = book_from_list['id']
+                        some_book.places = book_from_list['places']
+                        output.append(some_book)
+            return output
 
 
 class XmlSaxReadBookFuncs(ContentHandler):
@@ -433,9 +464,13 @@ class XmlSaxReadBookFuncs(ContentHandler):
     def read_books_from_xml_file(path: str) -> (Book, list):
         """Docstring: Function to read books from xml file"""
         handler = XmlSaxReadBookFuncs()
-        SAX_parse(path, handler)
-        book_list = handler.get_books()
-        if len(book_list) == 1:
-            return book_list[0]
+        try:
+            SAX_parse(path, handler)
+        except ValueError:
+            print(f'[ERROR]: No such file or directory: "{path}". Object Book has not been created from xml file (sax)')
         else:
-            return book_list
+            book_list = handler.get_books()
+            if len(book_list) == 1:
+                return book_list[0]
+            else:
+                return book_list
