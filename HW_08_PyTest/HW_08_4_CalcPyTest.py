@@ -1,10 +1,10 @@
 # Homework 08, file 4 (2023.06.08)
 # Calculating Engine Tests (PyTest)
 
-# Run with cmd-line from current files' folder:
+# Run with cmd-line from current files_for_classwork' folder:
 #   Current file:
 #       pytest HW_08_4_CalcPyTest.py -v
-#   All test files:
+#   All test files_for_classwork:
 #       pytest HW_08_4_CalcPyTest.py HW_08_5_AccPyTest.py -v
 # (Flag "-v" -> using for more information in console)
 

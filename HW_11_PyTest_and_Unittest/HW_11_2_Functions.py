@@ -208,7 +208,7 @@ def difference_of_lists_var2(income_lst1: list, income_lst2: list) -> list:
 
 # Task 11 -------------------------------------------------------------------------------------------------------------
 def files_from_dir_var1(path: str) -> list:
-    """Docstring: Function to return list with files in directory. Variant 1"""
+    """Docstring: Function to return list with files_for_classwork in directory. Variant 1"""
     result = []
     with os.scandir(path) as listOfEntries:
         for entry in listOfEntries:
@@ -218,7 +218,7 @@ def files_from_dir_var1(path: str) -> list:
 
 
 def files_from_dir_var2(path: str) -> list:
-    """Docstring: Function to return list with files in directory. Variant 2"""
+    """Docstring: Function to return list with files_for_classwork in directory. Variant 2"""
     result = []
 
     def files(file_path):

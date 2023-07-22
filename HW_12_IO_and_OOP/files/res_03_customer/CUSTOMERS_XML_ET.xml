@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<customers>
+  <customer>
+    <name>Alex</name>
+    <surname>Smith</surname>
+    <sex>M</sex>
+    <age>33</age>
+    <addresses>
+      <address>
+        <type>Primary</type>
+        <text>Chicago</text>
+      </address>
+      <address>
+        <type>Secondary</type>
+        <text>Toronto</text>
+      </address>
+    </addresses>
+    <phone>+578-19-122-33-55</phone>
+    <email>a.smith@usmail.com</email>
+    <orders>
+      <order>
+        <id>2769</id>
+        <status>in progress</status>
+      </order>
+      <order>
+        <id>2805</id>
+        <status>paid</status>
+      </order>
+    </orders>
+  </customer>
+  <customer>
+    <name>John</name>
+    <surname>Black</surname>
+    <sex>M</sex>
+    <age>25</age>
+    <addresses>
+      <address>
+        <type>Primary</type>
+        <text>Seattle</text>
+      </address>
+      <address>
+        <type>Secondary</type>
+        <text>New York</text>
+      </address>
+    </addresses>
+    <phone>+555-12-355-55-55</phone>
+    <email>j.black@usmail.com</email>
+    <orders>
+      <order>
+        <id>2805</id>
+        <status>paid</status>
+      </order>
+      <order>
+        <id>2769</id>
+        <status>in progress</status>
+      </order>
+    </orders>
+  </customer>
+</customers>

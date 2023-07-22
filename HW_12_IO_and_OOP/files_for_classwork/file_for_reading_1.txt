@@ -1,0 +1,7 @@
+File one
+String 1
+Monster energy
+String 2
+Empty line
+Hell yeah!
+String 3

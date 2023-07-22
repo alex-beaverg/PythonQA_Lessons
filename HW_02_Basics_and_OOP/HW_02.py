@@ -2,10 +2,10 @@
 # Task 1 (extends Task 3 from Homework 01)
 
 def string_methods() -> int:
-    """Function for print results of string methods"""
+    """Function for print res_books of string methods"""
     print('\nTASK 1 (extends Task 3 from Homework 01)')
     print('-' * 6)
-    print('LOG_INFO: Print results of string methods')
+    print('LOG_INFO: Print res_books of string methods')
     text = "Hello my dear Friends!!!"
     print('Text for examples: "Hello my dear Friends!!!":')
     print('-' * 46)

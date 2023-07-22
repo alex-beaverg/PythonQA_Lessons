@@ -12,7 +12,7 @@ class Library:
     def add_book(self, book) -> None:
         """Docstring: Method to add book to library"""
         print('LOG_INFO: Add book to library')
-        self.__books[book.get_book()["ID"]] = book.get_book()
+        self.__books[book.get_orders()["ID"]] = book.get_orders()
 
     def get_books(self) -> dict:
         """Docstring: Getter for book list"""

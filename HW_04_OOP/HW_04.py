@@ -22,7 +22,7 @@ class BookStore:
     def add_book(self, book) -> None:
         """Docstring: Method to add book to BookStore"""
         print('LOG_INFO: Add book to BookStore')
-        self.__books[book.get_book()["ID"]] = book.get_book()
+        self.__books[book.get_orders()["ID"]] = book.get_orders()
 
     def add_customer(self, customer) -> None:
         """Docstring: Method to add customer to BookStore"""
@@ -146,7 +146,7 @@ class Order:
         print(f'Customer: {self.__customer.get_customer()["Name"]} {self.__customer.get_customer()["Surname"]}')
         print('Books in order:')
         for book in self.__books:
-            print(f'\t{book.get_book()["Title"]}, Price: {book.get_book()["Price"]} BYN')
+            print(f'\t{book.get_orders()["Title"]}, Price: {book.get_orders()["Price"]} BYN')
         print(f'Total price: {self.__total} BYN')
         print(f'Total price with sale: {self.__total_with_sale} BYN')
         print(f'Sale: {self.__total - self.__total_with_sale}')

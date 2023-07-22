@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Alex",
+        "surname": "Smith",
+        "sex": "M",
+        "age": 33,
+        "addresses": {
+            "Primary": "Chicago",
+            "Secondary": "Toronto"
+        },
+        "phone": "+578-19-122-33-55",
+        "email": "a.smith@usmail.com",
+        "orders": {
+            "2769": "in progress",
+            "2805": "paid"
+        }
+    },
+    {
+        "name": "John",
+        "surname": "Black",
+        "sex": "M",
+        "age": 25,
+        "addresses": {
+            "Primary": "Seattle",
+            "Secondary": "New York"
+        },
+        "phone": "+555-12-355-55-55",
+        "email": "j.black@usmail.com",
+        "orders": {
+            "2805": "paid",
+            "2769": "in progress"
+        }
+    }
+]

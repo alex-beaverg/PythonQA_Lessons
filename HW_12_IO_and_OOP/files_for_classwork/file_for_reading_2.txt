@@ -1,0 +1,6 @@
+file two
+String 4
+I love beer!
+String 5
+Hello!!!
+String 6

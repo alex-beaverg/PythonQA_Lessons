@@ -1,7 +1,7 @@
 # Homework 10, file 4 (2023.06.15)
 # Calculating Engine Tests (Unittest)
 
-# Run with cmd-line from current files' folder:
+# Run with cmd-line from current files_for_classwork' folder:
 #   All tests:
 #       python -m unittest -v
 # (Flag "-v" -> using for more information in console)

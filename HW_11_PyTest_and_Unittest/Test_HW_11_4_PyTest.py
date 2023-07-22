@@ -235,7 +235,7 @@ class TestFunctions:
                              [('.', ['HW_11_1_Classwork.py', 'HW_11_2_Functions.py', 'HW_11_3_Actions.py',
                                      'Test_HW_11_4_PyTest.py', 'Test_HW_11_5_UnitTest.py'])])
     def test_25_files_from_dir_var1(self, path, expected_result) -> None:
-        """Docstring: Parametrized test method for function to return list with files in directory. Variant 1"""
+        """Docstring: Parametrized test method for function to return list with files_for_classwork in directory. Variant 1"""
         result = files_from_dir_var1(path)
         assert result == expected_result, "[ASSERT MESSAGE]: Function does not work correctly!"
 
@@ -243,6 +243,6 @@ class TestFunctions:
                              [('.', ['HW_11_1_Classwork.py', 'HW_11_2_Functions.py', 'HW_11_3_Actions.py',
                                      'Test_HW_11_4_PyTest.py', 'Test_HW_11_5_UnitTest.py'])])
     def test_26_files_from_dir_var2(self, path, expected_result) -> None:
-        """Docstring: Parametrized test method for function to return list with files in directory. Variant 2"""
+        """Docstring: Parametrized test method for function to return list with files_for_classwork in directory. Variant 2"""
         result = files_from_dir_var2(path)
         assert result == expected_result, "[ASSERT MESSAGE]: Function does not work correctly!"

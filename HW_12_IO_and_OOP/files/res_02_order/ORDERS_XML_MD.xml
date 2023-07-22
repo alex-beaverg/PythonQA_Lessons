@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<orders>
+	<order>
+		<id>2769</id>
+		<status>in progress</status>
+		<books>
+			<book>
+				<title>Bad guys II</title>
+				<quantity>3</quantity>
+			</book>
+			<book>
+				<title>Chip and Dale</title>
+				<quantity>5</quantity>
+			</book>
+			<book>
+				<title>Three mini pigs</title>
+				<quantity>1</quantity>
+			</book>
+		</books>
+		<places>
+			<place>Book Shop 2</place>
+			<place>Book Shop 1</place>
+		</places>
+	</order>
+	<order>
+		<id>2805</id>
+		<status>paid</status>
+		<books>
+			<book>
+				<title>Three mini pigs</title>
+				<quantity>4</quantity>
+			</book>
+			<book>
+				<title>Chip and Dale</title>
+				<quantity>2</quantity>
+			</book>
+		</books>
+		<places>
+			<place>Book Shop 1</place>
+			<place>Book Shop 2</place>
+		</places>
+	</order>
+</orders>

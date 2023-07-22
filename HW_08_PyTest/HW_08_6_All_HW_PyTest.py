@@ -1,7 +1,7 @@
 # Homework 08, file 6 (2023.06.08)
 # All Homeworks Tests (PyTest)
 
-# Run with cmd-line from current files' folder:
+# Run with cmd-line from current files_for_classwork' folder:
 #   Current file:
 #       pytest HW_08_6_All_HW_PyTest.py -v
 # (Flag "-v" -> using for more information in console)

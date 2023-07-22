@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tripPackages>
+    <package id="paris">
+        <description>Unforgettable trip to Paris</description>
+        <price>$3000</price>
+        <duration>France, Paris</duration>
+        <quantity>15</quantity>
+    </package>
+    <package id="berlin">
+        <description>Beer trip to Berlin</description>
+        <price>$2000</price>
+        <duration>Germany, Berlin</duration>
+        <quantity>20</quantity>
+    </package>
+    <package id="seattle">
+        <description>Grunge trip to Seattle</description>
+        <price>$5900</price>
+        <duration>USA, Seattle</duration>
+        <quantity>7</quantity>
+    </package>
+    <package id="san-francisco">
+        <description>Thrash metal trip to Bay Area</description>
+        <price>$7000</price>
+        <duration>USA, San Francisco</duration>
+        <quantity>3</quantity>
+    </package>
+</tripPackages>

@@ -40,10 +40,10 @@ def variables() -> int:
 
 # Task 3
 def string_methods() -> int:
-    """Function for print results of string methods"""
+    """Function for print res_books of string methods"""
     print('\nTASK 3')
     print('-' * 6)
-    print('LOG_INFO: Print results of string methods')
+    print('LOG_INFO: Print res_books of string methods')
     print('Write your text, for example "hello my dear friends!!!":', end=' ')
 
     # text = input()[:25]
@@ -71,10 +71,10 @@ def string_methods() -> int:
 
 # Task 4
 def simple_calculations() -> int:
-    """Function for print results of simple calculations"""
+    """Function for print res_books of simple calculations"""
     print('\nTASK 4')
     print('-' * 6)
-    print('LOG_INFO: Print results of simple calculations')
+    print('LOG_INFO: Print res_books of simple calculations')
     print('Results of simple calculations:')
     print(f'10 + 10 = {10 + 10} | 10 - 10 = {10 - 10} | 10 * 10 = {10 * 10} | 10 / 10 = {10 / 10}')
     print(f'12 // 10 = {12 // 10} | 12 % 10 = {12 % 10} | 2 ** 4 = {2 ** 4}')

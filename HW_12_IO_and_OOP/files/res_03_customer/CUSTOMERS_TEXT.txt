@@ -1,0 +1,30 @@
+John
+Black
+M
+25
+Primary
+Seattle
+Secondary
+New York
++555-12-355-55-55
+j.black@usmail.com
+2805
+paid
+2769
+in progress
+
+Alex
+Smith
+M
+33
+Primary
+Chicago
+Secondary
+Toronto
++578-19-122-33-55
+a.smith@usmail.com
+2769
+in progress
+2805
+paid
+

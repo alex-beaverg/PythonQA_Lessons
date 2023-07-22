@@ -9,5 +9,10 @@
 - Unittest
 - Parametrized Tests (PyTest and Unittest)
 - SetUp and TearDown Methods for Tests (PyTest and Unittest)
-- Custom Decorator
+- Custom Decorators
+- Input/Output: 
+  - text
+  - binary (pickle)
+  - xml (MiniDom, ElementTree, SAX)
+  - json (json, orjson, jsonpickle)
 > 2023
