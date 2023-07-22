@@ -1,7 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <books>
   <book>
-    <id>97217287249</id>
+    <id>126202831697</id>
+    <title>Bad guys II</title>
+    <author>Michael Bay</author>
+    <quantity>23</quantity>
+    <price>29</price>
+    <places>
+      <place>Book Shop 2</place>
+      <place>Book Stock 1</place>
+    </places>
+  </book>
+  <book>
+    <id>126203340989</id>
     <title>Three mini pigs</title>
     <author>Dont Know 2nd</author>
     <quantity>12</quantity>
@@ -12,7 +23,7 @@
     </places>
   </book>
   <book>
-    <id>97217676081</id>
+    <id>126203340997</id>
     <title>Chip and Dale</title>
     <author>Dont Know</author>
     <quantity>25</quantity>

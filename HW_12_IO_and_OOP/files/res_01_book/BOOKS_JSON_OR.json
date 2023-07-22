@@ -1,6 +1,17 @@
 [
   {
-    "id": 97217287249,
+    "id": 126202831697,
+    "title": "Bad guys II",
+    "author": "Michael Bay",
+    "quantity": 23,
+    "price": 29,
+    "places": [
+      "Book Shop 2",
+      "Book Stock 1"
+    ]
+  },
+  {
+    "id": 126203340989,
     "title": "Three mini pigs",
     "author": "Dont Know 2nd",
     "quantity": 12,
@@ -11,7 +22,7 @@
     ]
   },
   {
-    "id": 97217676081,
+    "id": 126203340997,
     "title": "Chip and Dale",
     "author": "Dont Know",
     "quantity": 25,

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 126203415449,
+    "title": "Bad guys III",
+    "author": "Michael Bay",
+    "quantity": 51,
+    "price": 35,
+    "places": []
+  },
+  {
+    "id": 126203415469,
+    "title": "Three mini pigs. Part 2",
+    "author": "Dont Know 2nd",
+    "quantity": 15,
+    "price": 18,
+    "places": []
+  },
+  {
+    "id": 126203415437,
+    "title": "Chip and Dale. Part 2",
+    "author": "Dont Know",
+    "quantity": 30,
+    "price": 15,
+    "places": []
+  }
+]

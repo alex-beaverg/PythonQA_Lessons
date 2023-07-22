@@ -1,6 +1,18 @@
 [
     {
-        "id": "2769",
+        "id": "2217",
+        "status": "in progress",
+        "books": {
+            "Three mini pigs": 5,
+            "Bad guys II": 1
+        },
+        "places": [
+            "Book Shop 1",
+            "Book Shop 2"
+        ]
+    },
+    {
+        "id": "0261",
         "status": "in progress",
         "books": {
             "Bad guys II": 3,
@@ -13,7 +25,7 @@
         ]
     },
     {
-        "id": "2805",
+        "id": "2237",
         "status": "paid",
         "books": {
             "Three mini pigs": 4,

@@ -51,11 +51,12 @@ class TxtBookFuncs:
             book.price = lines[i]
             i += 1
             while True:
-                book.places.append(lines[i])
-                i += 1
                 if i == len(lines) or lines[i] == '':
                     i += 1
                     break
+                else:
+                    book.places.append(lines[i])
+                    i += 1
             if not single:
                 books.append(book)
                 book = Book('', '', 0, 0)
@@ -201,7 +202,7 @@ class XmlElementTreeBookFuncs:
         root = tree.getroot()
         output, title, author, quantity, price, places, book_id = [], '', '', 0, 0, [], ''
         for element in root.iter():
-            if element.text.strip() != '':
+            if element.tag == 'places' or element.text.strip() != '':
                 if element.tag == 'id':
                     book_id = element.text
                 if element.tag == 'title':

@@ -1,5 +1,20 @@
 [
   {
+    "name": "Kate",
+    "surname": "Johnson",
+    "sex": "F",
+    "age": 29,
+    "addresses": {
+      "Primary": "Austin",
+      "Secondary": "Montreal"
+    },
+    "phone": "+529-23-366-44-11",
+    "email": "k.johnson@usmail.com",
+    "orders": {
+      "2237": "paid"
+    }
+  },
+  {
     "name": "Alex",
     "surname": "Smith",
     "sex": "M",
@@ -11,8 +26,8 @@
     "phone": "+578-19-122-33-55",
     "email": "a.smith@usmail.com",
     "orders": {
-      "2769": "in progress",
-      "2805": "paid"
+      "0261": "in progress",
+      "2237": "paid"
     }
   },
   {
@@ -27,8 +42,8 @@
     "phone": "+555-12-355-55-55",
     "email": "j.black@usmail.com",
     "orders": {
-      "2805": "paid",
-      "2769": "in progress"
+      "2237": "paid",
+      "0261": "in progress"
     }
   }
 ]

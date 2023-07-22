@@ -1,7 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <orders>
   <order>
-    <id>2769</id>
+    <id>2217</id>
+    <status>in progress</status>
+    <books>
+      <book>
+        <title>Three mini pigs</title>
+        <quantity>5</quantity>
+      </book>
+      <book>
+        <title>Bad guys II</title>
+        <quantity>1</quantity>
+      </book>
+    </books>
+    <places>
+      <place>Book Shop 1</place>
+      <place>Book Shop 2</place>
+    </places>
+  </order>
+  <order>
+    <id>0261</id>
     <status>in progress</status>
     <books>
       <book>
@@ -23,7 +41,7 @@
     </places>
   </order>
   <order>
-    <id>2805</id>
+    <id>2237</id>
     <status>paid</status>
     <books>
       <book>

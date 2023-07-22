@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<books>
+	<book>
+		<id>126203415449</id>
+		<title>Bad guys III</title>
+		<author>Michael Bay</author>
+		<quantity>51</quantity>
+		<price>35</price>
+		<places/>
+	</book>
+	<book>
+		<id>126203415469</id>
+		<title>Three mini pigs. Part 2</title>
+		<author>Dont Know 2nd</author>
+		<quantity>15</quantity>
+		<price>18</price>
+		<places/>
+	</book>
+	<book>
+		<id>126203415437</id>
+		<title>Chip and Dale. Part 2</title>
+		<author>Dont Know</author>
+		<quantity>30</quantity>
+		<price>15</price>
+		<places/>
+	</book>
+</books>
