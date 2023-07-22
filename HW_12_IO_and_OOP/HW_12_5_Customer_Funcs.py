@@ -62,11 +62,12 @@ class TxtCustomerFuncs:
             customer.email = lines[i]
             i += 1
             while True:
-                customer.orders[lines[i]] = lines[i + 1]
-                i += 2
                 if i == len(lines) or lines[i] == '':
                     i += 1
                     break
+                else:
+                    customer.orders[lines[i]] = lines[i + 1]
+                    i += 2
             if not single:
                 customers.append(customer)
                 customer = Customer('', '', '', 0, {}, '', '')
@@ -251,7 +252,7 @@ class XmlElementTreeCustomerFuncs:
         output, age, addresses, orders = [], 0, {}, {}
         name, surname, sex, phone, email, addr_type, addr_text, order_id, status = '', '', '', '', '', '', '', '', ''
         for element in root.iter():
-            if element.text.strip() != '':
+            if element.tag == 'orders' or element.text.strip() != '':
                 if element.tag == 'name':
                     name = element.text
                 if element.tag == 'surname':

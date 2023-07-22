@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Mary",
+    "surname": "Simpson",
+    "sex": "F",
+    "age": 21,
+    "addresses": {
+      "Primary": "London",
+      "Secondary": "Vienna"
+    },
+    "phone": "+315-17-622-33-16",
+    "email": "m.simpson@eumail.com",
+    "orders": {}
+  },
+  {
+    "name": "Harold",
+    "surname": "Eugen",
+    "sex": "M",
+    "age": 31,
+    "addresses": {
+      "Primary": "Paris",
+      "Secondary": "Madrid"
+    },
+    "phone": "+311-14-651-89-75",
+    "email": "h.eugen@eumail.com",
+    "orders": {}
+  },
+  {
+    "name": "Mister",
+    "surname": "X",
+    "sex": "M",
+    "age": 40,
+    "addresses": {
+      "Primary": "Oslo",
+      "Secondary": "Berlin"
+    },
+    "phone": "+322-10-356-58-95",
+    "email": "mister.x@eumail.com",
+    "orders": {}
+  }
+]

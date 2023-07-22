@@ -1,4 +1,4 @@
-8389
+3225
 paid
 Three mini pigs
 4
@@ -9,7 +9,7 @@ Book Shop 1
 Book Shop 2
 
 
-7085
+2485
 in progress
 Bad guys II
 3
@@ -22,7 +22,7 @@ Book Shop 2
 Book Shop 1
 
 
-8085
+0477
 in progress
 Three mini pigs
 5

@@ -971,3 +971,186 @@ print('\n3 orders without adds from xml file (SAX):')
 for order in orders_18:
     order.print_information()
 print()
+
+# ----------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH TEXT FILES (CUSTOMERS):
+# Create customers:
+customer_4 = Customer('Mister', 'X', 'M', 40, {'Primary': 'Oslo', 'Secondary': 'Berlin'}, '+322-10-356-58-95',
+                      'mister.x@eumail.com')
+customer_5 = Customer('Harold', 'Eugen', 'M', 31, {'Primary': 'Paris', 'Secondary': 'Madrid'}, '+311-14-651-89-75',
+                      'h.eugen@eumail.com')
+customer_6 = Customer('Mary', 'Simpson', 'F', 21, {'Primary': 'London', 'Secondary': 'Vienna'}, '+315-17-622-33-16',
+                      'm.simpson@eumail.com')
+path_customers_text_without_orders = 'files/res_03_customer/CUSTOMERS_TEXT_WITHOUT_ORDERS.txt'
+# Create text file with customer without orders:
+TxtCustomerFuncs.write_customers_to_text_file(path_customers_text_without_orders, customer_4)
+
+# Read text file with customer without orders:
+customer_2a = TxtCustomerFuncs.read_customers_from_text_file(path_customers_text_without_orders)
+print('\nCustomer without orders from text file:')
+customer_2a.print_information()
+
+# Add another customers without orders to text file:
+TxtCustomerFuncs.write_customers_to_text_file(path_customers_text_without_orders, customer_5, 'a')
+TxtCustomerFuncs.write_customers_to_text_file(path_customers_text_without_orders, customer_6, 'a')
+
+# Read text file with customers without orders:
+customers_11 = TxtCustomerFuncs.read_customers_from_text_file(path_customers_text_without_orders, False)
+print('\n3 customers without orders from text file:')
+for customer in customers_11:
+    customer.print_information()
+print()
+
+# ------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH BINARY FILES (CUSTOMERS):
+path_customers_binary_without_orders = 'files/res_03_customer/CUSTOMERS_BINARY_WITHOUT_ORDERS.binary'
+# Create binary file with customer without orders:
+BinCustomerFuncs.write_customers_to_binary_file(path_customers_binary_without_orders, customer_4)
+
+# Read binary file with customer without orders:
+customer_2b = BinCustomerFuncs.read_customers_from_binary_file(path_customers_binary_without_orders)
+print('Customer without orders from binary file:')
+customer_2b.print_information()
+
+# Add another customers without orders to binary file:
+BinCustomerFuncs.write_customers_to_binary_file(path_customers_binary_without_orders, customer_5, 'ab')
+BinCustomerFuncs.write_customers_to_binary_file(path_customers_binary_without_orders, customer_6, 'ab')
+
+# Read binary file with customers without orders:
+customers_12 = BinCustomerFuncs.read_customers_from_binary_file(path_customers_binary_without_orders, False)
+print('\n3 customers without orders from binary file:')
+for customer in customers_12:
+    customer.print_information()
+print()
+
+# -------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (MINIDOM) (CUSTOMERS):
+path_customers_xml_md_without_orders = 'files/res_03_customer/CUSTOMERS_XML_MD_WITHOUT_ORDERS.xml'
+# Create xml file with customer without orders:
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_without_orders, customer_4)
+
+# Read xml file with customer without orders:
+customer_2c = XmlMiniDomCustomerFuncs.read_customers_from_xml_file(path_customers_xml_md_without_orders)
+print('Customer without orders from xml file (minidom):')
+customer_2c.print_information()
+
+# Add another customers without orders to xml file:
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_without_orders, customer_5, False)
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_without_orders, customer_6, False)
+
+# Read xml file with customers without orders:
+customers_13 = XmlMiniDomCustomerFuncs.read_customers_from_xml_file(path_customers_xml_md_without_orders, False)
+print('\n3 customers without orders from xml file (minidom):')
+for customer in customers_13:
+    customer.print_information()
+print()
+
+# -----------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (ELEMENTTREE) (CUSTOMERS):
+path_customers_xml_et_without_orders = 'files/res_03_customer/CUSTOMERS_XML_ET_WITHOUT_ORDERS.xml'
+# Create xml file with customer without orders:
+XmlElementTreeCustomerFuncs.write_customers_to_xml_file(path_customers_xml_et_without_orders, customer_4)
+
+# Read xml file with customer without orders:
+customer_2d = XmlElementTreeCustomerFuncs.read_customers_from_xml_file(path_customers_xml_et_without_orders)
+print('Customer without orders from xml file (elementtree):')
+customer_2d.print_information()
+
+# Add another customers without orders to xml file:
+XmlElementTreeCustomerFuncs.write_customers_to_xml_file(path_customers_xml_et_without_orders, customer_5, False)
+XmlElementTreeCustomerFuncs.write_customers_to_xml_file(path_customers_xml_et_without_orders, customer_6, False)
+
+# Read xml file with customers without orders:
+customers_14 = XmlElementTreeCustomerFuncs.read_customers_from_xml_file(path_customers_xml_et_without_orders, False)
+print('\n3 customers without orders from xml file (elementtree):')
+for customer in customers_14:
+    customer.print_information()
+print()
+
+# ------------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (JSON MODULE) (CUSTOMERS):
+path_customers_json_without_orders = 'files/res_03_customer/CUSTOMERS_JSON_WITHOUT_ORDERS.json'
+# Create json file with customer without orders:
+JsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_without_orders, customer_4)
+
+# Read json file with customer without orders:
+customer_2e = JsonModuleCustomerFuncs.read_customers_from_json_file(path_customers_json_without_orders)
+print('Customer without orders from json file:')
+customer_2e.print_information()
+
+# Add another customers without orders to json file:
+JsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_without_orders, customer_5, False)
+JsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_without_orders, customer_6, False)
+
+# Read json file with customers without orders:
+customers_15 = JsonModuleCustomerFuncs.read_customers_from_json_file(path_customers_json_without_orders, False)
+print('\n3 customers without orders from json file:')
+for customer in customers_15:
+    customer.print_information()
+print()
+
+# --------------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (ORJSON MODULE) (CUSTOMERS):
+path_customers_json_or_without_orders = 'files/res_03_customer/CUSTOMERS_JSON_OR_WITHOUT_ORDERS.json'
+# Create json file with customer without orders:
+OrjsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_or_without_orders, customer_4)
+
+# Read json file with customer without orders:
+customer_2f = OrjsonModuleCustomerFuncs.read_customers_from_json_file(path_customers_json_or_without_orders)
+print('Customer without orders from json file (orjson):')
+customer_2f.print_information()
+
+# Add another customers without orders to json file:
+OrjsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_or_without_orders, customer_5, False)
+OrjsonModuleCustomerFuncs.write_customers_to_json_file(path_customers_json_or_without_orders, customer_6, False)
+
+# Read json file with customers without orders:
+customers_16 = OrjsonModuleCustomerFuncs.read_customers_from_json_file(path_customers_json_or_without_orders, False)
+print('\n3 customers without orders from json file (orjson):')
+for customer in customers_16:
+    customer.print_information()
+print()
+
+# ------------------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (JSONPICKLE MODULE) (CUSTOMERS):
+path_customers_json_p_without_orders = 'files/res_03_customer/CUSTOMERS_JSON_P_WITHOUT_ORDERS.json'
+# Create json file with customer without orders:
+JsonPickleCustomerFuncs.write_customers_to_json_file(path_customers_json_p_without_orders, customer_4)
+
+# Read json file with customer without orders:
+customer_2g = JsonPickleCustomerFuncs.read_customers_from_json_file(path_customers_json_p_without_orders)
+print('Customer without orders from json file (jsonpickle):')
+customer_2g.print_information()
+
+# Add another customers without orders to json file:
+JsonPickleCustomerFuncs.write_customers_to_json_file(path_customers_json_p_without_orders, customer_5, False)
+JsonPickleCustomerFuncs.write_customers_to_json_file(path_customers_json_p_without_orders, customer_6, False)
+
+# Read json file with customers without orders:
+customers_16 = JsonPickleCustomerFuncs.read_customers_from_json_file(path_customers_json_p_without_orders, False)
+print('\n3 customers without orders from json file (jsonpickle):')
+for customer in customers_16:
+    customer.print_information()
+print()
+
+# ---------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (SAX) (CUSTOMERS):
+path_customers_xml_md_and_sax_woo = 'files/res_03_customer/CUSTOMERS_XML_MD_AND_SAX_WOO.xml'
+# Create xml file with customer without orders (using minidom):
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_and_sax_woo, customer_4)
+
+# Read XML file with customer without orders:
+customer_2h = XmlSaxReadCustomerFuncs.read_customers_from_xml_file(path_customers_xml_md_and_sax_woo)
+print('Customer without orders from xml file (SAX):')
+customer_2h.print_information()
+
+# Add another customers without orders to xml file (using minidom):
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_and_sax_woo, customer_5, False)
+XmlMiniDomCustomerFuncs.write_customers_to_xml_file(path_customers_xml_md_and_sax_woo, customer_6, False)
+
+# Read xml file with customers without orders:
+customers_18 = XmlSaxReadCustomerFuncs.read_customers_from_xml_file(path_customers_xml_md_and_sax_woo)
+print('\n3 customers without orders from xml file (SAX):')
+for customer in customers_18:
+    customer.print_information()
+print()

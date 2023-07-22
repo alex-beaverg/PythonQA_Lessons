@@ -2,14 +2,14 @@ D:\Code\Python\ITSTEP\PythonQA_Lessons\HW_12_IO_and_OOP\HW_12_6_Actions.py
 
 Books after creating them:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
 Price: 35
 Places:
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -20,7 +20,7 @@ Book "Chip and Dale" has not been added to "Book Shop 2"
 
 Books after adding them to shops and stocks:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -30,7 +30,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -41,7 +41,7 @@ Places:
 
 Book from text file:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -53,7 +53,7 @@ Places:
 
 3 books from text file:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -63,7 +63,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -72,7 +72,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -83,7 +83,7 @@ Places:
 
 Book from binary file:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -95,7 +95,7 @@ Places:
 
 3 books from binary file:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -105,7 +105,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -114,7 +114,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -125,7 +125,7 @@ Places:
 
 Book from xml file (minidom):
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -137,7 +137,7 @@ Places:
 
 3 books from xml file (minidom):
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -146,7 +146,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -155,7 +155,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -167,7 +167,7 @@ Places:
 
 Book from xml file (elementtree):
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -179,7 +179,7 @@ Places:
 
 3 books from xml file (elementtree):
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -188,7 +188,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -197,7 +197,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -209,7 +209,7 @@ Places:
 
 Book from json file:
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -221,7 +221,7 @@ Places:
 
 3 books from json file:
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -230,7 +230,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -239,7 +239,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -251,7 +251,7 @@ Places:
 
 Book from json file (orjson):
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -263,7 +263,7 @@ Places:
 
 3 books from json file (orjson):
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -272,7 +272,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -281,7 +281,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -293,7 +293,7 @@ Places:
 
 Book from json file (jsonpickle):
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -305,7 +305,7 @@ Places:
 
 3 books from json file (jsonpickle):
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -314,7 +314,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -323,7 +323,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -335,7 +335,7 @@ Places:
 
 Order after adding books:
 
-Order ID: 2381
+Order ID: 3225
 Status: in progress
 Books:
 	Three mini pigs: 4
@@ -346,7 +346,7 @@ Places:
 
 Order after change status:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -357,7 +357,7 @@ Places:
 
 Order after adding books:
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -369,7 +369,7 @@ Places:
 
 Order from text file:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -380,7 +380,7 @@ Places:
 
 3 orders from text file:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -389,7 +389,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -399,7 +399,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -410,7 +410,7 @@ Places:
 
 Order from binary file:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -421,7 +421,7 @@ Places:
 
 3 orders from binary file:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -430,7 +430,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -440,7 +440,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -451,7 +451,7 @@ Places:
 
 Order from xml file (minidom):
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -462,7 +462,7 @@ Places:
 
 3 orders from xml file (minidom):
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -471,7 +471,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -481,7 +481,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -492,7 +492,7 @@ Places:
 
 Order from xml file (elementtree):
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -503,7 +503,7 @@ Places:
 
 3 orders from xml file (elementtree):
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -512,7 +512,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -522,7 +522,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -533,7 +533,7 @@ Places:
 
 Order from json file:
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -544,7 +544,7 @@ Places:
 
 3 orders from json file:
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -553,7 +553,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -563,7 +563,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -574,7 +574,7 @@ Places:
 
 Order from json file (orjson):
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -585,7 +585,7 @@ Places:
 
 3 orders from json file (orjson):
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -594,7 +594,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -604,7 +604,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -615,7 +615,7 @@ Places:
 
 Order from json file (jsonpickle):
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -626,7 +626,7 @@ Places:
 
 3 orders from json file (jsonpickle):
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -635,7 +635,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -645,7 +645,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -679,8 +679,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Customer from text file:
 
@@ -694,8 +694,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from text file:
 
@@ -709,8 +709,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Name: Alex
 Surname: Smith
@@ -722,8 +722,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: Kate
 Surname: Johnson
@@ -735,7 +735,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Customer from binary file:
 
@@ -749,8 +749,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from binary file:
 
@@ -764,8 +764,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Name: Alex
 Surname: Smith
@@ -777,8 +777,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: Kate
 Surname: Johnson
@@ -790,7 +790,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Customer from xml file (minidom):
 
@@ -804,8 +804,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from xml file (minidom):
 
@@ -819,7 +819,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -831,8 +831,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -844,8 +844,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Customer from xml file (elementtree):
 
@@ -859,8 +859,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from xml file (elementtree):
 
@@ -874,7 +874,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -886,8 +886,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -899,8 +899,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Customer from json file:
 
@@ -914,8 +914,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from json file:
 
@@ -929,7 +929,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -941,8 +941,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -954,8 +954,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Customer from json file (orjson):
 
@@ -969,8 +969,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from json file (orjson):
 
@@ -984,7 +984,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -996,8 +996,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -1009,8 +1009,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Customer from json file (jsonpickle):
 
@@ -1024,8 +1024,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from json file (jsonpickle):
 
@@ -1039,7 +1039,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -1051,8 +1051,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -1064,12 +1064,12 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Book from xml file (SAX):
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -1081,7 +1081,7 @@ Places:
 
 3 books from xml file (SAX):
 
-Book ID: 138495714129
+Book ID: 135107834769
 Title: Bad guys II
 Author: Michael Bay
 Quantity: 23
@@ -1090,7 +1090,7 @@ Places:
 	Book Shop 2
 	Book Stock 1
 
-Book ID: 138496215229
+Book ID: 135108784985
 Title: Three mini pigs
 Author: Dont Know 2nd
 Quantity: 12
@@ -1099,7 +1099,7 @@ Places:
 	Book Shop 1
 	Book Stock 1
 
-Book ID: 138496215237
+Book ID: 135108706777
 Title: Chip and Dale
 Author: Dont Know
 Quantity: 25
@@ -1111,7 +1111,7 @@ Places:
 
 Order from xml file (SAX):
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -1122,7 +1122,7 @@ Places:
 
 3 orders from xml file (SAX):
 
-Order ID: 2361
+Order ID: 0477
 Status: in progress
 Books:
 	Three mini pigs: 5
@@ -1131,7 +1131,7 @@ Places:
 	Book Shop 1
 	Book Shop 2
 
-Order ID: 2693
+Order ID: 2485
 Status: in progress
 Books:
 	Bad guys II: 3
@@ -1141,7 +1141,7 @@ Places:
 	Book Shop 2
 	Book Shop 1
 
-Order ID: 2381
+Order ID: 3225
 Status: paid
 Books:
 	Three mini pigs: 4
@@ -1162,8 +1162,8 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 3 customers from xml file (SAX):
 
@@ -1177,7 +1177,7 @@ Addresses:
 Phone: +529-23-366-44-11
 Email: k.johnson@usmail.com
 Orders:
-	2381: paid
+	3225: paid
 
 Name: Alex
 Surname: Smith
@@ -1189,8 +1189,8 @@ Addresses:
 Phone: +578-19-122-33-55
 Email: a.smith@usmail.com
 Orders:
-	2693: in progress
-	2381: paid
+	2485: in progress
+	3225: paid
 
 Name: John
 Surname: Black
@@ -1202,12 +1202,12 @@ Addresses:
 Phone: +555-12-355-55-55
 Email: j.black@usmail.com
 Orders:
-	2381: paid
-	2693: in progress
+	3225: paid
+	2485: in progress
 
 Book without places from text file:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1216,21 +1216,21 @@ Places:
 
 3 books without places from text file:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
 Price: 15
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
@@ -1239,7 +1239,7 @@ Places:
 
 Book without places from binary file:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1248,21 +1248,21 @@ Places:
 
 3 books without places from binary file:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
 Price: 15
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
@@ -1271,7 +1271,7 @@ Places:
 
 Book without places from xml file (minidom):
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1280,21 +1280,21 @@ Places:
 
 3 books without places from xml file (minidom):
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1303,7 +1303,7 @@ Places:
 
 Book without places from xml file (elementtree):
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1312,21 +1312,21 @@ Places:
 
 3 books without places from xml file (elementtree):
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1335,7 +1335,7 @@ Places:
 
 Book without places from json file:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1344,21 +1344,21 @@ Places:
 
 3 books without places from json file:
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1367,7 +1367,7 @@ Places:
 
 Book without places from json file (orjson):
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1376,21 +1376,21 @@ Places:
 
 3 books without places from json file (orjson):
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1399,7 +1399,7 @@ Places:
 
 Book without places from json file (jsonpickle):
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1408,21 +1408,21 @@ Places:
 
 3 books without places from json file (jsonpickle):
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1431,7 +1431,7 @@ Places:
 
 Book without places from xml file (SAX):
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
@@ -1440,26 +1440,603 @@ Places:
 
 3 books without places from xml file (SAX):
 
-Book ID: 138496285593
+Book ID: 135109396801
 Title: Bad guys III
 Author: Michael Bay
 Quantity: 51
 Price: 35
 Places:
 
-Book ID: 138496285613
+Book ID: 135109397429
 Title: Three mini pigs. Part 2
 Author: Dont Know 2nd
 Quantity: 15
 Price: 18
 Places:
 
-Book ID: 138496285581
+Book ID: 135108803961
 Title: Chip and Dale. Part 2
 Author: Dont Know
 Quantity: 30
 Price: 15
 Places:
+
+Order without adds from text file:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from text file:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order without adds from binary file:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from binary file:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order without adds from xml file (minidom):
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from xml file (minidom):
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order without adds from xml file (elementtree):
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from xml file (elementtree):
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order without adds from json file:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from json file:
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order without adds from json file (orjson):
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from json file (orjson):
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order without adds from json file (jsonpickle):
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from json file (jsonpickle):
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+Order without adds from xml file (SAX):
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+3 orders without adds from xml file (SAX):
+
+Order ID: 0945
+Status: in progress
+Books:
+Places:
+
+Order ID: 5653
+Status: in progress
+Books:
+Places:
+
+Order ID: 3073
+Status: in progress
+Books:
+Places:
+
+
+Customer without orders from text file:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from text file:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Customer without orders from binary file:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from binary file:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Customer without orders from xml file (minidom):
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from xml file (minidom):
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Customer without orders from xml file (elementtree):
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from xml file (elementtree):
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Customer without orders from json file:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from json file:
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Customer without orders from json file (orjson):
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from json file (orjson):
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Customer without orders from json file (jsonpickle):
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from json file (jsonpickle):
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+Customer without orders from xml file (SAX):
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
+
+3 customers without orders from xml file (SAX):
+
+Name: Mary
+Surname: Simpson
+Sex: F
+Age: 21
+Addresses:
+	Primary: London
+	Secondary: Vienna
+Phone: +315-17-622-33-16
+Email: m.simpson@eumail.com
+Orders:
+
+Name: Harold
+Surname: Eugen
+Sex: M
+Age: 31
+Addresses:
+	Primary: Paris
+	Secondary: Madrid
+Phone: +311-14-651-89-75
+Email: h.eugen@eumail.com
+Orders:
+
+Name: Mister
+Surname: X
+Sex: M
+Age: 40
+Addresses:
+	Primary: Oslo
+	Secondary: Berlin
+Phone: +322-10-356-58-95
+Email: mister.x@eumail.com
+Orders:
 
 
 Process finished with exit code 0
