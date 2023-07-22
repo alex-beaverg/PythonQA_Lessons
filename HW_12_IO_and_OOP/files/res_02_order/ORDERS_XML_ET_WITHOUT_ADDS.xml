@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<orders>
+  <order>
+    <id>6749</id>
+    <status>in progress</status>
+    <books/>
+    <places/>
+  </order>
+  <order>
+    <id>6933</id>
+    <status>in progress</status>
+    <books/>
+    <places/>
+  </order>
+  <order>
+    <id>7173</id>
+    <status>in progress</status>
+    <books/>
+    <places/>
+  </order>
+</orders>

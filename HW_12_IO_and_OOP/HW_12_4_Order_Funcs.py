@@ -47,17 +47,19 @@ class TxtOrderFuncs:
             order.status = lines[i]
             i += 1
             while True:
-                order.books[lines[i]] = lines[i + 1]
-                i += 2
                 if lines[i] == '':
                     i += 1
                     break
+                else:
+                    order.books[lines[i]] = lines[i + 1]
+                    i += 2
             while True:
-                order.places.append(lines[i])
-                i += 1
                 if i == len(lines) or lines[i] == '':
                     i += 2
                     break
+                else:
+                    order.places.append(lines[i])
+                    i += 1
             if not single:
                 orders.append(order)
                 order = Order()
@@ -213,7 +215,7 @@ class XmlElementTreeOrderFuncs:
         root = tree.getroot()
         output, title, quantity, order_id, status, books, places = [], '', '', '', '', {}, []
         for element in root.iter():
-            if element.text.strip() != '':
+            if element.tag == 'books' or element.tag == 'places' or element.text.strip() != '':
                 if element.tag == 'id':
                     order_id = element.text
                 if element.tag == 'status':

@@ -791,3 +791,183 @@ print('\n3 books without places from xml file (SAX):')
 for book in books_18:
     book.print_information()
 print()
+
+# -------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH TEXT FILES (ORDERS):
+# Create orders:
+order_4 = Order()
+order_5 = Order()
+order_6 = Order()
+path_orders_text_without_adds = 'files/res_02_order/ORDERS_TEXT_WITHOUT_ADDS.txt'
+# Create text file with order without adds:
+TxtOrderFuncs.write_orders_to_text_file(path_orders_text_without_adds, order_4)
+
+# Read text file with order without adds:
+order_2a = TxtOrderFuncs.read_orders_from_text_file(path_orders_text_without_adds)
+print('Order without adds from text file:')
+order_2a.print_information()
+
+# Add another orders without adds to text file:
+TxtOrderFuncs.write_orders_to_text_file(path_orders_text_without_adds, order_5, 'a')
+TxtOrderFuncs.write_orders_to_text_file(path_orders_text_without_adds, order_6, 'a')
+
+# Read text file with orders without adds:
+orders_11 = TxtOrderFuncs.read_orders_from_text_file(path_orders_text_without_adds, False)
+print('\n3 orders without adds from text file:')
+for order in orders_11:
+    order.print_information()
+print()
+
+# ---------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH BINARY FILES (ORDERS):
+path_orders_binary_without_adds = 'files/res_02_order/ORDERS_BINARY_WITHOUT_ADDS.binary'
+# Create binary file with order without adds:
+BinOrderFuncs.write_orders_to_binary_file(path_orders_binary_without_adds, order_4)
+
+# Read binary file with order without adds:
+order_2b = BinOrderFuncs.read_orders_from_binary_file(path_orders_binary_without_adds)
+print('Order without adds from binary file:')
+order_2b.print_information()
+
+# Add another orders without adds to binary file:
+BinOrderFuncs.write_orders_to_binary_file(path_orders_binary_without_adds, order_5, 'ab')
+BinOrderFuncs.write_orders_to_binary_file(path_orders_binary_without_adds, order_6, 'ab')
+
+# Read binary file with orders without adds:
+orders_12 = BinOrderFuncs.read_orders_from_binary_file(path_orders_binary_without_adds, False)
+print('\n3 orders without adds from binary file:')
+for order in orders_12:
+    order.print_information()
+print()
+
+# ----------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (MINIDOM) (ORDERS):
+path_orders_xml_md_without_adds = 'files/res_02_order/ORDERS_XML_MD_WITHOUT_ADDS.xml'
+# Create xml file with order without adds:
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_without_adds, order_4)
+
+# Read xml file with order without adds:
+order_2c = XmlMiniDomOrderFuncs.read_orders_from_xml_file(path_orders_xml_md_without_adds)
+print('Order without adds from xml file (minidom):')
+order_2c.print_information()
+
+# Add another orders without adds to xml file:
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_without_adds, order_5, False)
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_without_adds, order_6, False)
+
+# Read xml file with orders without adds:
+orders_13 = XmlMiniDomOrderFuncs.read_orders_from_xml_file(path_orders_xml_md_without_adds, False)
+print('\n3 orders without adds from xml file (minidom):')
+for order in orders_13:
+    order.print_information()
+print()
+
+# --------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (ELEMENTTREE) (ORDERS):
+path_orders_xml_et_without_adds = 'files/res_02_order/ORDERS_XML_ET_WITHOUT_ADDS.xml'
+# Create xml file with order without adds:
+XmlElementTreeOrderFuncs.write_orders_to_xml_file(path_orders_xml_et_without_adds, order_4)
+
+# Read xml file with order without adds:
+order_2d = XmlElementTreeOrderFuncs.read_orders_from_xml_file(path_orders_xml_et_without_adds)
+print('Order without adds from xml file (elementtree):')
+order_2d.print_information()
+
+# Add another orders without adds to xml file:
+XmlElementTreeOrderFuncs.write_orders_to_xml_file(path_orders_xml_et_without_adds, order_5, False)
+XmlElementTreeOrderFuncs.write_orders_to_xml_file(path_orders_xml_et_without_adds, order_6, False)
+
+# Read xml file with orders without adds:
+orders_14 = XmlElementTreeOrderFuncs.read_orders_from_xml_file(path_orders_xml_et_without_adds, False)
+print('\n3 orders without adds from xml file (elementtree):')
+for order in orders_14:
+    order.print_information()
+print()
+
+# ---------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (JSON MODULE) (ORDERS):
+path_orders_json_without_adds = 'files/res_02_order/ORDERS_JSON_WITHOUT_ADDS.json'
+# Create json file with order without adds:
+JsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_without_adds, order_4)
+
+# Read json file with order without adds:
+order_2e = JsonModuleOrderFuncs.read_orders_from_json_file(path_orders_json_without_adds)
+print('Order without adds from json file:')
+order_2e.print_information()
+
+# Add another orders without adds to json file:
+JsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_without_adds, order_5, False)
+JsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_without_adds, order_6, False)
+
+# Read json file with orders without adds:
+orders_15 = JsonModuleOrderFuncs.read_orders_from_json_file(path_orders_json_without_adds, False)
+print('\n3 orders without adds from json file:')
+for order in orders_15:
+    order.print_information()
+print()
+
+# -----------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (ORJSON MODULE) (ORDERS):
+path_orders_json_or_without_adds = 'files/res_02_order/ORDERS_JSON_OR_WITHOUT_ADDS.json'
+# Create json file with order without adds:
+OrjsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_or_without_adds, order_4)
+
+# Read json file with order without adds:
+order_2f = OrjsonModuleOrderFuncs.read_orders_from_json_file(path_orders_json_or_without_adds)
+print('Order without adds from json file (orjson):')
+order_2f.print_information()
+
+# Add another orders without adds to json file:
+OrjsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_or_without_adds, order_5, False)
+OrjsonModuleOrderFuncs.write_orders_to_json_file(path_orders_json_or_without_adds, order_6, False)
+
+# Read json file with orders without adds:
+orders_16 = OrjsonModuleOrderFuncs.read_orders_from_json_file(path_orders_json_or_without_adds, False)
+print('\n3 orders without adds from json file (orjson):')
+for order in orders_16:
+    order.print_information()
+print()
+
+# ---------------------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH JSON FILES (JSONPICKLE MODULE) (ORDERS):
+path_orders_json_p_without_adds = 'files/res_02_order/ORDERS_JSON_P_WITHOUT_ADDS.json'
+# Create json file with order without adds:
+JsonPickleOrderFuncs.write_orders_to_json_file(path_orders_json_p_without_adds, order_4)
+
+# Read json file with order without adds:
+order_2g = JsonPickleOrderFuncs.read_orders_from_json_file(path_orders_json_p_without_adds)
+print('Order without adds from json file (jsonpickle):')
+order_2g.print_information()
+
+# Add another orders without adds to json file:
+JsonPickleOrderFuncs.write_orders_to_json_file(path_orders_json_p_without_adds, order_5, False)
+JsonPickleOrderFuncs.write_orders_to_json_file(path_orders_json_p_without_adds, order_6, False)
+
+# Read json file with orders without adds:
+orders_17 = JsonPickleOrderFuncs.read_orders_from_json_file(path_orders_json_p_without_adds, False)
+print('\n3 orders without adds from json file (jsonpickle):')
+for order in orders_17:
+    order.print_information()
+print()
+
+# ------------------------------------------------------
+# ADDITIONAL ACTIONS (I/O) WITH XML FILES (SAX) (ORDERS):
+path_orders_xml_md_and_sax_woa = 'files/res_02_order/ORDERS_XML_MD_AND_SAX_WOA.xml'
+# Create xml file with order without adds (using minidom):
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_and_sax_woa, order_4)
+
+# Read XML file with order without adds:
+order_2h = XmlSaxReadOrderFuncs.read_orders_from_xml_file(path_orders_xml_md_and_sax_woa)
+print('Order without adds from xml file (SAX):')
+order_2h.print_information()
+
+# Add another orders without adds to xml file (using minidom):
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_and_sax_woa, order_5, False)
+XmlMiniDomOrderFuncs.write_orders_to_xml_file(path_orders_xml_md_and_sax_woa, order_6, False)
+
+# Read xml file with orders without adds:
+orders_18 = XmlSaxReadOrderFuncs.read_orders_from_xml_file(path_orders_xml_md_and_sax_woa)
+print('\n3 orders without adds from xml file (SAX):')
+for order in orders_18:
+    order.print_information()
+print()
