@@ -19,7 +19,7 @@ class IOEngine:
                 for line in file_read_2:
                     lines.append(line.strip())
         print('\nAll lines from two files_for_classwork:')
-        print('=' * 25)
+        print('=' * 38)
         for line in lines:
             print(line)
         return lines
@@ -29,7 +29,7 @@ class IOEngine:
         """Docstring: Method to write information to text file"""
         all_lines = IOEngine.read_text_files()
         print('\nOnly "String" lines from two files_for_classwork into result file:')
-        print('=' * 52)
+        print('=' * 65)
         with open('files_for_classwork/file_for_result.txt', 'w') as file_write:
             for line in all_lines:
                 if 'String' in line:
@@ -48,7 +48,7 @@ class IOEngine:
         """Docstring: Method to read information from binary file"""
         with open('files_for_classwork/file_for_result_bin.binary', 'rb') as bin_read:
             result = pickle.load(bin_read)
-            print(f'\nInfo from binary file:\n{"=" * 22}\n{result}')
+            print(f'\nInfo from binary file:\n{"=" * 21}\n{result}')
 
     @staticmethod
     def read_xml_file_minidom() -> None:
