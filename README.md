@@ -15,4 +15,7 @@
   - binary (pickle)
   - xml (MiniDom, ElementTree, SAX)
   - json (json, orjson, jsonpickle)
+- Selenium Webdriver:
+  - Unittest
+  - SetUp and TearDown Methods
 > 2023
