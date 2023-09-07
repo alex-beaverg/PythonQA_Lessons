@@ -9,19 +9,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-class TestHomeWork(unittest.TestCase):
+class TestHomeWork13(unittest.TestCase):
     """Docstring: Test class"""
-
     def setUp(self) -> None:
         """Docstring: Method before every test"""
-        self.driver = webdriver.Edge()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
 
     def tearDown(self) -> None:
         """Docstring: Method after every test"""
         self.driver.quit()
 
-    def test_01_open_and_search_and_assert(self):
+    def test_01_open_and_search_and_assert(self) -> None:
         """Docstring: Test 01 (my own test)"""
         self.page_url = "https://www.selenium.dev/"
         self.driver.get(self.page_url)
@@ -34,7 +33,7 @@ class TestHomeWork(unittest.TestCase):
         self.find_text = self.driver.find_element(By.TAG_NAME, "h1").text
         self.assertIn("Selenium", self.find_text)
 
-    def test_02_from_presentation(self):
+    def test_02_from_presentation(self) -> None:
         """Docstring: Test 02 (from presentation)"""
         self.page_url = "https://the-internet.herokuapp.com/"
         self.driver.get(self.page_url)
