@@ -3,13 +3,15 @@
 # Run: Shift + F10
 
 import unittest
+
+from parameterized import parameterized
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class TestYandexAccountLogins(unittest.TestCase):
+class TestYandexAccountNegativeLogins(unittest.TestCase):
     """Docstring: Test class"""
 
     def setUp(self) -> None:
@@ -30,26 +32,30 @@ class TestYandexAccountLogins(unittest.TestCase):
 
     def pageSetUp(self) -> None:
         """Docstring: Page setup method"""
-        self.page_url = "https://passport.yandex.by/auth"
+        self.page_url = 'https://passport.yandex.by/auth'
         self.driver.get(self.page_url)
 
     def setLocators(self) -> None:
         """Docstring: Set locators method"""
-        self.login_field_id = "passp-field-login"
-        self.submit_button_id = "passp:sign-in"
-        self.wrong_message_id = "field:input-login:hint"
+        self.login_field_id = 'passp-field-login'
+        self.submit_button_id = 'passp:sign-in'
+        self.wrong_message_id = 'field:input-login:hint'
 
     def setVariables(self) -> None:
         """Docstring: Set variables method"""
         self.timeout = 10
-        self.expected_url = "https://passport.yandex.by/auth"
-        self.invalid_login = "invalid-account-123-123"
-        self.empty_login = ""
-        self.semicolon_login = ";"
-        self.long_login = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
-        self.expected_invalid_login_text = "Нет такого аккаунта"
-        self.expected_empty_login_text = "Логин не указан"
-        self.expected_not_suitable_login_text = "Такой логин не подойдет"
+        self.expected_url = 'https://passport.yandex.by/auth'
+        self.invalid_login = 'invalid-account-123-123'
+        self.empty_login = ''
+        self.correct_symbol = 'q'
+        self.long_login = 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq'
+        self.expected_invalid_login_text = 'Нет такого аккаунта'
+        self.expected_empty_login_text = 'Логин не указан'
+        self.expected_not_suitable_login_text = 'Такой логин не подойдет'
+
+    @staticmethod
+    def get_wrong_symbols() -> list:
+        return [';', ':', '!', '(', ')']
 
     def setTestsParameters(self) -> None:
         """Docstring: Method to set parameters to all tests"""
@@ -85,17 +91,28 @@ class TestYandexAccountLogins(unittest.TestCase):
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_empty_login_text, self.wrong_message_empty_login_element.text)
 
-    def test_03_yandex_account_semicolon_login(self) -> None:
-        """Docstring: Test 02 (Yandex account semicolon log in)"""
-        self.login_action(self.semicolon_login)
-        self.wrong_message_semicolon_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
+    @parameterized.expand(get_wrong_symbols())
+    def test_03_yandex_account_wrong_symbol_login(self, wrong_symbol) -> None:
+        """Docstring: Test 03 (Yandex account wrong symbol log in)"""
+        self.login_action(wrong_symbol)
+        self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
         WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_semicolon_login_element))
+            EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
-        self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_semicolon_login_element.text)
+        self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_wrong_symbol_login_element.text)
 
-    def test_04_yandex_account_long_login(self) -> None:
-        """Docstring: Test 02 (Yandex account long log in)"""
+    @parameterized.expand(get_wrong_symbols())
+    def test_04_yandex_account_login_with_wrong_symbol(self, wrong_symbol) -> None:
+        """Docstring: Test 04 (Yandex account log in with wrong symbol)"""
+        self.login_action(self.correct_symbol + wrong_symbol)
+        self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
+        WebDriverWait(self.driver, self.timeout).until(
+            EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
+        self.assertEqual(self.expected_url, self.driver.current_url)
+        self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_wrong_symbol_login_element.text)
+
+    def test_05_yandex_account_long_login(self) -> None:
+        """Docstring: Test 05 (Yandex account long log in)"""
         self.login_action(self.long_login)
         self.wrong_message_long_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
         WebDriverWait(self.driver, self.timeout).until(
