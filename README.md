@@ -19,7 +19,8 @@
   - Chrome, Edge, Firefox
   - Unittest
   - SetUp and TearDown Methods
-  - Implicitly wait
+  - Implicitly waits
+  - Explicitly waits
   - Refactoring
   - Parametrized Tests
 > 2023
