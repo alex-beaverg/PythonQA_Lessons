@@ -27,8 +27,9 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
 
     def webdriverSetUp(self) -> None:
         """Docstring: Webdriver setup method"""
+        self.timeout = 5
         self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(self.timeout)
 
     def pageSetUp(self) -> None:
         """Docstring: Page setup method"""
@@ -48,7 +49,6 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
 
     def setVariables(self) -> None:
         """Docstring: Set variables method"""
-        self.timeout = 10
         self.expected_url = 'https://passport.yandex.by/auth'
         self.invalid_login = 'invalid-account-123-123'
         self.empty_login = ''
