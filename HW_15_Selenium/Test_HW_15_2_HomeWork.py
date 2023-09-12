@@ -77,8 +77,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         """Docstring: Test 01 (Yandex account invalid log in)"""
         self.login_action(self.invalid_login)
         self.wrong_message_invalid_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_invalid_login_element))
+        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of(self.wrong_message_invalid_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_invalid_login_text, self.wrong_message_invalid_login_element.text)
 
@@ -86,8 +85,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         """Docstring: Test 02 (Yandex account empty log in)"""
         self.login_action(self.empty_login)
         self.wrong_message_empty_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_empty_login_element))
+        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of(self.wrong_message_empty_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_empty_login_text, self.wrong_message_empty_login_element.text)
 
@@ -96,8 +94,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         """Docstring: Test 03 (Yandex account wrong symbol log in)"""
         self.login_action(wrong_symbol)
         self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
+        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_wrong_symbol_login_element.text)
 
@@ -106,8 +103,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         """Docstring: Test 04 (Yandex account log in with wrong symbol)"""
         self.login_action(self.correct_symbol + wrong_symbol)
         self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
+        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of(self.wrong_message_wrong_symbol_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_wrong_symbol_login_element.text)
 
@@ -115,7 +111,6 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         """Docstring: Test 05 (Yandex account long log in)"""
         self.login_action(self.long_login)
         self.wrong_message_long_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of(self.wrong_message_long_login_element))
+        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of(self.wrong_message_long_login_element))
         self.assertEqual(self.expected_url, self.driver.current_url)
         self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_long_login_element.text)
