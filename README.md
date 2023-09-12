@@ -21,4 +21,5 @@
   - SetUp and TearDown Methods
   - Implicitly wait
   - Refactoring
+  - Parametrized Tests
 > 2023

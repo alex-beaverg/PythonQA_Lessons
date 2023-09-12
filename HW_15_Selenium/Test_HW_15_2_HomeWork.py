@@ -35,6 +35,11 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         self.page_url = 'https://passport.yandex.by/auth'
         self.driver.get(self.page_url)
 
+    def setTestsParameters(self) -> None:
+        """Docstring: Method to set parameters to all tests"""
+        self.setLocators()
+        self.setVariables()
+
     def setLocators(self) -> None:
         """Docstring: Set locators method"""
         self.login_field_id = 'passp-field-login'
@@ -56,11 +61,6 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
     @staticmethod
     def get_wrong_symbols() -> list:
         return [';', ':', '!', '(', ')']
-
-    def setTestsParameters(self) -> None:
-        """Docstring: Method to set parameters to all tests"""
-        self.setLocators()
-        self.setVariables()
 
     def tearDown(self) -> None:
         """Docstring: Teardown method after every test"""
