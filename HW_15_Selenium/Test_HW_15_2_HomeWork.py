@@ -90,7 +90,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         self.assertIn(self.expected_empty_login_text, self.wrong_message_empty_login_element.text)
 
     @parameterized.expand(get_wrong_symbols())
-    def test_03_yandex_account_wrong_symbol_login(self, wrong_symbol) -> None:
+    def test_03_yandex_account_wrong_symbol_login(self, wrong_symbol: str) -> None:
         """Docstring: Test 03 (Yandex account wrong symbol log in)"""
         self.login_action(wrong_symbol)
         self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
@@ -99,7 +99,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
         self.assertIn(self.expected_not_suitable_login_text, self.wrong_message_wrong_symbol_login_element.text)
 
     @parameterized.expand(get_wrong_symbols())
-    def test_04_yandex_account_login_with_wrong_symbol(self, wrong_symbol) -> None:
+    def test_04_yandex_account_login_with_wrong_symbol(self, wrong_symbol: str) -> None:
         """Docstring: Test 04 (Yandex account log in with wrong symbol)"""
         self.login_action(self.correct_symbol + wrong_symbol)
         self.wrong_message_wrong_symbol_login_element = self.driver.find_element(By.ID, self.wrong_message_id)
