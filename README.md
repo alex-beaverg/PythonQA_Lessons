@@ -16,6 +16,9 @@
   - xml (MiniDom, ElementTree, SAX)
   - json (json, orjson, jsonpickle)
 - Selenium Webdriver:
+  - Chrome, Edge, Firefox
   - Unittest
   - SetUp and TearDown Methods
+  - Implicitly wait
+  - Refactoring
 > 2023

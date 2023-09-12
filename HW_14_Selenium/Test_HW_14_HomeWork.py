@@ -10,6 +10,7 @@ from selenium.webdriver.common.keys import Keys
 
 class TestHomeWork14(unittest.TestCase):
     """Docstring: Test class"""
+
     def setUp(self) -> None:
         """Docstring: Method before every test"""
         self.page_url = "https://www.google.com/"
