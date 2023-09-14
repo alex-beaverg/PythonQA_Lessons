@@ -21,7 +21,7 @@ class TestClass(unittest.TestCase):
 
     def tearDown(self) -> None:
         """Docstring: Teardown method after every test"""
-        self.driver.quit()
+        browser.quit_driver()
 
     def webdriverSetUp(self) -> None:
         """Docstring: Webdriver setup method"""
