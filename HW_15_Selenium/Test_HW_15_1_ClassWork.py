@@ -1,4 +1,5 @@
 # Homework 15, file 1 - (2023.09.12)
+# Classwork -> Refactoring and decomposition of HW_14
 # Run configuration -> Current File
 # Run: Shift + F10
 

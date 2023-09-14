@@ -22,5 +22,7 @@
   - Implicitly waits
   - Explicitly waits
   - Refactoring
+  - Decomposition
   - Parametrized Tests
+  - Selene
 > 2023
