@@ -61,6 +61,7 @@ class TestYandexAccountNegativeLogins(unittest.TestCase):
 
     @staticmethod
     def get_wrong_symbols() -> list:
+        """Docstring: Static method to get list of wrong symbols for parametrize test methods"""
         return [';', ':', '!', '(', ')']
 
     def tearDown(self) -> None:
