@@ -10,13 +10,15 @@ from selene import browser, by, have
 from selene.support.shared.jquery_style import s
 
 
-class TestClass(unittest.TestCase):
+class TestClassWithClassworkTestsAndUsingSelene(unittest.TestCase):
     """Docstring: Test class"""
 
     def setUp(self) -> None:
         """Docstring: Setup method before every test"""
         browser.open('https://passport.yandex.by/auth')
-        browser.driver.maximize_window()
+        # If we use CI system we don't need to use maximize_window()
+        # Test time will be less
+        # browser.driver.maximize_window()
         self.setTestsParameters()
 
     def tearDown(self) -> None:
