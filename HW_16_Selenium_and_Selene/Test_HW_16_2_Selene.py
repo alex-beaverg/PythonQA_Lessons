@@ -1,13 +1,13 @@
 # Homework 15, file 2 - (2023.09.14)
-# Homework -> Using selene library
+# Homework -> Using selene 2.0.0rc4 (Aug 3, 2023) library
 # Run configuration -> Current File
 # Run: Shift + F10
 
 import unittest
 
 from parameterized import parameterized
-from selene.api import *
-from selenium import webdriver
+from selene import browser, by, have
+from selene.support.shared.jquery_style import s
 
 
 class TestClass(unittest.TestCase):
@@ -15,23 +15,13 @@ class TestClass(unittest.TestCase):
 
     def setUp(self) -> None:
         """Docstring: Setup method before every test"""
-        self.webdriverSetUp()
+        browser.open('https://passport.yandex.by/auth')
+        browser.driver.maximize_window()
         self.setTestsParameters()
-        self.pageSetUp()
 
     def tearDown(self) -> None:
         """Docstring: Teardown method after every test"""
-        browser.quit_driver()
-
-    def webdriverSetUp(self) -> None:
-        """Docstring: Webdriver setup method"""
-        self.driver = webdriver.Chrome()
-        self.driver.maximize_window()
-        browser.set_driver(self.driver)
-
-    def pageSetUp(self) -> None:
-        """Docstring: Page setup method"""
-        browser.open_url(self.expected_url)
+        browser.quit()
 
     def setTestsParameters(self) -> None:
         """Docstring: Method to set parameters to all tests"""
@@ -45,7 +35,6 @@ class TestClass(unittest.TestCase):
 
     def setVariables(self) -> None:
         """Docstring: Set variables method"""
-        self.expected_url = 'https://passport.yandex.by/auth'
         self.invalid_login = 'invalid-account-123-123'
         self.empty_login = ''
         self.correct_symbol = 'q'
