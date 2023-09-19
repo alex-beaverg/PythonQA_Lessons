@@ -10,6 +10,7 @@
 - Parametrized Tests (PyTest and Unittest)
 - SetUp and TearDown Methods for Tests (PyTest and Unittest)
 - Custom Decorators
+- Builder Pattern
 - Input/Output: 
   - text
   - binary (pickle)
@@ -25,4 +26,6 @@
   - Decomposition
   - Parametrized Tests
   - Selene
+  - Singleton
+  - Action Chains
 > 2023
