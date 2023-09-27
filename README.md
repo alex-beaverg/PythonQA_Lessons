@@ -26,6 +26,7 @@
   - Decomposition
   - Parametrized Tests
   - Selene
-  - Singleton
+  - Singleton Pattern
   - Action Chains
+  - Alerts, Frames, Windows, Shadow DOM, HTML5 Elements
 > 2023

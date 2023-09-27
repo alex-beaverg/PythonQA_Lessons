@@ -4,11 +4,11 @@
 from typing import Self
 
 
-class SweetSetBuilder:
-    """Docstring: Class SweetSetBuilder -> example of builder pattern"""
+class SweetBoxBuilder:
+    """Docstring: Class SweetBoxBuilder -> example of builder pattern"""
 
     def __init__(self) -> None:
-        """Docstring: Constructor of SweetSetBuilder class"""
+        """Docstring: Constructor of SweetBoxBuilder class"""
         self.candy = ''
         self.chocolate = ''
         self.bubble_gum = ''
@@ -16,49 +16,49 @@ class SweetSetBuilder:
         self.marmalade = ''
         self.sweet_set_box = []
 
-    def with_candy(self, candy_name: str) -> Self:
-        """Docstring: Method to add candy to sweet set"""
+    def add_candy(self, candy_name: str) -> Self:
+        """Docstring: Method to add candy to sweet box"""
         self.candy = candy_name
         self.sweet_set_box.append(self.candy)
         return self
 
-    def with_chocolate(self, chocolate_name: str) -> Self:
-        """Docstring: Method to add chocolate to sweet set"""
+    def add_chocolate(self, chocolate_name: str) -> Self:
+        """Docstring: Method to add chocolate to sweet box"""
         self.chocolate = chocolate_name
         self.sweet_set_box.append(self.chocolate)
         return self
 
-    def with_bubble_gum(self, bubble_gum_name: str) -> Self:
-        """Docstring: Method to add bubble gum to sweet set"""
+    def add_bubble_gum(self, bubble_gum_name: str) -> Self:
+        """Docstring: Method to add bubble gum to sweet box"""
         self.bubble_gum = bubble_gum_name
         self.sweet_set_box.append(self.bubble_gum)
         return self
 
-    def with_marshmallow(self, marshmallow_name: str) -> Self:
-        """Docstring: Method to add marshmallow to sweet set"""
+    def add_marshmallow(self, marshmallow_name: str) -> Self:
+        """Docstring: Method to add marshmallow to sweet box"""
         self.marshmallow = marshmallow_name
         self.sweet_set_box.append(self.marshmallow)
         return self
 
-    def with_marmalade(self, marmalade_name: str) -> Self:
-        """Docstring: Method to add marmalade to sweet set"""
+    def add_marmalade(self, marmalade_name: str) -> Self:
+        """Docstring: Method to add marmalade to sweet box"""
         self.marmalade = marmalade_name
         self.sweet_set_box.append(self.marmalade)
         return self
 
-    def build(self) -> None:
-        """Docstring: Method to build (print) sweet set"""
-        print('Sweet set box:')
+    def print_box(self) -> None:
+        """Docstring: Method to print (build) sweet box"""
+        print('Sweet box:')
         for sweet in self.sweet_set_box:
             print('\t' + sweet)
 
 
 if __name__ == '__main__':
-    SweetSetBuilder()\
-        .with_candy('Chupa Chups')\
-        .with_candy('Lemon caramel')\
-        .with_marmalade('Strawberry marmalade')\
-        .with_marshmallow('Choco marshmallow')\
-        .with_chocolate('Chocolate with peanuts')\
-        .with_bubble_gum('Orbit without sugar')\
-        .build()
+    SweetBoxBuilder()\
+        .add_candy('Chupa Chups')\
+        .add_candy('Lemon caramel')\
+        .add_marmalade('Strawberry marmalade')\
+        .add_marshmallow('Choco marshmallow')\
+        .add_chocolate('Chocolate with peanuts')\
+        .add_bubble_gum('Orbit without sugar')\
+        .print_box()
