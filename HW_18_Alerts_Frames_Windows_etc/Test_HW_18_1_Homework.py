@@ -1,4 +1,4 @@
-# Homework 18 - (2023.09.26)
+# Homework 18, file 1 - (2023.09.26)
 # Homework -> Alerts, Frames, Windows, Shadow DOM and HTML5 Elements
 # Run configuration -> Current File
 # Run: Shift + F10
@@ -44,7 +44,7 @@ class TestClass(unittest.TestCase):
         self.driver.implicitly_wait(self.timeout)
 
     def pageUrls(self) -> None:
-        """Docstring: Page setup method"""
+        """Docstring: Page URLs method"""
         self.page_url = 'https://the-internet.herokuapp.com/'
         self.page_url_canvas = 'https://canvas.apps.chrome/'
         self.page_url_video = 'https://www.w3schools.com/html/html5_video.asp'
