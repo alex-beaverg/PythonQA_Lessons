@@ -29,4 +29,5 @@
   - Singleton Pattern
   - Action Chains
   - Alerts, Frames, Windows, Shadow DOM, HTML5 Elements
+  - Design Patterns (Page Object, Page Element)
 > 2023
