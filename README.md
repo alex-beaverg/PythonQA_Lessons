@@ -1,8 +1,17 @@
->## Python QA Homeworks
-#### [IT STEP Academy](https://itstep.by)
-#### Group: QA1823
-#### Student: Alexey Bobrykov
-#### Teacher: Anton Semenchenko
+## Python AQA Homeworks
+
+---
+
+***[IT STEP Academy](https://itstep.by)***
+
+**Group:** *QA1823*
+
+**Student:** *Alexey Bobrykov*
+
+**Teacher:** *Anton Semenchenko*
+
+---
+
 - Python Basics
 - Python OOP
 - PyTest
@@ -18,7 +27,7 @@
   - json (json, orjson, jsonpickle)
 - Selenium Webdriver:
   - Chrome, Edge, Firefox
-  - Unittest
+  - Unittest, Pytest
   - SetUp and TearDown Methods
   - Implicitly waits
   - Explicitly waits
@@ -30,4 +39,7 @@
   - Action Chains
   - Alerts, Frames, Windows, Shadow DOM, HTML5 Elements
   - Design Patterns (Page Object, Page Element)
-> 2023
+
+---
+
+***© 2023***
