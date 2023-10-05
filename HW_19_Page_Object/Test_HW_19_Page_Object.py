@@ -1,4 +1,4 @@
-# Homework 19, file 1 - (2023.09.28)
+# Homework 19 - (2023.09.28)
 # Homework -> Page Object
 # Run configuration -> Current File
 # Run: Shift + F10

@@ -1,5 +1,5 @@
-# Homework 20, file 1 - (2023.10.05)
-# Homework -> Page Object
+# Homework 20 - (2023.10.05)
+# Homework -> Page Object and Page Element
 
 import unittest
 from typing import Self
