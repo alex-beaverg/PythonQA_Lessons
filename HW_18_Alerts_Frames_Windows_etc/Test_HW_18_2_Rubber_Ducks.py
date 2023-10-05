@@ -57,7 +57,9 @@ class TestClassForRubberDucksSite(unittest.TestCase):
         self.input_password_element_name = 'password'
         self.button_login_element_name = 'login'
         self.text_after_login_css_selector = '.notice.success'
+
         self.rubber_ducks_menu_item_element_css_selector = '#site-menu .category-1 > a'
+
         self.text_after_click_to_menu_item_element_css_selector = 'h1.title'
         self.duck_class = 'name'
         self.button_sort_by_name_element_css_selector = 'nav.filter>a:first-child'
