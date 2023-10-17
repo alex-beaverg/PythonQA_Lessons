@@ -18,8 +18,10 @@
 - Unittest
 - Parametrized Tests (PyTest and Unittest)
 - SetUp and TearDown Methods for Tests (PyTest and Unittest)
-- Custom Decorators
+- Custom Decorator
+- Nested Decorator
 - Builder Pattern
+- User Interface (tkinter)
 - Input/Output: 
   - text
   - binary (pickle)

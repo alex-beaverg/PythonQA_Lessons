@@ -1,5 +1,5 @@
 # Homework 21, file 1 - (2023.10.12)
-# Homework -> Using custom decorators
+# Homework -> Using nested decorators
 
 
 from pyunpack import Archive
