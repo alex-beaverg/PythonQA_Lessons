@@ -1,41 +1,46 @@
-# Homework 22 - (2023.10.17)
-# Homework -> User interface (tkinter) for unpacking file from Homework 21
+# Homework 23 - (2023.10.19)
+# Homework -> File processing decorator, User Interface, Builder Pattern
 
-from tkinter import *
-from tkinter import ttk
+from typing import Self
 from pyunpack import Archive
 from patoolib.util import PatoolError
 import patoolib
+from tkinter import *
+from tkinter import ttk
 
 
-def unzip_decorator(decorated_func: ()) -> ():
-    """Function -> Custom unzip decorator"""
+def processing_decorator(decorated_func: ()) -> ():
+    """Function -> File processing decorator"""
 
     def wrapper(*args) -> ():
         """Function to wrapp around the original function"""
+        action = ActionsForFileProcessing()
+        action \
+            .unzip_file(args[0] + '.zip', 'files/') \
+            .unrar_file(args[0] + '.rar', 'files/')
+        decorated_func(*args)
+
+    return wrapper
+
+
+class ActionsForFileProcessing:
+    """Class with builder actions for file processing"""
+
+    def unzip_file(self, file_path: str, dir_path: str) -> Self:
+        """Method to unzip file"""
         try:
-            Archive(args[0] + '.zip').extractall('files/')
+            Archive(file_path).extractall(dir_path)
         except ValueError:
-            pass
-        finally:
-            decorated_func(*args)
+            print('Unzip ERROR')
+        return self
 
-    return wrapper
-
-
-def unrar_decorator(decorated_func: ()) -> ():
-    """Function -> Custom unrar decorator"""
-
-    def wrapper(*args) -> ():
-        """Function to wrapp around the original function"""
+    def unrar_file(self, file_path: str, dir_path: str) -> Self:
+        """Method to unrar file"""
         try:
-            patoolib.extract_archive(args[0] + '.rar', outdir='files/')
+            patoolib.extract_archive(file_path, outdir=dir_path)
         except PatoolError:
-            pass
-        finally:
-            decorated_func(*args)
-
-    return wrapper
+            print('Unrar ERROR')
+        return self
 
 
 class Application:
@@ -58,6 +63,7 @@ class Application:
         self.__root.iconbitmap(default='files/favicon.ico')
         self.__root.geometry('400x120+760+100')
         self.__root.resizable(False, False)
+        self.__root.protocol("WM_DELETE_WINDOW", self.__finish)
 
     def __create_content(self):
         """Docstring: Method to create content for application"""
@@ -94,7 +100,8 @@ class Application:
     def __click_read_file_button(self):
         """Docstring: Method to get results after click to read file button"""
         if self.__unzip_checkbutton_selection and self.__unrar_checkbutton_selection:
-            self.__read_info_from_file('files/textfile', 'r')
+            self.__read_info_from_file('files/textfile')
+        self.__finish()
 
     def __select(self):
         """Docstring: Check selection check buttons"""
@@ -103,9 +110,11 @@ class Application:
         if self.__enabled_unrar.get() == 1:
             self.__unrar_checkbutton_selection = True
 
+    def __finish(self):
+        self.__root.destroy()
+
     @staticmethod
-    @unzip_decorator
-    @unrar_decorator
+    @processing_decorator
     def __read_info_from_file(path_from: str, mode='r') -> None:
         """Docstring: Function to read info from file"""
         lines = []
@@ -116,7 +125,7 @@ class Application:
         except FileNotFoundError:
             pass
         else:
-            Application.__write_info_to_text_file('files/textfile_result.txt', lines, 'w')
+            Application.__write_info_to_text_file('files/textfile_result.txt', lines)
 
     @staticmethod
     def __write_info_to_text_file(path_to: str, info: [], mode='w') -> None:
