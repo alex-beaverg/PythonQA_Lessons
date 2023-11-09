@@ -22,6 +22,7 @@
 - Nested Decorator
 - Builder Pattern
 - User Interface (tkinter)
+- Allure
 - Input/Output: 
   - text
   - binary (pickle)
